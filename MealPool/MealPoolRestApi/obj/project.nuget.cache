@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "szkC5s4ZVHKYERyFb6rAXL2XLrsfxcLdTk3vGYLLjclUeB6Wmy1WaNmlNZGGSfzynqj9av+RzdrHB+pzhWgOFA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jcoyn\\Documents\\Bachelors Thesis\\Bachelor-s-Final-Project-MealPool\\MealPool\\MealPoolRestApi\\MealPoolRestApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\jcoyn\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\jcoyn\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\jcoyn\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\jcoyn\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
