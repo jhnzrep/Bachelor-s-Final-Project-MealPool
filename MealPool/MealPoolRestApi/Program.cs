@@ -1,7 +1,15 @@
+using MealPoolLibrary.Services.DBConfiguration;
+using MealPoolLibrary.Services.Repositories;
+using MealPoolLibrary.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddSingleton<IDbClient, DbClient>();
+builder.Services.Configure<MealPoolDBConfig>(builder.Configuration);
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IMealRepository, MealRepository>();
+builder.Services.AddTransient<IReviewRepository, ReviewRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
