@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace MealPoolLibrary.Models
 {
-    class Meal
+    public class Meal
     {
-        public int Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id{ get; set; }
         public int CookId { get; set; }
         public string Name { get; set; }
         DateTime Created { get; set; }
