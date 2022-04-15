@@ -30,10 +30,10 @@
             text-indent: 21px;
         }
 
-        input[type=password]::placeholder, input[type=email]::placeholder {
+        input[type=text]::placeholder ,input[type=password]::placeholder, input[type=email]::placeholder {
             color: rgba(67, 45, 27, 0.4);
         }
-        input[type=text], input[type=password]{
+        input[type=email], input[type=text], input[type=password]{
             margin-top: 22px;
         }
 

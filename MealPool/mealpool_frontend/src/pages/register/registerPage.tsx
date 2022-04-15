@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../App.css';
 import styles from './registerPage.module.scss';
 
 class RegisterPage extends Component {

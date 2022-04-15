@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@media (max-width:768px){
+  .desktop_only{display: none;}
+  .mobile_only{display: block;}
+}
+
+
+@media (min-width:768px){
+  .desktop_only{display: block !important;}
+  .mobile_only{display: none !important;}
+}
