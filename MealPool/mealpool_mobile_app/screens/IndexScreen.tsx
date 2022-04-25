@@ -14,6 +14,7 @@ import Navigation from '../components/Navigation';
 import SearchInput from '../components/SearchInput';
 import CustomHeader from '../components/CustomHeader';
 import CustomCard from '../components/CustomCard';
+import MealCategoryBox from '../components/MealCategoryBox';
 
 
 export default function IndexScreen() {
@@ -29,6 +30,34 @@ export default function IndexScreen() {
         title: "Tasty breakfast with avocado3",
     }
     ];
+
+    const food_category_mock_data = [
+      {
+          title: "Indian",
+          image: "../assets/images/meal_category_image.svg"
+      },
+      {
+          title: "Vegetarian",
+          image: "../assets/images/meal_category_image.svg"
+      },
+      {
+          title: "Fast food",
+          image: "../assets/images/meal_category_image.svg"
+      },
+      {
+        title: "Italian",
+        image: "../assets/images/meal_category_image.svg"
+      },
+      {
+        title: "Sushi",
+        image: "../assets/images/meal_category_image.svg"
+      },
+      {
+        title: "Sushi",
+        image: "../assets/images/meal_category_image.svg"
+      },
+      
+      ];
  
   return (
     <View  style={{flex: 1}}>
@@ -36,19 +65,28 @@ export default function IndexScreen() {
 
         <ScrollView style={styles.scroll_container}>
         <View style={styles.container}>
+          
             <CustomHeader value="Search for food" />
-
             <CustomInput
                 setValue={(text : string) => setSearchVal(text)}
                 value={searchVal}
                 placeholder="What meal do you want to try today?"
             />
 
+            <ScrollView  style={styles.meal_category_box_wrapper} horizontal>
+              {food_category_mock_data.map((item) => {
+                  return <MealCategoryBox
+                      title={item.title}
+                      image={item.image}
+                  />
+              })}
+            </ScrollView>
+
             <CustomHeader value="Popular offers" />
             
             {DATA.map((item) => {
                 return <CustomCard
-                    CustomCard title={item.title}
+                     title={item.title}
                 />
             })}
 
@@ -74,6 +112,13 @@ const styles = StyleSheet.create({
   },
   scroll_container: {
     width: '100%',
+  },
+  meal_category_box_wrapper: {
+    marginBottom: '20px',
+    paddingLeft: '20px',
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 12,
     
   }
 
