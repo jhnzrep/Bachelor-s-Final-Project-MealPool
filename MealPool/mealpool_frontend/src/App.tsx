@@ -6,7 +6,7 @@ import RegisterPage from './pages/register/registerPage'
 function App() {
   return (
     <div className="App">
-      <LoginPage/>
+      <RegisterPage/>
     </div>
   );
 }
