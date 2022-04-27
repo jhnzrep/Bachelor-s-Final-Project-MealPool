@@ -16,8 +16,7 @@ import CustomHeader from '../components/CustomHeader';
 import CustomCard from '../components/CustomCard';
 import MealCategoryBox from '../components/MealCategoryBox';
 
-
-export default function IndexScreen() {
+export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
   const [searchVal, setSearchVal] = React.useState('');
   const DATA = [
     {

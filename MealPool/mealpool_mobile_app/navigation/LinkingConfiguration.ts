@@ -15,21 +15,17 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          LoginScreen: {
+          Index: {
             screens: {
-              LoginScreen: 'one',
-            },
-          },
-          RegisterScreen: {
-            screens: {
-              RegisterScreen: 'two',
+              Index: 'one',
             },
           },
         },
       },
       Modal: 'modal',
       NotFound: '*',
-      Index: 'index'
+      LoginScreen: 'login',
+      RegisterScreen: 'register'
     },
   },
 };

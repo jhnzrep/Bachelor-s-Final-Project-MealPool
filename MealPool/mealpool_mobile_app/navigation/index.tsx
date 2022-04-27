@@ -41,7 +41,9 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-      <Stack.Screen  name="Index" component={IndexScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
+
 
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
@@ -61,41 +63,18 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="LoginScreen"
+      initialRouteName="Index"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="LoginScreen"
-        component={LoginScreen}
-        options={({ navigation }: RootTabScreenProps<'LoginScreen'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
-      />
-      <BottomTab.Screen
-        name="RegisterScreen"
-        component={RegisterScreen}
+        name="Index"
+        component={IndexScreen}
         options={{
-          title: 'Tab Two',
+          title: 'Index',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
-      
     </BottomTab.Navigator>
   );
 }

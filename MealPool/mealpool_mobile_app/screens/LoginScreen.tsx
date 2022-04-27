@@ -4,18 +4,17 @@ import { CheckBox } from 'react-native-elements'
 
 import { Platform } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
 
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
 import CustomInput from '../components/CustomInput';
 import CustomHeader from '../components/CustomHeader';
 
 
-export default function LoginScreen({ navigation }: RootTabScreenProps<'LoginScreen'>) {
+export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginScreen'>) {
   const window = useWindowDimensions();
   const desktop = window.width < 768;
   // State Management
