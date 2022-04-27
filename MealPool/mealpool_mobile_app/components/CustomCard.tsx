@@ -200,8 +200,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         display: 'flex',
         justifyContent: 'space-between'
-    },
-    hidden_content: {
-        
     }
 })
