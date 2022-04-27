@@ -19,6 +19,8 @@ export type RootStackParamList = {
   NotFound: undefined;
   LoginScreen: undefined;
   RegisterScreen: undefined;
+  Index: undefined;
+  ProfileScreen: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -28,6 +30,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
 
 export type RootTabParamList = {
   Index: undefined;
+  ProfileScreen: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<

@@ -20,12 +20,18 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'one',
             },
           },
+          ProfileScreen: {
+            screens: {
+              Index: 'two',
+            },
+          },
         },
       },
       Modal: 'modal',
       NotFound: '*',
       LoginScreen: 'login',
-      RegisterScreen: 'register'
+      RegisterScreen: 'register',
+     
     },
   },
 };
