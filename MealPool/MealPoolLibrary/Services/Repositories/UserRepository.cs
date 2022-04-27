@@ -2,6 +2,8 @@
 using MealPoolLibrary.Services.DBConfiguration;
 using MealPoolLibrary.Services.Interfaces;
 using MongoDB.Driver;
+using Nest;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace MealPoolLibrary.Services.Repositories
 {
@@ -19,6 +21,19 @@ namespace MealPoolLibrary.Services.Repositories
             return user;
         }
 
+        public User RegisterUser(User user)
+        {
+            if(_users.Find(i => i.Email == user.Email).Any())
+            {
+                throw new Exception("Email: " + user.Email + "is already taken.");
+            }
+
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+
+            _users.InsertOne(user);
+            return user;
+        }
+
         public List<User> GetAllUsers()
         {
             return _users.Find(i => true).ToList();
@@ -26,7 +41,17 @@ namespace MealPoolLibrary.Services.Repositories
 
         public User GetUserById(string id)
         {
-            return (User)_users.Find(i => i.Id == id);
+            return (User)_users.Find(i => i._id == id).FirstOrDefault();
+        }
+
+        public User LoginUser(string email, string password)
+        {
+            var user = (User)_users.Find(i => i.Email == email).FirstOrDefault();
+
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
+                throw new Exception("Username or password is incorrect");
+
+            return user;
         }
     }
 }

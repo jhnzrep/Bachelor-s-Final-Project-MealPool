@@ -1,0 +1,551 @@
+﻿++Solution 'MealPool' ‎(2 of 2 projects)
+i:{00000000-0000-0000-0000-000000000000}:MealPool.sln
+++MealPoolLibrary
+i:{00000000-0000-0000-0000-000000000000}:MealPoolLibrary
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\mealpoollibrary.csproj
+++Dependencies
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:>85
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:>117
+++Analyzers
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:analyzers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:analyzers
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++System.Text.Json.SourceGeneration
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Frameworks
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:frameworks
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:frameworks
+++Packages
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:packages
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:packages
+++Models
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\models\
+++Meal.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\models\meal.cs
+++Rating.cs
+++User.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\models\user.cs
+++Services
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\
+++DBConfiguration
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\dbconfiguration\
+++MealPoolDBConfig.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\dbconfiguration\mealpooldbconfig.cs
+++Microsoft.NETCore.App
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\microsoft.netcore.app
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\microsoft.netcore.app
+++MongoDB.Bson (2.15.0)
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:>152
+++MealPoolRestApi
+i:{00000000-0000-0000-0000-000000000000}:MealPoolRestApi
+++Connected Services 
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:>118
+++Imports
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:>155
+++Properties
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\properties\
+++launchSettings.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\properties\launchsettings.json
+++bin
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\
+++Controllers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\controllers\
+++UserController.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\controllers\usercontroller.cs
+++obj
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\
+++appsettings.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\appsettings.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\appsettings.json
+++Program.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\program.cs
+++No service dependencies discovered
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:>119
+++Projects
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:projects
+++Sdk.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\sdk\sdk.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.illink.tasks\sdk\sdk.props
+++Sdk.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\sdk\sdk.targets
+++Debug
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\
+++MealPoolRestApi.csproj.nuget.dgspec.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\mealpoolrestapi.csproj.nuget.dgspec.json
+++MealPoolRestApi.csproj.nuget.g.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\mealpoolrestapi.csproj.nuget.g.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\mealpoolrestapi.csproj.nuget.g.props
+++MealPoolRestApi.csproj.nuget.g.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\mealpoolrestapi.csproj.nuget.g.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\mealpoolrestapi.csproj.nuget.g.targets
+++project.assets.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\project.assets.json
+++project.nuget.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\project.nuget.cache
+++staticwebassets.pack.sentinel
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\staticwebassets.pack.sentinel
+++appsettings.Development.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\appsettings.development.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.Extensions.Logging.Generators
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++Microsoft.AspNetCore.App
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\microsoft.aspnetcore.app
+++MongoDB.Driver (2.15.0)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:>150
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:>607
+++Swashbuckle.AspNetCore (6.2.3)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:>135
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\sdk\sdk.props
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Razor\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\sdk\sdk.props
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web.projectsystem\sdk\sdk.props
+++Sdk.props (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Publish\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\sdk\sdk.props
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\sdk\sdk.targets
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Razor\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\sdk\sdk.targets
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web.projectsystem\sdk\sdk.targets
+++Sdk.targets (C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Publish\Sdk)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\sdk\sdk.targets
+++net6.0
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\
+++Microsoft.Common.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.props
+++Microsoft.NET.Sdk.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.props
+++Sdk.Razor.CurrentVersion.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\sdk.razor.currentversion.props
+++Microsoft.NET.Sdk.Web.ProjectSystem.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web.projectsystem\targets\microsoft.net.sdk.web.projectsystem.props
+++Microsoft.NET.Sdk.Publish.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\microsoft.net.sdk.publish.props
+++Microsoft.NET.Sdk.BeforeCommon.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.beforecommon.targets
+++Microsoft.CSharp.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.csharp.targets
+++Microsoft.NET.Sdk.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.targets
+++Microsoft.NET.Compatibility.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.compatibility.targets
+++NuGet.Build.Tasks.Pack.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\nuget.build.tasks.pack\build\nuget.build.tasks.pack.targets
+++Sdk.Razor.CurrentVersion.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\sdk.razor.currentversion.targets
+++Microsoft.NET.Sdk.Web.ProjectSystem.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web.projectsystem\targets\microsoft.net.sdk.web.projectsystem.targets
+++Microsoft.NET.Sdk.Publish.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\microsoft.net.sdk.publish.targets
+++runtimes
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\
+++DnsClient.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\dnsclient.dll
+++MealPoolLibrary.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoollibrary.dll
+++MealPoolLibrary.pdb
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoollibrary.pdb
+++MealPoolRestApi.deps.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoolrestapi.deps.json
+++MealPoolRestApi.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoolrestapi.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\ref\mealpoolrestapi.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\refint\mealpoolrestapi.dll
+++MealPoolRestApi.exe
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoolrestapi.exe
+++MealPoolRestApi.pdb
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoolrestapi.pdb
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.pdb
+++MealPoolRestApi.runtimeconfig.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mealpoolrestapi.runtimeconfig.json
+++Microsoft.OpenApi.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\microsoft.openapi.dll
+++MongoDB.Bson.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mongodb.bson.dll
+++MongoDB.Driver.Core.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mongodb.driver.core.dll
+++MongoDB.Driver.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mongodb.driver.dll
+++MongoDB.Libmongocrypt.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\mongodb.libmongocrypt.dll
+++SharpCompress.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\sharpcompress.dll
+++Swashbuckle.AspNetCore.Swagger.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\swashbuckle.aspnetcore.swagger.dll
+++Swashbuckle.AspNetCore.SwaggerGen.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\swashbuckle.aspnetcore.swaggergen.dll
+++Swashbuckle.AspNetCore.SwaggerUI.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\swashbuckle.aspnetcore.swaggerui.dll
+++ref
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\ref\
+++refint
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\refint\
+++staticwebassets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\staticwebassets\
+++.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\.netcoreapp,version=v6.0.assemblyattributes.cs
+++apphost.exe
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\apphost.exe
+++MealPoolRestApi.AssemblyInfo.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.assemblyinfo.cs
+++MealPoolRestApi.AssemblyInfoInputs.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.assemblyinfoinputs.cache
+++MealPoolRestApi.assets.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.assets.cache
+++MealPoolRestApi.csproj.AssemblyReference.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.csproj.assemblyreference.cache
+++MealPoolRestApi.csproj.BuildWithSkipAnalyzers
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.csproj.buildwithskipanalyzers
+++MealPoolRestApi.csproj.CopyComplete
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.csproj.copycomplete
+++MealPoolRestApi.csproj.CoreCompileInputs.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.csproj.corecompileinputs.cache
+++MealPoolRestApi.csproj.FileListAbsolute.txt
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.csproj.filelistabsolute.txt
+++MealPoolRestApi.GeneratedMSBuildEditorConfig.editorconfig
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.generatedmsbuildeditorconfig.editorconfig
+++MealPoolRestApi.genruntimeconfig.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.genruntimeconfig.cache
+++MealPoolRestApi.GlobalUsings.g.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.globalusings.g.cs
+++MealPoolRestApi.MvcApplicationPartsAssemblyInfo.cache
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.mvcapplicationpartsassemblyinfo.cache
+++MealPoolRestApi.MvcApplicationPartsAssemblyInfo.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\mealpoolrestapi.mvcapplicationpartsassemblyinfo.cs
+++staticwebassets.build.json
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\obj\debug\net6.0\staticwebassets.build.json
+++Microsoft.LiveUnitTesting.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\imports\microsoft.common.props\importbefore\microsoft.liveunittesting.props
+++Microsoft.NuGet.ImportBefore.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\imports\microsoft.common.props\importbefore\microsoft.nuget.importbefore.props
+++NuGet.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\common7\ide\commonextensions\microsoft\nuget\nuget.props
+++Microsoft.NET.Sdk.DefaultItems.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.defaultitems.props
+++Microsoft.NET.Sdk.ImportWorkloads.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.importworkloads.props
+++Microsoft.NET.SupportedTargetFrameworks.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.supportedtargetframeworks.props
+++Microsoft.NET.SupportedPlatforms.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.supportedplatforms.props
+++Microsoft.NET.WindowsSdkSupportedTargetPlatforms.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.windowssdksupportedtargetplatforms.props
+++Microsoft.NET.Sdk.CSharp.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.csharp.props
+++Microsoft.NET.ILLink.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.illink.props
+++Microsoft.NET.Compatibility.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.compatibility.props
+++Microsoft.NET.PackTool.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.packtool.props
+++Microsoft.NET.PackProjectTool.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.packprojecttool.props
+++Microsoft.NET.Sdk.WindowsDesktop.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.windowsdesktop\targets\microsoft.net.sdk.windowsdesktop.props
+++Microsoft.NET.Windows.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.windows.props
+++Sdk.Razor.StaticAssets.ProjectSystem.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\sdk\sdk.razor.staticassets.projectsystem.props
+++Microsoft.TypeScript.Default.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\v17.0\typescript\microsoft.typescript.default.props
+++Microsoft.NET.Sdk.Web.DefaultItems.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web.projectsystem\targets\microsoft.net.sdk.web.defaultitems.props
+++Microsoft.NET.DefaultAssemblyInfo.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.defaultassemblyinfo.targets
+++Microsoft.NET.DefaultOutputPaths.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.defaultoutputpaths.targets
+++Microsoft.NET.Sdk.ImportPublishProfile.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.importpublishprofile.targets
+++Microsoft.NET.TargetFrameworkInference.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.targetframeworkinference.targets
+++Microsoft.NET.Sdk.Razor.BeforeCommon.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.beforecommon.targets
+++Microsoft.NET.Sdk.ImportWorkloads.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.importworkloads.targets
+++Microsoft.NET.RuntimeIdentifierInference.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.runtimeidentifierinference.targets
+++Microsoft.NET.EolTargetFrameworks.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.eoltargetframeworks.targets
+++Microsoft.NET.NuGetOfflineCache.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.nugetofflinecache.targets
+++Microsoft.Managed.Before.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.managed.before.targets
+++Microsoft.CSharp.CurrentVersion.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.csharp.currentversion.targets
+++Microsoft.Managed.After.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.managed.after.targets
+++Microsoft.NET.Sdk.Common.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.common.targets
+++Microsoft.PackageDependencyResolution.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.packagedependencyresolution.targets
+++Microsoft.NET.Sdk.DefaultItems.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.defaultitems.targets
+++Microsoft.NET.Sdk.FrameworkReferenceResolution.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.frameworkreferenceresolution.targets
+++Microsoft.NET.Sdk.Shared.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.shared.targets
+++Microsoft.NET.DisableStandardFrameworkResolution.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.disablestandardframeworkresolution.targets
+++Microsoft.NET.DesignerSupport.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.designersupport.targets
+++Microsoft.NET.GenerateAssemblyInfo.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.generateassemblyinfo.targets
+++Microsoft.NET.GenerateGlobalUsings.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.generateglobalusings.targets
+++Microsoft.NET.GenerateSupportedRuntime.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.generatesupportedruntime.targets
+++Microsoft.NET.ComposeStore.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.composestore.targets
+++Microsoft.NET.CrossGen.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.crossgen.targets
+++Microsoft.NET.ObsoleteReferences.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.obsoletereferences.targets
+++Microsoft.NET.Publish.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.publish.targets
+++Microsoft.NET.PackTool.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.packtool.targets
+++Microsoft.NET.PackProjectTool.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.packprojecttool.targets
+++Microsoft.NET.PreserveCompilationContext.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.preservecompilationcontext.targets
+++Microsoft.NET.ConflictResolution.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.conflictresolution.targets
+++Microsoft.NET.Sdk.CSharp.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.csharp.targets
+++Microsoft.NET.ILLink.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.illink.targets
+++Microsoft.NET.Sdk.Analyzers.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.analyzers.targets
+++Microsoft.NET.Compatibility.Common.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.compatibility.common.targets
+++Microsoft.NET.Sdk.Razor.Configuration.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.configuration.targets
+++Microsoft.NET.Sdk.Razor.CodeGeneration.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.codegeneration.targets
+++Microsoft.NET.Sdk.Razor.SourceGenerators.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.sourcegenerators.targets
+++Microsoft.NET.Sdk.Razor.StaticWebAssets.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.staticwebassets.targets
+++Microsoft.NET.Sdk.Razor.ScopedCss.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.scopedcss.targets
+++Microsoft.NET.Sdk.Razor.JSModules.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.jsmodules.targets
+++Microsoft.NET.Sdk.Razor.GenerateAssemblyInfo.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.generateassemblyinfo.targets
+++Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\targets\microsoft.net.sdk.razor.mvcapplicationpartsdiscovery.targets
+++Microsoft.NET.Sdk.Razor.DesignTime.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\razor\microsoft.net.sdk.razor.designtime.targets
+++Microsoft.TypeScript.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\v17.0\typescript\microsoft.typescript.targets
+++Microsoft.TypeScript.DotNetCore.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\v17.0\typescript\microsoft.typescript.dotnetcore.targets
+++Microsoft.Web.Designtime.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\managed.web\microsoft.web.designtime.targets
+++Default.pubxml
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\publishprofiles\default.pubxml
+++Microsoft.NET.Sdk.Publish.ComputeFiles.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\computetargets\microsoft.net.sdk.publish.computefiles.targets
+++Microsoft.NET.Sdk.Publish.FilterFiles.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\copytargets\microsoft.net.sdk.publish.filterfiles.targets
+++Microsoft.NET.Sdk.Publish.CopyFiles.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\copytargets\microsoft.net.sdk.publish.copyfiles.targets
+++Microsoft.NET.Sdk.Publish.TransformFiles.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\transformtargets\microsoft.net.sdk.publish.transformfiles.targets
+++Microsoft.NET.Sdk.Publish.FileSystem.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\publishtargets\microsoft.net.sdk.publish.filesystem.targets
+++Microsoft.NET.Sdk.DotNetCLITool.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.publish\targets\dotnetclitooltargets\microsoft.net.sdk.dotnetclitool.targets
+++linux
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\linux\
+++osx
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\osx\
+++win
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\win\
+++Microsoft.Extensions.ApiDescription.Server.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0\build\microsoft.extensions.apidescription.server.props
+++Swashbuckle.AspNetCore.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\.nuget\packages\swashbuckle.aspnetcore\6.2.3\build\swashbuckle.aspnetcore.props
+++Microsoft.NuGet.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\nuget\17.0\microsoft.nuget.props
+++Microsoft.NETCoreSdk.BundledVersions.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\microsoft.netcoresdk.bundledversions.props
+++Microsoft.NET.Sdk.WindowsDesktop.WindowsForms.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.windowsdesktop\targets\microsoft.net.sdk.windowsdesktop.windowsforms.props
+++Microsoft.NET.Sdk.WindowsDesktop.WPF.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.windowsdesktop\targets\microsoft.net.sdk.windowsdesktop.wpf.props
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.android)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.android\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.ios)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.ios\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.maccatalyst)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.maccatalyst\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.macos)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.macos\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.maui)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.maui\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.tvos)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.sdk.tvos\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.workload.emscripten)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.workload.emscripten\workloadmanifest.targets
+++WorkloadManifest.targets (C:\Program Files\dotnet\sdk-manifests\6.0.200\microsoft.net.workload.mono.toolchain)
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk-manifests\6.0.200\microsoft.net.workload.mono.toolchain\workloadmanifest.targets
+++Microsoft.CSharp.Core.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\roslyn\microsoft.csharp.core.targets
+++Microsoft.CSharp.DesignTime.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\managed\microsoft.csharp.designtime.targets
+++Microsoft.Common.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.common.targets
+++Microsoft.ServiceModel.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.servicemodel.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\windows\microsoft.net\framework\v4.0.30319\microsoft.servicemodel.targets
+++Microsoft.NET.Sdk.DefaultItems.Shared.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.sdk.defaultitems.shared.targets
+++Microsoft.NETCoreSdk.BundledCliTools.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\microsoft.netcoresdk.bundledclitools.props
+++Microsoft.NET.DefaultPackageConflictOverrides.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\targets\microsoft.net.defaultpackageconflictoverrides.targets
+++Microsoft.CodeAnalysis.NetAnalyzers.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\build\microsoft.codeanalysis.netanalyzers.props
+++Microsoft.CodeAnalysis.NetAnalyzers.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\build\microsoft.codeanalysis.netanalyzers.targets
+++native
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\linux\native\
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\osx\native\
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\win\native\
+++Microsoft.NET.ILLink.Tasks.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.illink.tasks\build\microsoft.net.illink.tasks.props
+++System.Windows.Forms.Analyzers.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.windowsdesktop\targets\system.windows.forms.analyzers.props
+++Microsoft.Managed.Core.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\roslyn\microsoft.managed.core.targets
+++Microsoft.Managed.DesignTime.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\managed\microsoft.managed.designtime.targets
+++Microsoft.Common.CurrentVersion.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.common.currentversion.targets
+++libmongocrypt.so
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\linux\native\libmongocrypt.so
+++libsnappy64.so
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\linux\native\libsnappy64.so
+++libzstd.so
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\linux\native\libzstd.so
+++libmongocrypt.dylib
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+++libsnappy64.dylib
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\osx\native\libsnappy64.dylib
+++libzstd.dylib
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\osx\native\libzstd.dylib
+++libzstd.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\win\native\libzstd.dll
+++mongocrypt.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\win\native\mongocrypt.dll
+++snappy32.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\win\native\snappy32.dll
+++snappy64.dll
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\bin\debug\net6.0\runtimes\win\native\snappy64.dll
+++Microsoft.Managed.Core.CurrentVersions.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\roslyn\microsoft.managed.core.currentversions.targets
+++Microsoft.LiveUnitTesting.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.targets\importbefore\microsoft.liveunittesting.targets
+++MealPoolRestApi.csproj.user
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\mealpoolrestapi.csproj.user
+++Microsoft.NET.props
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.net.props
+++Microsoft.CodeAnalysis.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\v17.0\codeanalysis\microsoft.codeanalysis.targets
+++Microsoft.Xaml.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.xaml.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\windows\microsoft.net\framework\v4.0.30319\microsoft.xaml.targets
+++Microsoft.WorkflowBuildExtensions.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\bin\amd64\microsoft.workflowbuildextensions.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\windows\microsoft.net\framework\v4.0.30319\microsoft.workflowbuildextensions.targets
+++Microsoft.TeamTest.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\v17.0\teamtest\microsoft.teamtest.targets
+++NuGet.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\common7\ide\commonextensions\microsoft\nuget\nuget.targets
+++Microsoft.Docker.ImportAfter.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.targets\importafter\microsoft.docker.importafter.targets
+++Microsoft.NET.Build.Extensions.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.targets\importafter\microsoft.net.build.extensions.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\microsoft.net.build.extensions\microsoft.net.build.extensions.targets
+++Microsoft.NuGet.ImportAfter.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.targets\importafter\microsoft.nuget.importafter.targets
+++Microsoft.QualityTools.Testing.Fakes.ImportAfter.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.targets\importafter\microsoft.qualitytools.testing.fakes.importafter.targets
+++Microsoft.Web.ImportAfter.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\current\microsoft.common.targets\importafter\microsoft.web.importafter.targets
+++Microsoft.Extensions.ApiDescription.Server.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0\build\microsoft.extensions.apidescription.server.targets
+++Microsoft.Docker.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\sdks\microsoft.docker.sdk\build\microsoft.docker.targets
+++Microsoft.QualityTools.Testing.Fakes.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\v17.0\fakes\microsoft.qualitytools.testing.fakes.targets
+++Microsoft.Web.IISSupport.targets
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\program files\microsoft visual studio\2022\enterprise\msbuild\microsoft\visualstudio\managed.web\microsoft.web.iissupport.targets
+++NewFolder
+++Interfaces
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\interfaces\
+++IUserRepository.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\interfaces\iuserrepository.cs
+++IReviewRepositorycs.cs
+++IMealRepository.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\interfaces\imealrepository.cs
+++Repositories
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\repositories\
+++UserRepository.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\repositories\userrepository.cs
+++Review.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\models\review.cs
+++MealRepository.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\repositories\mealrepository.cs
+++ReviewRepository.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\repositories\reviewrepository.cs
+++IReviewRepository.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\interfaces\ireviewrepository.cs
+++IDbClient.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\dbconfiguration\idbclient.cs
+++DbClient.cs
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoollibrary\services\dbconfiguration\dbclient.cs
+++Microsoft.Extensions.Options (6.0.0)
+i:{2a739f6c-1be1-429c-8c6f-cdcf34e2179f}:>610
+++MealPoolLibrary.csproj.nuget.dgspec.json
+++MealPoolLibrary.csproj.nuget.g.props
+++MealPoolLibrary.csproj.nuget.g.targets
+++MealPoolLibrary.AssemblyInfo.cs
+++MealPoolLibrary.AssemblyInfoInputs.cache
+++MealPoolLibrary.assets.cache
+++MealPoolLibrary.csproj.AssemblyReference.cache
+++MealPoolLibrary.csproj.BuildWithSkipAnalyzers
+++MealPoolLibrary.csproj.CoreCompileInputs.cache
+++MealPoolLibrary.csproj.FileListAbsolute.txt
+++MealPoolLibrary.GeneratedMSBuildEditorConfig.editorconfig
+++MealPoolLibrary.GlobalUsings.g.cs
+++MealPoolLibrary.deps.json
+++ReviewController.cs
+i:{8eb75206-fd24-4748-b288-9ac2c601e2ce}:c:\users\jcoyn\documents\bachelors thesis\bachelor-s-final-project-mealpool\mealpool\mealpoolrestapi\controllers\reviewcontroller.cs

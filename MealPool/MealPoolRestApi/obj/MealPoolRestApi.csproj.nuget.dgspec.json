@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -51,6 +55,14 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.15.0, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.17.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.17.0, )"
             }
           },
           "imports": [
@@ -118,7 +130,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.3.1, )"
             }
           },
           "imports": [

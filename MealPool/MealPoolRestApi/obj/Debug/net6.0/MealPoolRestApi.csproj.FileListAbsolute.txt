@@ -43,3 +43,10 @@ C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\Meal
 C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\obj\Debug\net6.0\MealPoolRestApi.pdb
 C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\obj\Debug\net6.0\MealPoolRestApi.genruntimeconfig.cache
 C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\obj\Debug\net6.0\ref\MealPoolRestApi.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\Elasticsearch.Net.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\Nest.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolRestApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
