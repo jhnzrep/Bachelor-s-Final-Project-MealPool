@@ -20,8 +20,8 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
         <ScrollView style={styles.scroll_container}>
             <View style={{flex: 1,  justifyContent: 'center', alignItems: 'center', marginTop: 50, position: 'relative' }}>
                     <Image source={require('../assets/images/profile_picture.svg')}  style={styles.profile_picture} />
-                {/* <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.svg')}>
-                </ImageBackground> */}
+                <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.svg')}>
+                </ImageBackground>
             </View>
         
             <View style={styles.content_section}>
@@ -40,7 +40,20 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
                 <Text style={styles.bolded_text}>Location:</Text>
                 <Text>Roskilde</Text>
             </View>
-        </ScrollView>
+            <View style={{marginTop: '20px'}}>
+                <View style={styles.user_reviews}>
+                    <Text> 4,3 </Text>
+                    <View style={{width: '50%'}}>
+                        <SubmitButton text="See reviews" />
+                    </View>
+                </View>
+                <View style={styles.user_reviews}>
+                    <Text style={{width: '50%'}}> 54 reviews given </Text>
+                    <View style={{width: '50%'}}>
+                        <SubmitButton text="See given reviews" />
+                    </View>
+                </View>
+            </View>
 
         <View style={styles.user_content_bottom_section}>
             <View style={styles.content_user_info_section}>
@@ -55,7 +68,15 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
                   />
               })}
             </ScrollView>
+            <View style={styles.edit_profile_wrapper}>
+                <View style={{width: '50%'}}>
+                    <SubmitButton 
+                        text="Edit Profile"
+                    />
+                </View>
+            </View>
         </View>
+        </ScrollView>
     </View>
 
   );
@@ -65,12 +86,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingRight: '20px',
-    paddingLeft: '20px',
     justifyContent: 'center',
   },
   scroll_container: {
     width: '100%',
+    paddingRight: '20px',
+    paddingLeft: '20px',
   },
   profile_picture: {
     borderRadius: 100,
@@ -98,8 +119,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700'
   },
+  user_content_bottom_section: {
+      marginTop: '20px',
+      textAlign: 'left',
+  },
   content_user_info_section: {
       flexDirection: "row",
-      justifyContent: 'center'
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '5px'
+  },
+  edit_profile_wrapper: {
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '10px'
+  },
+  user_reviews: {
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row',
+      flex: 1
   }
 });
