@@ -3,7 +3,11 @@ import { StyleSheet, View, Text, Image, Pressable, Alert, TextInput } from "reac
 import Colors from "../constants/Colors";
 
 export default function CustomInput(props: any){
+    const customWidth = props.width
     const [error, setErrorMessage] = React.useState(false)
+    const customType :string = props.type
+
+    
 
     const checkOnPressOut = () => {
         if (props.value == 0 && props.required) {
@@ -16,12 +20,12 @@ export default function CustomInput(props: any){
   return (
 
     <View style={{width: '100%'}}>
-        <TextInput 
+        <TextInput
         placeholderTextColor={'rgba(67, 45, 27, 0.4)'} 
         onChangeText={props.setValue}
         onBlur={checkOnPressOut}
         onFocus={() => setErrorMessage(false)}
-        style={[error ? styles.input_error : null , styles.text_input]} 
+        style={[error ? styles.input_error : null , styles.text_input, customWidth == "" ? {width: '100%'} : {width: customWidth}, customType == "textfield" ?  {height: '100px' }: { height:'45px'}]} 
         blurOnSubmit={true}
         placeholder={props.placeholder}
         secureTextEntry={props.secureTextEntry}
@@ -45,9 +49,9 @@ const styles = StyleSheet.create({
         shadowRadius: 2,  
         elevation: 12,
         borderRadius: 25,
-        width: '100%',
-        height: '45px',
-        fontSize: 14,
+       /*  width: customWidth  , */
+/*         height: props.type ==  '45px',
+ */        fontSize: 14,
         fontWeight: '600',
         marginTop: '10px',
         color: 'rgba(67, 45, 27, 0.4)',

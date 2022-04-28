@@ -20,6 +20,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import LoginScreen from '../screens/LoginScreen';
 import IndexScreen from '../screens/IndexScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import MealOfferScreen from '../screens/MealOfferScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -78,6 +79,13 @@ function BottomTabNavigator() {
        <BottomTab.Screen
         name="ProfileScreen"
         component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+       <BottomTab.Screen
+        name="MealOfferScreen"
+        component={MealOfferScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}

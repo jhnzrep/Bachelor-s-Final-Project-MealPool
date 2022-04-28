@@ -22,7 +22,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
  
  
   return (
-    <View  style={{flex: 1}}>
+    <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
         <Navigation/>
 
         <ScrollView style={styles.scroll_container}>
@@ -34,15 +34,16 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
                 value={searchVal}
                 placeholder="What meal do you want to try today?"
             />
-
-            <ScrollView  style={styles.meal_category_box_wrapper} horizontal>
-              {food_category_mock_data.map((item) => {
-                  return <MealCategoryBox
-                      title={item.title}
-                      image={item.image}
-                  />
-              })}
-            </ScrollView>
+            <View style={{width: '100%'}}>
+              <ScrollView  style={styles.meal_category_box_wrapper} horizontal>
+                {food_category_mock_data.map((item) => {
+                    return <MealCategoryBox
+                        title={item.title}
+                        image={item.image}
+                    />
+                })}
+              </ScrollView>
+            </View>
 
             <CustomHeader value="Popular offers" />
             
@@ -67,20 +68,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     width: '100%',
-    paddingRight: '20px',
-    paddingLeft: '20px',
+  
     justifyContent: 'center',
     color: Colors.text_color.background
   },
   scroll_container: {
     width: '100%',
+    paddingRight: '20px',
+    paddingLeft: '20px',
   },
   meal_category_box_wrapper: {
-    marginBottom: '20px',
-    paddingLeft: '20px',
-    display: 'flex',
+/*     marginBottom: '20px',
+    paddingLeft: '20px', */
+/*     display: 'flex',
     flexDirection: 'row',
-    gap: 12,
+    gap: 12, */
     
   }
 
