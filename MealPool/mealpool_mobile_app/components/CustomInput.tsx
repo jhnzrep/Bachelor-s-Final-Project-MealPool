@@ -25,11 +25,15 @@ export default function CustomInput(props: any){
         onChangeText={props.setValue}
         onBlur={checkOnPressOut}
         onFocus={() => setErrorMessage(false)}
-        style={[error ? styles.input_error : null , styles.text_input, customWidth == "" ? {width: '100%'} : {width: customWidth}, customType == "textfield" ?  {height: '100px' }: { height:'45px'}]} 
+        style={[ error ? styles.input_error : null , styles.text_input, customWidth == "" ? {width: '100%'} : {width: customWidth}, customType == "textArea" ?  styles.textArea : null ]} 
         blurOnSubmit={true}
         placeholder={props.placeholder}
         secureTextEntry={props.secureTextEntry}
-        value={props.value} />
+        value={props.value} 
+        // For TEXT AREA
+        multiline={customType == "textArea" ? true : false }
+        numberOfLines={customType == "textArea" ? 4 : 1}
+        />
         <Text style={styles.error_text} >
         { error ?  props.errorText : null }
         </Text>
@@ -50,12 +54,17 @@ const styles = StyleSheet.create({
         elevation: 12,
         borderRadius: 25,
        /*  width: customWidth  , */
-/*         height: props.type ==  '45px',
- */        fontSize: 14,
+        height: '45px',
+        fontSize: 14,
         fontWeight: '600',
         marginTop: '10px',
         color: 'rgba(67, 45, 27, 0.4)',
         paddingHorizontal: 22,
+      },
+      textArea: {
+        height: 150,
+        justifyContent: "flex-start",
+        paddingTop: 10,
       },
     error_text: {
         height: '19px',

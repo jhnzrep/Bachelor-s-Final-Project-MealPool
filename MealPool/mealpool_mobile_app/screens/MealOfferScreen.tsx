@@ -80,7 +80,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             <CustomInput
             setValue={(text : string) => setAbout({ value: text, error: ''})}
             placeholder="About"
-            type="textfield"
+            type="textArea"
             value={about.value}/>
 
             <CustomInput
