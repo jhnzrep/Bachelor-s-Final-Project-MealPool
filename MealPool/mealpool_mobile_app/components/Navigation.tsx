@@ -10,7 +10,7 @@ export default function Navigation(props: any){
 
     <View style={styles.navigation_wrapper}>
         <View></View>
-        <View>
+        <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
             <Logo type="nav"  />
         </View>
         <View>
@@ -23,6 +23,7 @@ export default function Navigation(props: any){
 const styles = StyleSheet.create({
     navigation_wrapper: {
         width: '100%',
+        height: '80px',
         zIndex: 9999,
         display: 'flex',
         flexDirection: 'row',
