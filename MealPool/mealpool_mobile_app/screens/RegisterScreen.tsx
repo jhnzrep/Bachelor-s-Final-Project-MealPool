@@ -29,8 +29,8 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
       {
           desktop ? null :  <DesktopNavigation/>
         }
-        <View>
-          <CustomHeader value="Sign Up" />
+        <View style={[!desktop ? styles.custom_input_desktop_wrapper : styles.custom_input_mobile_wrapper, {marginTop: 33}]}>
+          <CustomHeader  value="Sign Up" />
 
           <CustomInput 
           setValue={(text : string) => setFname({ value: text, error: ''})}
@@ -105,7 +105,8 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
 
 
           <SubmitButton
-            text="Sign up" 
+            text="Sign in" 
+            showSeparator={true}
             navigation={() => navigation.navigate('LoginScreen')} 
             separator_text="Sign in"
           />
@@ -127,6 +128,12 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingLeft: 70,
     paddingRight: 70,
+  },
+  custom_input_desktop_wrapper: {
+    width: 330
+  },
+  custom_input_mobile_wrapper: {
+    width: '100%'
   },
   separator: {
     marginVertical: 30,

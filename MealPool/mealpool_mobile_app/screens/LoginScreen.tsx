@@ -47,7 +47,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
         }
 
         <CustomHeader value="Sign In" />
-        <View>
+        <View style={[!desktop ? styles.custom_input_desktop_wrapper : styles.custom_input_mobile_wrapper, {marginTop: 33}]}>
           <CustomInput 
           setValue={(text : string) => setTextInputEmail({ value: text, error: ''})}
           error={!!textInputEmail.error}
@@ -104,6 +104,12 @@ const styles = StyleSheet.create({
     color: Colors.text_color.background,
     paddingLeft: 70,
     paddingRight: 70,
+  },
+  custom_input_desktop_wrapper: {
+    width: 330
+  },
+  custom_input_mobile_wrapper: {
+    width: '100%'
   },
   scroll_container: {
     width: '100%',
