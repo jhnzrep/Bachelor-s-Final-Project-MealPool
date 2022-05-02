@@ -1,7 +1,9 @@
 import React from 'react';
-import { ScrollView, StyleSheet, TextInput } from 'react-native';
+import { ScrollView, StyleSheet, Image, TextInput, useWindowDimensions } from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import CustomInput from '../components/CustomInput';
+import DesktopNavigation from '../components/DesktopNavigation';
+import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
 
 import {  View } from '../components/Themed';
@@ -17,92 +19,101 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   const [zcode, setZcode] = React.useState({ value: '', error: ''});
   const [password, setPassword] = React.useState({ value: '', error: ''});
   const [rpassword, setRpassword] = React.useState({ value: '', error: ''});
-
+  const window = useWindowDimensions();
+  const desktop = window.width < 768;
 
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <CustomHeader value="Sign Up" />
+      {
+          desktop ? null :  <DesktopNavigation/>
+        }
+        <View>
+          <CustomHeader value="Sign Up" />
 
-        <CustomInput 
-        setValue={(text : string) => setFname({ value: text, error: ''})}
-        error={!!fname.error}
-        required={true}
-        errorText="You have to fill first name"
-        placeholder="First Name" 
-        value={fname.value} />
+          <CustomInput 
+          setValue={(text : string) => setFname({ value: text, error: ''})}
+          error={!!fname.error}
+          required={true}
+          errorText="You have to fill first name"
+          placeholder="First Name" 
+          value={fname.value} />
 
-        <CustomInput 
-        setValue={(text : string) => setLname({ value: text, error: ''})}
-        placeholder="Last Name" 
-        required={true}
-        error={!!fname.error}
-        errorText="You have to fill last name"
-        value={lname.value}/>
+          <CustomInput 
+          setValue={(text : string) => setLname({ value: text, error: ''})}
+          placeholder="Last Name" 
+          required={true}
+          error={!!fname.error}
+          errorText="You have to fill last name"
+          value={lname.value}/>
 
-        <CustomInput 
-        setValue={(text : string) => setEmail({ value: text, error: ''})}
-        required={true}
-        placeholder="Email account" 
-        error={!!fname.error}
-        errorText="You have to fill email account"
-        value={email.value}/>
+          <CustomInput 
+          setValue={(text : string) => setEmail({ value: text, error: ''})}
+          required={true}
+          placeholder="Email account" 
+          error={!!fname.error}
+          errorText="You have to fill email account"
+          value={email.value}/>
 
-        <CustomInput 
-        setValue={(text : string) => setDob({ value: text, error: ''})}
-        placeholder="Zip code" 
-        error={!!fname.error}
-        errorText="You have to fill Date of Birth"
-        value={dob.value}/>
+          <CustomInput 
+          setValue={(text : string) => setDob({ value: text, error: ''})}
+          placeholder="Zip code" 
+          error={!!fname.error}
+          errorText="You have to fill Date of Birth"
+          value={dob.value}/>
 
-        <CustomInput 
-        setValue={(text : string) => setAddress({ value: text, error: ''})}
-        placeholder="Address" 
-        error={!!fname.error}
-        errorText="You have to fill Address"
-        value={address.value}/>
-
-
-        <CustomInput 
-        setValue={(text : string) => setCity({ value: text, error: ''})}
-        placeholder="City" 
-        error={!!fname.error}
-        errorText="You have to fill city"
-        value={city.value}/>
-
-        <CustomInput 
-        setValue={(text : string) => setZcode({ value: text, error: ''})}
-        placeholder="Date of birth" 
-        error={!!fname.error}
-        errorText="You have to fill Zip code"
-        value={zcode.value}/>
-
-         <CustomInput 
-        setValue={(text : string) => setPassword({ value: text, error: ''})}
-        placeholder="Password" 
-        error={!!fname.error}
-        errorText="You have to fill password"
-        required={true}
-        secureTextEntry={true}
-        value={password.value}/>
-
-        <CustomInput 
-        setValue={(text : string) => setRpassword({ value: text, error: ''})}
-        placeholder="Repeat Password"
-        error={!!fname.error} 
-        required={true}
-        errorText="You have to repeat password"
-        secureTextEntry={true}
-        value={rpassword.value}/>
+          <CustomInput 
+          setValue={(text : string) => setAddress({ value: text, error: ''})}
+          placeholder="Address" 
+          error={!!fname.error}
+          errorText="You have to fill Address"
+          value={address.value}/>
 
 
-        <SubmitButton
-          text="Sign up" 
-          navigation={() => navigation.navigate('LoginScreen')} 
-          separator_text="Sign in"
-        />
+          <CustomInput 
+          setValue={(text : string) => setCity({ value: text, error: ''})}
+          placeholder="City" 
+          error={!!fname.error}
+          errorText="You have to fill city"
+          value={city.value}/>
 
+          <CustomInput 
+          setValue={(text : string) => setZcode({ value: text, error: ''})}
+          placeholder="Date of birth" 
+          error={!!fname.error}
+          errorText="You have to fill Zip code"
+          value={zcode.value}/>
+
+          <CustomInput 
+          setValue={(text : string) => setPassword({ value: text, error: ''})}
+          placeholder="Password" 
+          error={!!fname.error}
+          errorText="You have to fill password"
+          required={true}
+          secureTextEntry={true}
+          value={password.value}/>
+
+          <CustomInput 
+          setValue={(text : string) => setRpassword({ value: text, error: ''})}
+          placeholder="Repeat Password"
+          error={!!fname.error} 
+          required={true}
+          errorText="You have to repeat password"
+          secureTextEntry={true}
+          value={rpassword.value}/>
+
+
+          <SubmitButton
+            text="Sign up" 
+            navigation={() => navigation.navigate('LoginScreen')} 
+            separator_text="Sign in"
+          />
+       
+        </View>
+        {
+        !desktop ?  <Image source={require('../assets/images/main_image_desktop.svg')}  style={{height: 333, width: 639}}/>: null
+        }
       </View>
     </ScrollView>
   );

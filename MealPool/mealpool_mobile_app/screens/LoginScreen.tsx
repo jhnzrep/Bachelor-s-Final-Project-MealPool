@@ -12,6 +12,7 @@ import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
 import CustomInput from '../components/CustomInput';
 import CustomHeader from '../components/CustomHeader';
+import DesktopNavigation from '../components/DesktopNavigation';
 
 
 export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginScreen'>) {
@@ -41,41 +42,48 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
     <ScrollView style={styles.scroll_container}>
       <View style={styles.container}>
 
-        <Logo type="main" show_title={true} />
+        {
+          desktop ? <Logo type="main" show_title={true} /> :  <DesktopNavigation/>
+        }
 
         <CustomHeader value="Sign In" />
-        
-        <CustomInput 
-        setValue={(text : string) => setTextInputEmail({ value: text, error: ''})}
-        error={!!textInputEmail.error}
-        errorText="You have to fill email"
-        required={true}
-        placeholder="Email account" 
-        secureTextEntry={false}
-        value={textInputEmail.value} />
+        <View>
+          <CustomInput 
+          setValue={(text : string) => setTextInputEmail({ value: text, error: ''})}
+          error={!!textInputEmail.error}
+          errorText="You have to fill email"
+          required={true}
+          placeholder="Email account" 
+          secureTextEntry={false}
+          value={textInputEmail.value} />
 
-        <CustomInput 
-        setValue={(text : string) => setTextInputPassword({ value: text, error: ''})}
-        placeholder="Password" 
-        errorText="You have to fill password"
-        required={true}
-        secureTextEntry={true}
-        value={textInputPassword.value}/>
+          <CustomInput 
+          setValue={(text : string) => setTextInputPassword({ value: text, error: ''})}
+          placeholder="Password" 
+          errorText="You have to fill password"
+          required={true}
+          secureTextEntry={true}
+          value={textInputPassword.value}/>
 
-        <CheckBox
+          <CheckBox
           title="Remember me?"
           containerStyle ={styles.checkBox}
           checked={checked}
-        />
+          />
 
-       <SubmitButton 
-        text="Sign in" 
-        onPress={checkTextInput} 
-        showSeparator={true}
-        navigation={() => navigation.navigate('RegisterScreen')} 
-        separator_text="Create a new account"
-       />
-        
+          <SubmitButton 
+          text="Sign in" 
+          onPress={checkTextInput} 
+          showSeparator={true}
+          navigation={() => navigation.navigate('RegisterScreen')} 
+          separator_text="Create a new account"
+          />
+        </View>
+
+        {
+        !desktop ?  <Image source={require('../assets/images/main_image_desktop.svg')}  style={{height: 333, width: 639}}/>: <Text>No Web</Text>
+        }
+
       </View>
 
       {
@@ -100,6 +108,10 @@ const styles = StyleSheet.create({
   scroll_container: {
     width: '100%',
     
+  },
+  login_wrapper_desktop: {
+    flex: 1,
+    flexDirection: 'row'
   },
   company_logo: {
     width: 282,
