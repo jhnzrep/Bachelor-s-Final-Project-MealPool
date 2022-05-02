@@ -52,10 +52,10 @@ namespace MealPoolRestApi.Controllers
         }
 
         [HttpPost]
-        [Route("/login")]
-        public ActionResult Login(string email, string password)
+        [Route("/Login")]
+        public ActionResult Login([FromBody] LoginCredentials credentials)
         {
-            User user = _userRepository.LoginUser(email, password);
+            User user = _userRepository.LoginUser(credentials.Email, credentials.Password);
 
             var claims = new[] {
                         new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
