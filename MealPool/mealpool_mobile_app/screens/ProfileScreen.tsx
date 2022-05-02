@@ -26,7 +26,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
         
             <View style={styles.content_section}>
                 <CustomHeader value="Matus Kalanin"/>
-                <Text style={{fontStyle: 'italic'}}>My profile - Chef</Text>
+                <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
             </View>
             <View style={styles.content_follower_section}>
                 <Text style={styles.bolded_text}>256 Followers</Text>
@@ -40,7 +40,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
                 <Text style={styles.bolded_text}>Location:</Text>
                 <Text>Roskilde</Text>
             </View>
-            <View style={{marginTop: '20px'}}>
+            <View style={{marginTop: 20}}>
                 <View style={styles.user_reviews}>
                     <Text> 4,3 </Text>
                     <View style={{width: '50%'}}>
@@ -60,7 +60,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
                 <Text style={styles.bolded_text}>Your meals:</Text>
                 <Text>119</Text>
             </View>
-            <ScrollView  style={styles.meal_category_box_wrapper} horizontal>
+            <ScrollView   horizontal>
               {food_category_mock_data.map((item) => {
                   return <MealCategoryBox
                       title={item.title}
@@ -90,50 +90,49 @@ const styles = StyleSheet.create({
   },
   scroll_container: {
     width: '100%',
-    paddingRight: '20px',
-    paddingLeft: '20px',
+    paddingRight: 20,
+    paddingLeft: 20,
   },
   profile_picture: {
     borderRadius: 100,
-    height: '168px',
-    width: '173px',
+    height: 168,
+    width: 173,
     zIndex: 999999999999999,
   },
  image_wrapper: {
-    height: '210px',
+    height: 210,
     position: 'absolute',
-    width: '210px',
+    width: 210,
   },
   content_section: {
     textAlign: 'center',
     justifyContent: 'center',
-    marginTop: '50px'
+    marginTop: 50
   },
   content_follower_section: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: '20px',
-    marginBottom: '10px'
+    marginTop: 20,
+    marginBottom: 10
   },
   bolded_text: {
     fontSize: 16,
     fontWeight: '700'
   },
   user_content_bottom_section: {
-      marginTop: '20px',
+      marginTop: 20,
       textAlign: 'left',
   },
   content_user_info_section: {
       flexDirection: "row",
       justifyContent: 'center',
       alignItems: 'center',
-      gap: '5px'
   },
   edit_profile_wrapper: {
       width: '100%',
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: '10px'
+      marginTop: 10
   },
   user_reviews: {
       justifyContent: 'space-between',

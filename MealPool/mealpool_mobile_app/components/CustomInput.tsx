@@ -54,10 +54,10 @@ const styles = StyleSheet.create({
         elevation: 12,
         borderRadius: 25,
        /*  width: customWidth  , */
-        height: '45px',
+        height: 45,
         fontSize: 14,
         fontWeight: '600',
-        marginTop: '10px',
+        marginTop: 10,
         color: 'rgba(67, 45, 27, 0.4)',
         paddingHorizontal: 22,
       },
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
       },
     error_text: {
-        height: '19px',
+        height: 19,
         color: Colors.error_text.background
     },
     input_error: {

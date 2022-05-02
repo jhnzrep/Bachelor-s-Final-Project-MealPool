@@ -19,12 +19,12 @@ export default function Logo(props: any){
 
 const styles = StyleSheet.create({
     company_logo_main: {
-        width: '282px',
-        height: '236px'
+        width: 282,
+        height: 236
     },
     company_logo_nav: {
-        width: '113px',
-        height: '96px'
+        width: 113,
+        height: 96
     },
     main_title: {
         fontWeight: 'bold',

@@ -23,7 +23,7 @@ export default function Navigation(props: any){
 const styles = StyleSheet.create({
     navigation_wrapper: {
         width: '100%',
-        height: '80px',
+        height: 80,
         zIndex: 9999,
         display: 'flex',
         flexDirection: 'row',
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     },
     profile_picture: {
         borderRadius: 100,
-        height: '38px',
-        width: '38px',
+        height: 38,
+        width: 38,
         
 
     }

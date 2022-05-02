@@ -4,18 +4,17 @@ import { CheckBox } from 'react-native-elements'
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
-import SubmitButton from '../components/SubmitButton';
 import DatePicker from 'react-native-date-picker'
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
-import CustomInput from '../components/CustomInput';
-import Navigation from '../components/Navigation';
 import SearchInput from '../components/SearchInput';
 import CustomHeader from '../components/CustomHeader';
-import CustomCard from '../components/CustomCard';
-import MealCategoryBox from '../components/MealCategoryBox';
+
 import { DATA, food_category_mock_data } from '../constants/MockData';
+import CustomInput from '../components/CustomInput';
+import Navigation from '../components/Navigation';
+import SubmitButton from '../components/SubmitButton';
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
     const [name, setName] = React.useState({ value: '', error: ''});
@@ -47,7 +46,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
 
             <CustomInput
             setValue={(text : string) => setDob({ value: text, error: ''})}
-            placeholder={new Date()} 
+            placeholder="Date" 
             required={true}
             error={!!dob.error}
             errorText="You have fill date"
@@ -65,9 +64,9 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             setValue={(text : string) => setAddress({ value: text, error: ''})}
             placeholder="Address" 
             required={true}
-            error={!!spots.error}
+            error={!!address.error}
             errorText="You have to city"
-            value={spots.value}/>
+            value={address.value}/>
 
             <CustomInput
             setValue={(text : string) => setCity({ value: text, error: ''})}
@@ -95,42 +94,9 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             setValue={(text : string) => setCalories({ value: text, error: ''})}
             placeholder="Calories" 
             required={true}
-            error={!!zcode.error}
+            error={!!calories.error}
             errorText="You have to fill calories"
-            value={zcode.value}/>
-
-            <View style={{justifyContent: 'center', width: '50%'}}>
-              <SubmitButton  text="Add" />
-            </View>
-
-          {/*   <CustomInput 
-            setValue={(text : string) => setDob({ value: text, error: ''})}
-            placeholder="Zip code" 
-            error={!!fname.error}
-            errorText="You have to fill Date of Birth"
-            value={dob.value}/>
-
-            <CustomInput 
-            setValue={(text : string) => setAddress({ value: text, error: ''})}
-            placeholder="Address" 
-            error={!!fname.error}
-            errorText="You have to fill Address"
-            value={address.value}/>
-
-
-            <CustomInput 
-            setValue={(text : string) => setCity({ value: text, error: ''})}
-            placeholder="City" 
-            error={!!fname.error}
-            errorText="You have to fill city"
-            value={city.value}/>
-
-            <CustomInput 
-            setValue={(text : string) => setZcode({ value: text, error: ''})}
-            placeholder="Date of birth" 
-            error={!!fname.error}
-            errorText="You have to fill Zip code"
-            value={zcode.value}/> */}
+            value={calories.value}/>
 
             </View>
         </ScrollView>
@@ -150,8 +116,8 @@ const styles = StyleSheet.create({
   },
   scroll_container: {
     width: '100%',
-    paddingRight: '20px',
-    paddingLeft: '20px',
+    paddingRight: 20,
+    paddingLeft: 20,
   },
 
 });

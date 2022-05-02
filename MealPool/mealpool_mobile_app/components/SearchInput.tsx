@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
     elevation: 12,
     borderRadius: 25,
     width: '100%',
-    height: '45px',
+    height: 45,
     fontSize: 16,
     fontWeight: '600',
-    marginTop: '10px',
+    marginTop: 10,
     color: 'rgba(67, 45, 27, 0.4)',
     paddingHorizontal: 22,
    }

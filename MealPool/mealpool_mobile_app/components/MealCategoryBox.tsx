@@ -10,8 +10,8 @@ export default function MealCategoryBox(props: any){
       <View style={styles.box_wrapper}>
         <Image source={require(`../assets/images/meal_category_image.svg`)}  style={styles.box_image} />
         <View style={styles.overlay}>
-            <Text style={styles.overlay_text}>{props.title}</Text>
-        </View>
+             <Text>{props.title}</Text> 
+        </View> 
       </View>
     </View>
 
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
   box_wrapper: {
     borderRadius: 25,
     alignItems: 'center',
-    width: '75px',
-    height: '75px',
+    width: 75,
+    height: 75,
     overflow: 'hidden'
   },
 
@@ -40,8 +40,5 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light_orange_full_opacity.background
 
   },
-  overlay_text: {
 
-  }
-    
 })

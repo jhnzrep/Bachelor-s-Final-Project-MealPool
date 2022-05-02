@@ -2,12 +2,12 @@ import React from 'react';
 import { ScrollView, StyleSheet, TextInput } from 'react-native';
 import CustomHeader from '../components/CustomHeader';
 import CustomInput from '../components/CustomInput';
-
 import SubmitButton from '../components/SubmitButton';
-import {  View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
 
-export default function RegisterScreen({ navigation }: RootTabScreenProps<'RegisterScreen'>) {
+import {  View } from '../components/Themed';
+import { RootStackScreenProps, RootTabScreenProps } from '../types';
+
+export default function RegisterScreen ({ navigation }: RootStackScreenProps<'RegisterScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
   const [lname, setLname] = React.useState({ value: '', error: ''});
   const [email, setEmail] = React.useState({ value: '', error: ''});
@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    paddingLeft: '70px',
-    paddingRight: '70px',
+    paddingLeft: 70,
+    paddingRight: 70,
   },
   separator: {
     marginVertical: 30,
@@ -130,11 +130,11 @@ const styles = StyleSheet.create({
     shadowRadius: 2,  
     elevation: 12,
     borderRadius: 25,
-    width: '253px',
-    height: '45px',
+    width: 253,
+    height: 45,
     fontSize: 16,
     fontWeight: '600',
-    marginTop: '22px',
+    marginTop: 22,
     color: 'rgba(67, 45, 27, 0.4)',
     paddingHorizontal: 22,
   }

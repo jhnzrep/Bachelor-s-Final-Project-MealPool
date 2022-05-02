@@ -33,7 +33,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       return;
     }
     
-    navigation.navigate('Index')
+    navigation.navigate('RegisterScreen')
   };
 
    
@@ -94,16 +94,16 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     color: Colors.text_color.background,
-    paddingLeft: '70px',
-    paddingRight: '70px',
+    paddingLeft: 70,
+    paddingRight: 70,
   },
   scroll_container: {
     width: '100%',
     
   },
   company_logo: {
-    width: '282px',
-    height: '236px'
+    width: 282,
+    height: 236
   },
   alternative_login_section: {
     paddingLeft: 20,
@@ -133,13 +133,13 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: Colors.dark_orange.background,
     borderRadius: 25,
-    width: '151px',
-    height: '45px',
+    width: 151,
+    height: 45,
     fontSize: 16,
     fontWeight: '600',
-    color:' #FFF3DE',
-    marginTop:'10px',
-    marginBottom: '10px',
+    color: '#FFF3DE',
+    marginTop:10,
+    marginBottom: 10,
     shadowColor: 'rgba(253, 180, 65, 0.3)',
     shadowOffset: { width: 5, height: 12 },
     shadowOpacity: 0.3,

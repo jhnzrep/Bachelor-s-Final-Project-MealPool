@@ -17,10 +17,10 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import LoginScreen from '../screens/LoginScreen';
-import IndexScreen from '../screens/IndexScreen';
-import ProfileScreen from '../screens/ProfileScreen';
 import MealOfferScreen from '../screens/MealOfferScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import IndexScreen from '../screens/IndexScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (

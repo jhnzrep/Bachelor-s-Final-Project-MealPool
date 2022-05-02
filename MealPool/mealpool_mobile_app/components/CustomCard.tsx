@@ -23,10 +23,10 @@ export default function CustomCard(props: any){
                 <View style={styles.card_right}>
                     <Text style={styles.title} >{props.title }</Text>
                     <View style={styles.card_content_wrapper}>
-                        <View style={styles.card_left_content}>
+                        <View>
                             <Text style={{fontWeight: '300', fontSize: 12, }}>Caroline Newman </Text>
                             <Text style={{fontWeight: '300', fontSize: 14}}>8 spots available </Text>
-                            <Text style={[styles.highlighted_text, {marginTop: '10px'}]}>2 points </Text>
+                            <Text style={[styles.highlighted_text, {marginTop: 10}]}>2 points </Text>
                             <Text style={styles.read_more}
                             onPress={readMore}
                             >Read more </Text>
@@ -48,10 +48,10 @@ export default function CustomCard(props: any){
                 <View style={styles.card_right}>
                     <Text style={styles.title} >{props.title }</Text>
                     <View style={styles.card_content_wrapper}>
-                        <View style={styles.card_left_content}>
+                        <View >
                             <Text style={{fontWeight: '300', fontSize: 12, }}>Caroline Newman </Text>
                             <Text style={{fontWeight: '300', fontSize: 14}}>8 spots available </Text>
-                            <Text style={[styles.highlighted_text, {marginTop: '10px'}]}>2 points </Text>
+                            <Text style={[styles.highlighted_text, {marginTop: 10}]}>2 points </Text>
                         </View>
                         <View style={styles.card_right_content}>
                             <Text style={[styles.highlighted_text ]}>350 kcal </Text>
@@ -74,7 +74,6 @@ export default function CustomCard(props: any){
                     <View>
                         <Text style={{fontSize: 14, fontWeight: '600'}}>Ingredients: </Text>
                         <FlatList
-                            textDecorationStyle='solid'
                             data={[
                             {key: 'Avocado'},
                             {key: 'Spinach'},
@@ -114,22 +113,22 @@ export default function CustomCard(props: any){
 
 const styles = StyleSheet.create({
     card: {
-        marginTop: '15px',
+        marginTop: 15,
         backgroundColor: Colors.light_orange_full_opacity.background,
         width: '100%',
         height: 'auto',
         borderRadius: 25,
-        paddingTop: '20px',
-        paddingBottom: '20px',
-        paddingLeft: '10px',
-        paddingRight: '10px',
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 10,
+        paddingRight: 10,
         shadowColor: 'rgba(253, 180, 65, 0.3)',
         shadowOffset: { width: 2, height: 6 },
         shadowOpacity: 0.3,
         flexWrap: 'wrap'
     },
     card_opened: {
-        marginTop: '15px',
+        marginTop: 15,
         backgroundColor: Colors.light_orange_full_opacity.background,
         width: '100%',
         height: 'auto',
@@ -137,10 +136,10 @@ const styles = StyleSheet.create({
         shadowColor: 'rgba(253, 180, 65, 0.3)',
         shadowOffset: { width: 2, height: 6 },
         shadowOpacity: 0.3,
-        paddingTop: '20px',
-        paddingBottom: '20px',
-        paddingLeft: '10px',
-        paddingRight: '10px',
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 10,
+        paddingRight: 10,
         flexWrap: 'wrap'
     },
     card_opened_content: {
@@ -150,8 +149,8 @@ const styles = StyleSheet.create({
         color: Colors.text_color.background
     },
     card_opened_center_wrapper: {
-        paddingLeft: '30px',
-        paddingRight: '30px'
+        paddingLeft: 30,
+        paddingRight: 30
     },
 
     card_content: {
@@ -166,11 +165,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     card_picture: {
-        height: '100px',
-        minWidth: '100px'
+        height: 100,
+        minWidth: 100
     },
     card_right: {
-        marginTop: '5px',
+        marginTop: 5,
         flex: 1,
         flexWrap: 'wrap'
     },
@@ -182,8 +181,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        gap: '2x',
-        marginTop: '10px'
+        marginTop: 10
     },
     highlighted_text: {
         fontWeight: '700',
@@ -194,7 +192,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: '300',
         textDecorationLine: 'underline',
-        marginTop: '10px'
+        marginTop: 10
     },
     card_right_content: {
         textAlign: 'center',
