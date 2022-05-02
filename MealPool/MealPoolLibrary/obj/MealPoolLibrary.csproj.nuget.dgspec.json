@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.15.0, )"
             },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.17.1, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.17.0, )"

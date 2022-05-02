@@ -2,7 +2,19 @@ using MealPoolLibrary.Services.DBConfiguration;
 using MealPoolLibrary.Services.Repositories;
 using MealPoolLibrary.Services.Interfaces;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.AllowAnyOrigin();
+                          policy.AllowAnyHeader();
+                          policy.AllowAnyMethod();
+                      });
+});
 
 // Add services to the container.
 builder.Services.AddSingleton<IDbClient, DbClient>();
@@ -23,6 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
