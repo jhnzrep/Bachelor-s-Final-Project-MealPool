@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 
 namespace MealPoolRestApi.Controllers
 {
@@ -74,7 +75,7 @@ namespace MealPoolRestApi.Controllers
                 expires: DateTime.UtcNow.AddMinutes(20),
                 signingCredentials: signIn);
 
-            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+            return Ok(JsonSerializer.Serialize(new JwtSecurityTokenHandler().WriteToken(token)));
         }
     }
 }
