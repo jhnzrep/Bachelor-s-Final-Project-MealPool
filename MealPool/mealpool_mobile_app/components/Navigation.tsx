@@ -14,7 +14,7 @@ export default function Navigation(props: any){
             <Logo type="nav"  />
         </View>
         <View>
-            <Image source={require('../assets/images/profile_picture.svg')}  style={styles.profile_picture} />
+            <Image source={require('../assets/images/profile_picture.png')}  style={styles.profile_picture} />
         </View>
     </View>
   );

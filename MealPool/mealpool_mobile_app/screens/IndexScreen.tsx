@@ -16,9 +16,24 @@ import CustomHeader from '../components/CustomHeader';
 import CustomCard from '../components/CustomCard';
 import MealCategoryBox from '../components/MealCategoryBox';
 import { DATA, food_category_mock_data } from '../constants/MockData';
+import axios from 'axios';
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
   const [searchVal, setSearchVal] = React.useState('');
+  const [users, setUsers] = React.useState('');
+
+  const getUsers = () => {
+    axios
+    .get('http://localhost:5109/api/User')
+    .then(function (response) {
+      console.log(response);
+    })
+  }
+
+  React.useEffect(() => {
+    getUsers()
+  })
+  
  
  
   return (
@@ -54,7 +69,6 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
                 />
             })} 
 
-
         </View>
         </ScrollView> 
     </View>
@@ -67,8 +81,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    width: '100%',
-  
+    width: '100%',  
     justifyContent: 'center',
     color: Colors.text_color.background
   },

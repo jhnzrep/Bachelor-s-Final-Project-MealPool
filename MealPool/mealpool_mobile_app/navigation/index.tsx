@@ -21,6 +21,7 @@ import MealOfferScreen from '../screens/MealOfferScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import IndexScreen from '../screens/IndexScreen';
 import LoginScreen from '../screens/LoginScreen';
+import InfoScreen from '../screens/InfoScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -68,23 +69,31 @@ function BottomTabNavigator() {
       initialRouteName="Index"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveBackgroundColor: "red"
       }}>
       <BottomTab.Screen
-        name="Index"
+        name="I"
         component={IndexScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
        <BottomTab.Screen
-        name="ProfileScreen"
+        name="Prof"
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
        <BottomTab.Screen
-        name="MealOfferScreen"
+        name="More"
+        component={InfoScreen}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+       <BottomTab.Screen
+        name="Meal"
         component={MealOfferScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,

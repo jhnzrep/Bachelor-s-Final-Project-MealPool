@@ -8,7 +8,7 @@ export default function MealCategoryBox(props: any){
   return (
     <View style={{justifyContent: 'center'}}>
       <View style={styles.box_wrapper}>
-        <Image source={require(`../assets/images/meal_category_image.svg`)}  style={styles.box_image} />
+        <Image source={require(`../assets/images/meal_category_image.png`)}  style={styles.box_image} />
         <View style={styles.overlay}>
              <Text>{props.title}</Text> 
         </View> 
@@ -19,15 +19,14 @@ export default function MealCategoryBox(props: any){
 }
 
 const styles = StyleSheet.create({
-
   box_wrapper: {
     borderRadius: 25,
     alignItems: 'center',
     width: 75,
     height: 75,
+    marginLeft: 10,
     overflow: 'hidden'
   },
-
   box_image: {
     height: '100%',
     width: '100%',
@@ -38,7 +37,5 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'center',
     backgroundColor: Colors.light_orange_full_opacity.background
-
   },
-
 })

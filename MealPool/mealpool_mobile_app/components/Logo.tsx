@@ -8,7 +8,7 @@ export default function Logo(props: any){
   return (
 
     <View>
-        <Image source={require('../assets/images/company_logo.svg')}  style={[  props.type == "main" ? styles.company_logo_main : styles.company_logo_nav]}/>
+        <Image source={require('../assets/images/company_logo.png')}  style={[  props.type == "main" ? styles.company_logo_main : styles.company_logo_nav]}/>
         {props.show_title ?
         <Text style={styles.main_title}>MEALPOOL</Text>
         : null }

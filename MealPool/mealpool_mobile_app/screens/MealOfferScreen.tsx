@@ -4,7 +4,6 @@ import { CheckBox } from 'react-native-elements'
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
-import DatePicker from 'react-native-date-picker'
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
