@@ -27,5 +27,20 @@ namespace MealPoolLibrary.Services.Repositories
         {
             return (Meal)_meals.Find(i => i._id == id);
         }
+
+        public List<Meal> SearchMeals(string name)
+        {
+            return GetAllMeals().FindAll(i => i.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public List<Meal> SearchMeals(string name, string category)
+        {
+            return _meals.Find(i => i.Category == category).ToList().Where(i => i.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+        public List<Meal> GetMealsByCategory(string category)
+        {
+            return _meals.Find(i => i.Category == category).ToList();
+        }
     }
 }

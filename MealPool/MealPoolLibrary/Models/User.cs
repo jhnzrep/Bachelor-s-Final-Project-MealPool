@@ -7,7 +7,9 @@ namespace MealPoolLibrary.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string _id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime CreatedDate { get; set; }
@@ -17,5 +19,6 @@ namespace MealPoolLibrary.Models
         public string Country { get; set; }
         public string PostalCode { get; set; }
         public string Phone { get; set; }
+        public List<Review>? Reviews { get; set; }
     }
 }

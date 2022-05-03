@@ -7,7 +7,7 @@ namespace MealPoolLibrary.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId Id { get; set; }
+        public string? Id { set; get; }
         public int AuthorId { get; set; }
         public int RatedId { get; set; }
         public int Stars { get; set; }

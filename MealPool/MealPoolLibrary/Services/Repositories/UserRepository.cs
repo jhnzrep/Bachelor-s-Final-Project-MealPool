@@ -41,7 +41,7 @@ namespace MealPoolLibrary.Services.Repositories
 
         public User GetUserById(string id)
         {
-            return (User)_users.Find(i => i._id == id).FirstOrDefault();
+            return (User)_users.Find(i => i.Id== id).FirstOrDefault();
         }
 
         public User LoginUser(string email, string password)

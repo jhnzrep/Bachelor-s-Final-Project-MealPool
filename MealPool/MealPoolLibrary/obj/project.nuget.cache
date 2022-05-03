@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dCbG/sadks8P7/bnM5ERVqF7bxNVr3nQsMPS/Ek5y+G+doMA0CCdLkd4DycP0tttFJyUhSXBnjjfR+2MYVXPew==",
+  "dgSpecHash": "WW3hjCIJg5cMuZsN2oP1T02J5/96aTSabm4B77NZccmYrhVsnsDAecXjb/xa1h2kduSp2chq8fY3I0IlcO/E5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\jcoyn\\Documents\\Bachelors Thesis\\Bachelor-s-Final-Project-MealPool\\MealPool\\MealPoolLibrary\\MealPoolLibrary.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\jcoyn\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
     "C:\\Users\\jcoyn\\.nuget\\packages\\elasticsearch.net\\7.17.1\\elasticsearch.net.7.17.1.nupkg.sha512",
     "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
+    "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\jcoyn\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
