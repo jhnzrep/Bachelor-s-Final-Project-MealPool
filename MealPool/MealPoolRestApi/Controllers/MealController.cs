@@ -22,22 +22,19 @@ namespace MealPoolRestApi.Controllers
             return _mealRepository.GetAllMeals();
         }
 
-        [HttpGet("{name},{category}")]
-        public ActionResult<IEnumerable<Meal>> Get(string name, string category)
+        [HttpGet]
+        [Route("Search")]
+        public ActionResult<IEnumerable<Meal>> GetByNameAndCategory([FromQuery] string? name, [FromQuery] string? category)
         {
-            return _mealRepository.SearchMeals(name, category);
-        }
-
-        [HttpGet("{name}")]
-        public ActionResult<IEnumerable<Meal>> Get(string name)
-        {
-            return _mealRepository.SearchMeals(name);
-        }
-
-        [HttpGet("{category}")]
-        public ActionResult<IEnumerable<Meal>> GetByCategory(string category)
-        {
-            return _mealRepository.GetMealsByCategory(category);
+            switch (String.IsNullOrEmpty(name))
+            {
+                case true when !String.IsNullOrEmpty(category) :
+                    return _mealRepository.GetMealsByCategory(category);
+                case false when String.IsNullOrEmpty(category) :
+                    return _mealRepository.SearchMeals(name);
+                default:
+                    return _mealRepository.SearchMeals(name,category);
+            }
         }
 
         //POST api/<MealController>
