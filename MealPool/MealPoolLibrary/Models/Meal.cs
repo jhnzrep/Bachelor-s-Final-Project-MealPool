@@ -11,7 +11,7 @@ namespace MealPoolLibrary.Models
         public int CookId { get; set; }
         public string Name { get; set; }
         DateTime Created { get; set; }
-        DateTime DateTime { get; set; }
+        public DateTime DateTime { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
         public string Street { get; set; }

@@ -20,7 +20,7 @@ namespace MealPoolLibrary.Services.Repositories
 
         public List<Meal> GetAllMeals()
         {
-            return _meals.Find(i => true).ToList();
+            return _meals.Find(i => i.DateTime > DateTime.Now).ToList();
         }
 
         public Meal GetMealById(string id)
@@ -35,7 +35,7 @@ namespace MealPoolLibrary.Services.Repositories
 
         public List<Meal> SearchMeals(string name, string category)
         {
-            return _meals.Find(i => i.Category == category).ToList().Where(i => i.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
+            return GetAllMeals().FindAll(i => i.Category == category).Where(i => i.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
         public List<Meal> GetMealsByCategory(string category)
