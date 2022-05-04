@@ -19,6 +19,6 @@ namespace MealPoolLibrary.Models
         public string Country { get; set; }
         public string PostalCode { get; set; }
         public string Phone { get; set; }
-        public List<Review>? Reviews { get; set; }
+        public List<Review>? Reviews { get; set; } = new List<Review>();
     }
 }
