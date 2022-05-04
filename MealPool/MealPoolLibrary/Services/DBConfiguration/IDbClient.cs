@@ -7,6 +7,5 @@ namespace MealPoolLibrary.Services.DBConfiguration
     {
         IMongoCollection<User> GetUsersCollection();
         IMongoCollection<Meal> GetMealsCollection();
-        IMongoCollection<Review> GetReviewsCollection();
     }
 }

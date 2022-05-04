@@ -19,9 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "MealPoolDB",
         "UsersCollection": "Users",
-        "MealsCollection": "Meals",
-        "ReviewsCollection": "Reviews"
-      }
+        "MealsCollection": "Meals"      }
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -31,8 +29,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "MealPoolDB",
         "UsersCollection": "Users",
-        "MealsCollection": "Meals",
-        "ReviewsCollection": "Reviews"
+        "MealsCollection": "Meals"
       }
     }
   }

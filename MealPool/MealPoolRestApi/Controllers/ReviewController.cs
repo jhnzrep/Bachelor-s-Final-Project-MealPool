@@ -17,9 +17,9 @@ namespace MealPoolRestApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Review>> Get()
+        public ActionResult<IEnumerable<Review>> Get(string id)
         {
-            var reviews = _reviewRepository.GetAllReviews();
+            var reviews = _reviewRepository.GetAllReviews(id);
             return Ok(reviews);
         }
 
