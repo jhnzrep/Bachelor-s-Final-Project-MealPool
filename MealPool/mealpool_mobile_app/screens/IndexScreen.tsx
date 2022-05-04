@@ -5,7 +5,6 @@ import { CheckBox } from 'react-native-elements'
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
-
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
@@ -17,25 +16,25 @@ import CustomCard from '../components/CustomCard';
 import MealCategoryBox from '../components/MealCategoryBox';
 import { DATA, food_category_mock_data } from '../constants/MockData';
 import axios from 'axios';
+import MealService from '../services/meal_service';
+import { useGlobalContext } from '../GlobalContext';
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
   const [searchVal, setSearchVal] = React.useState('');
-  const [users, setUsers] = React.useState('');
+  const [users, setUsers] = React.useState(Array);
+  //const [meal, setMeals] = React.useState('');
+  const {meal, setMeals } = useGlobalContext()
 
-  const getUsers = () => {
-    axios
-    .get('http://localhost:5109/api/User')
-    .then(function (response) {
-      console.log(response);
-    })
-  }
+
 
   React.useEffect(() => {
-    getUsers()
-  })
-  
+    MealService.getMeals().then(response=> {
+      setUsers(response)
+    })  }, [])
+  const test : object =  MealService.getMeals()
+
  
- 
+
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
       <Navigation/> 
@@ -60,12 +59,15 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
                 })}
               </ScrollView>
             </View>
-
             <CustomHeader value="Popular offers" /> 
-            
-            {DATA.map((item) => {
+            <View>
+          </View>
+          
+            {users.map((item) => {
                 return <CustomCard
-                     title={item.title}
+                     title={item.name}
+                     description={item.description}
+                     cook={item.cookId}
                 />
             })} 
 

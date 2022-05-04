@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, useWindowDimensions } from 'react-native';
 import { CheckBox } from 'react-native-elements'
-
+import ServiceFuncs from '../services/auth_service'
 import { Platform } from 'react-native';
-
 import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
+import { useGlobalContext } from '../GlobalContext';
 
 import { Text, View } from '../components/Themed';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
@@ -15,7 +15,12 @@ import CustomHeader from '../components/CustomHeader';
 import DesktopNavigation from '../components/DesktopNavigation';
 
 
-export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginScreen'>) {
+export default function LoginScreen({ navigation }: RootTabScreenProps<'LoginScreen'>) {
+  const { meal, setMeals } = useGlobalContext()
+
+  const [login, setLogin] = React.useState({message: "", loading: true})
+
+
   const window = useWindowDimensions();
   const desktop = window.width < 768;
   // State Management
@@ -23,18 +28,42 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
   const [textInputEmail, setTextInputEmail] = React.useState({value: '', error: ''}); 
   const [checked, toggleChecked] = React.useState(false);
 
-  const checkTextInput = () => {
+  const checkTextInput = (e : any) => {
+    e.preventDefault();
     if (!textInputPassword.value.trim()) {
       alert('Please Enter Password ');
       return;
     }
-
     if (!textInputEmail.value.trim()) {
       alert('Please Enter Email');
       return;
     }
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   /*  if(!re.test(textInputEmail.value) || textInputEmail.value.length < 6 ){
+      alert('Email is in valid format')
+      console.log('Email is in invalid format')
+      return;
+    }
+    if(textInputPassword.value.length < 6 ){
+      alert('Password is in valid format')
+      console.log('Password is in invalid format')
+      return;
+    } */
+    type DescribableFunction = {
+      textInputEmail: EmailValues;
+      textInputPassword: PasswordValues;
+    };
+    type EmailValues = {
+      value: string;
+      error: string;
+    }
+    type PasswordValues = {
+      value: string;
+      error: string;
+    }
     
-    navigation.navigate('RegisterScreen')
+    ServiceFuncs.loginUser({textInputEmail,textInputPassword });
+    //navigation.navigate('RegisterScreen')
   };
 
    
@@ -56,7 +85,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
           placeholder="Email account" 
           secureTextEntry={false}
           value={textInputEmail.value} />
-
+<h1>Copy: {meal}</h1>
           <CustomInput 
           setValue={(text : string) => setTextInputPassword({ value: text, error: ''})}
           placeholder="Password" 
