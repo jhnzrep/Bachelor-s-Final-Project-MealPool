@@ -1,26 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Image, TextInput, useWindowDimensions } from 'react-native';
-import CustomHeader from '../components/CustomHeader';
+import { useForm, Controller } from "react-hook-form";
 import CustomInput from '../components/CustomInput';
+
 import DesktopNavigation from '../components/DesktopNavigation';
 import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
 
 import {  View } from '../components/Themed';
+import AuthService from '../services/auth_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
+import CustomHeader from '../components/CustomHeader';
 
 export default function RegisterScreen ({ navigation }: RootStackScreenProps<'RegisterScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
   const [lname, setLname] = React.useState({ value: '', error: ''});
   const [email, setEmail] = React.useState({ value: '', error: ''});
   const [dob, setDob] = React.useState({ value: '', error: ''});
-  const [address, setAddress] = React.useState({ value: '', error: ''});
+  const [street, setStreet] = React.useState({ value: '', error: ''});
   const [city, setCity] = React.useState({ value: '', error: ''});
   const [zcode, setZcode] = React.useState({ value: '', error: ''});
+  const [country, setCountry] = React.useState({ value: '', error: ''});
   const [password, setPassword] = React.useState({ value: '', error: ''});
   const [rpassword, setRpassword] = React.useState({ value: '', error: ''});
+  const [phone, setPhone] = React.useState({ value: '', error: ''});
   const window = useWindowDimensions();
+  const [date, setDate] = React.useState(new Date())
+  const [open, setOpen] = React.useState(false)
+  
   const desktop = window.width < 768;
+
+  const fnameVal = fname.value
+  const lnameVal = lname.value
+  const emailVal = email.value
+  const passwordVal = password.value
+  const dobVal = new Date(2018, 0O5, 0O5, 17, 23, 42, 11)
+  const streetVal = rpassword.value
+  const cityVal = city.value
+  const countryVal = country.value
+  const postalCodeVal = zcode.value
+  const phoneVal = phone.value
+
+
+  
+/*   const dobVal = dob.value
+ */
+  type RegisterUser = {
+    fnameVal: string;
+    lnameVal: string;
+    emailVal: string;
+    passwordVal: string;
+    dobVal: Date;
+    streetVal: string;
+    cityVal: string;
+    countryVal: string;
+    postalCodeVal: string;
+    phoneVal: string;
+    reviewObj: Array<review>
+  };
+  type review = {
+    stars: Number,
+    comment: String
+  }
+  
+  type reviewObj ={
+    authorId: string,
+    ratedId: string,
+    stars: Number,
+    comment: String
+  }
+  
+  const reviewObj: reviewObj[] = [
+    { authorId: "", ratedId: "", stars: 0,  comment: ""}
+  ]
+  
+  const checkTextInput = (e : any) => {
+    console.log("ASDASDASD", password,  rpassword)
+    e.preventDefault();
+    if (password.value == rpassword.value) {
+      AuthService.registerUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj});
+    }
+  }
 
 
   return (
@@ -64,11 +124,11 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
           value={dob.value}/>
 
           <CustomInput 
-          setValue={(text : string) => setAddress({ value: text, error: ''})}
-          placeholder="Address" 
+          setValue={(text : string) => setStreet({ value: text, error: ''})}
+          placeholder="Street" 
           error={!!fname.error}
-          errorText="You have to fill Address"
-          value={address.value}/>
+          errorText="You have to fill street"
+          value={street.value}/>
 
 
           <CustomInput 
@@ -77,6 +137,17 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
           error={!!fname.error}
           errorText="You have to fill city"
           value={city.value}/>
+
+          
+          <CustomInput 
+          setValue={(text : string) => setCountry({ value: text, error: ''})}
+          placeholder="Country" 
+          value={country.value}/>
+
+          <CustomInput 
+          setValue={(text : string) => setPhone({ value: text, error: ''})}
+          placeholder="Phone" 
+          value={phone.value}/>
 
           <CustomInput 
           setValue={(text : string) => setZcode({ value: text, error: ''})}
@@ -107,6 +178,7 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
           <SubmitButton
             text="Sign in" 
             showSeparator={true}
+            onPress={checkTextInput} 
             navigation={() => navigation.navigate('LoginScreen')} 
             separator_text="Sign in"
           />
