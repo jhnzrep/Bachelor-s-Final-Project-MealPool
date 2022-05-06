@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList } from 'react-native';
 import { CheckBox } from 'react-native-elements'
+const moment = require('moment');
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
@@ -14,19 +15,40 @@ import { DATA, food_category_mock_data } from '../constants/MockData';
 import CustomInput from '../components/CustomInput';
 import Navigation from '../components/Navigation';
 import SubmitButton from '../components/SubmitButton';
+import MealService from '../services/meal_service';
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
     const [name, setName] = React.useState({ value: '', error: ''});
-    const [dob, setDob] = React.useState({ value: '', error: ''});
+    const [date, setDate] = React.useState({ value: '', error: ''});
     const [spots, setSpots] = React.useState({ value: '', error: ''});
-    const [about, setAbout] = React.useState({ value: '', error: ''});
-    const [address, setAddress] = React.useState({ value: '', error: ''});
+    const [description, setDescription] = React.useState({ value: '', error: ''});
+    const [street, setStreet] = React.useState({ value: '', error: ''});
     const [city, setCity] = React.useState({ value: '', error: ''});
+    const [country, setCountry] = React.useState({ value: '', error: ''});
+    const [category, setCategory] = React.useState({ value: '', error: ''});
     const [zcode, setZcode] = React.useState({ value: '', error: ''});
     const [calories, setCalories] = React.useState({ value: '', error: ''});
     const [ingredients, setIngredients] = React.useState({ value: '', error: ''});
     const [allergens, setAllergens] = React.useState({ value: '', error: ''});
- 
+    const currDate = new Date();
+
+    const cookId = "0";
+    const nameVal = name.value;
+    const dateItemVal = new Date("2023-05-05T23:56:45.469Z");
+    const categoryVal = category.value;
+    const descriptionVal =  description.value;
+    const streetVal = street.value;
+    const cityVal = city.value;
+    const countryVal = country.value;
+    const postalCodeVal = zcode.value; 
+
+    let now = moment().format('LLLL');
+
+  const checkTextInput = (e : any) => {
+    e.preventDefault();
+    MealService.addMeal({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal});
+  }
+  console.log(new Date())
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
         <Navigation/>
@@ -44,12 +66,12 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             value={name.value} />
 
             <CustomInput
-            setValue={(text : string) => setDob({ value: text, error: ''})}
+            setValue={(text : string) => setDate({ value: text, error: ''})}
             placeholder="Date" 
             required={true}
-            error={!!dob.error}
+            error={!!date.error}
             errorText="You have fill date"
-            value={dob.value}/>
+            value={date.value}/>
 
              <CustomInput
             setValue={(text : string) => setSpots({ value: text, error: ''})}
@@ -60,12 +82,20 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             value={spots.value}/>
 
             <CustomInput
-            setValue={(text : string) => setAddress({ value: text, error: ''})}
-            placeholder="Address" 
+            setValue={(text : string) => setCategory({ value: text, error: ''})}
+            placeholder="Category" 
             required={true}
-            error={!!address.error}
-            errorText="You have to city"
-            value={address.value}/>
+            error={!!category.error}
+            errorText="You have to fill categories"
+            value={category.value}/>
+
+            <CustomInput
+            setValue={(text : string) => setStreet({ value: text, error: ''})}
+            placeholder="Street" 
+            required={true}
+            error={!!street.error}
+            errorText="You have to street"
+            value={street.value}/>
 
             <CustomInput
             setValue={(text : string) => setCity({ value: text, error: ''})}
@@ -76,10 +106,19 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             value={city.value}/>
 
             <CustomInput
-            setValue={(text : string) => setAbout({ value: text, error: ''})}
-            placeholder="About"
+            setValue={(text : string) => setCountry({ value: text, error: ''})}
+            placeholder="Country" 
+            required={true}
+            error={!!country.error}
+            errorText="You have to fill country"
+            value={country.value}/>
+
+
+            <CustomInput
+            setValue={(text : string) => setDescription({ value: text, error: ''})}
+            placeholder="Description"
             type="textArea"
-            value={about.value}/>
+            value={description.value}/>
 
             <CustomInput
             setValue={(text : string) => setZcode({ value: text, error: ''})}
@@ -96,6 +135,14 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             error={!!calories.error}
             errorText="You have to fill calories"
             value={calories.value}/>
+
+            
+            <SubmitButton
+              text="Create meal" 
+              showSeparator={true}
+              onPress={checkTextInput} 
+              separator_text="Create meal"
+            />
 
             </View>
         </ScrollView>
