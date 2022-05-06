@@ -16,7 +16,7 @@ import DesktopNavigation from '../components/DesktopNavigation';
 
 
 export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginScreen'>) {
-  const { user, setUser } = useGlobalContext()
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const [login, setLogin] = React.useState({message: "", loading: true})
 
   const window = useWindowDimensions();
@@ -61,6 +61,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       phoneVal: "",
       reviewObj: []
     }])
+    setIsLoggedIn(true);
     navigation.navigate('Root')
   };
 

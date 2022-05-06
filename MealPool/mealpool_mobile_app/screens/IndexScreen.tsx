@@ -24,6 +24,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
   const [meals, setMeals] = React.useState(Array);
   const [searchTitle, setSearchTitle] = React.useState('Popular offers');
   const [foundItems, setFoundItem] = React.useState(0);
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
 
   const handleKeyDown = (e : any) => {
     if(e.nativeEvent.key == "Enter"){
@@ -36,6 +37,9 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
   }
 
   React.useEffect(() => {
+    if (!isLoggedIn) {
+      navigation.navigate("LoginScreen")
+    }
     MealService.getMeals().then(response=> {
       setMeals(response)
     })  }, [])

@@ -12,7 +12,7 @@ import { RegisterUser, userValue } from './types/User';
 export default function App() {
 
   const [user, setUser] = useState<Array<RegisterUser>>(userValue)
-
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
@@ -21,7 +21,7 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <MyGlobalContext.Provider value= {{ user, setUser }}>
+        <MyGlobalContext.Provider value= {{ user, setUser, isLoggedIn, setIsLoggedIn }}>
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
         </MyGlobalContext.Provider>
