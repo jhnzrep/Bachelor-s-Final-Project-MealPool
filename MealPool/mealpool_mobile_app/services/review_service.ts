@@ -1,13 +1,8 @@
 import axios from 'axios';
 import { useGlobalContext } from '../GlobalContext';
+import { Review } from '../types/Review';
 const API_URL = "http://localhost:5109/api";
 
-type Review = {
-    authorId: string,
-    ratedId: string,
-    stars: number,
-    comment: string
-}
 
 const postReview = ({authorId, ratedId, stars, comment} : Review) => {
     axios

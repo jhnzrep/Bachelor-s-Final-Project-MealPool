@@ -2,13 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { MyGlobalContext } from './GlobalContext';
+import { EmptyObject } from 'react-hook-form';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import { RegisterUser, userValue } from './types/User';
 
 export default function App() {
-const [meal, setMeals] = useState<string>('dasdas')
+
+  const [user, setUser] = useState<Array<RegisterUser>>(userValue)
 
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
@@ -18,7 +21,7 @@ const [meal, setMeals] = useState<string>('dasdas')
   } else {
     return (
       <SafeAreaProvider>
-        <MyGlobalContext.Provider value= {{ meal, setMeals }}>
+        <MyGlobalContext.Provider value= {{ user, setUser }}>
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
         </MyGlobalContext.Provider>

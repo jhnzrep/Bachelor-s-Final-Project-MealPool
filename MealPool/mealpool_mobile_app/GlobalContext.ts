@@ -1,10 +1,15 @@
 import { createContext, useContext } from "react"
+import { EmptyObject } from "react-hook-form";
+import { RegisterUser, userValue } from "./types/User";
+
+
+
 export type GlobalContent = {
-  meal: string
-  setMeals:(c: string) => void
+  user: Array<RegisterUser>
+  setUser:(c: Array<RegisterUser>) => void
 }
 export const MyGlobalContext = createContext<GlobalContent>({
-meal: 'Hello World', // set a default value
-setMeals: () => {},
+    user: userValue, // set a default value
+    setUser: () => {}
 })
 export const useGlobalContext = () => useContext(MyGlobalContext)

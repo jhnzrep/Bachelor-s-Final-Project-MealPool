@@ -1,34 +1,7 @@
 import axios from 'axios';
+import { EmptyObject } from 'react-hook-form';
+import { LoginUser, RegisterUser } from '../types/User';
 const API_URL = "http://localhost:5109/";
-
-type LoginUser = {
-  textInputEmail: EmailValues;
-  textInputPassword: PasswordValues;
-};
-
-type EmailValues = {
-  value: string;
-  error: string;
-};
-
-type PasswordValues = {
-  value: string;
-  error: string;
-};
-
-type RegisterUser = {
-  fnameVal: string;
-  lnameVal: string;
-  emailVal: string;
-  passwordVal: string;
-  dobVal: Date;
-  streetVal: string;
-  cityVal: string;
-  countryVal: string;
-  postalCodeVal: string;
-  phoneVal: string;
-  reviewObj: Array<reviewObj>
-};
 
 type reviewObj ={
   authorId: string,
@@ -65,7 +38,7 @@ const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, street
     lastName: lnameVal,
     email: emailVal,
     password: passwordVal,
-    createdDate: new Date(2018, 0O5, 0O5, 17, 23, 42, 11),
+    createdDate: new Date(),
     dateOfBirth: new Date(2018, 0O5, 0O5, 17, 23, 42, 11),
     street: streetVal,
     city: cityVal,

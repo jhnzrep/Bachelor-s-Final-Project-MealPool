@@ -42,13 +42,11 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
     const countryVal = country.value;
     const postalCodeVal = zcode.value; 
 
-    let now = moment().format('LLLL');
 
   const checkTextInput = (e : any) => {
     e.preventDefault();
     MealService.addMeal({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal});
   }
-  console.log(new Date())
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
         <Navigation/>
@@ -143,7 +141,6 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
               onPress={checkTextInput} 
               separator_text="Create meal"
             />
-
             </View>
         </ScrollView>
     </View>

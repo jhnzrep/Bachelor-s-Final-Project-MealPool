@@ -11,6 +11,7 @@ import {  View } from '../components/Themed';
 import AuthService from '../services/auth_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import CustomHeader from '../components/CustomHeader';
+import { useGlobalContext } from '../GlobalContext';
 
 export default function RegisterScreen ({ navigation }: RootStackScreenProps<'RegisterScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
@@ -27,7 +28,8 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   const window = useWindowDimensions();
   const [date, setDate] = React.useState(new Date())
   const [open, setOpen] = React.useState(false)
-  
+  const { user, setUser } = useGlobalContext()
+
   const desktop = window.width < 768;
 
   const fnameVal = fname.value
@@ -40,7 +42,8 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   const countryVal = country.value
   const postalCodeVal = zcode.value
   const phoneVal = phone.value
-
+  
+  console.log(user)
 
   
 /*   const dobVal = dob.value
@@ -63,15 +66,16 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
     comment: String
   }
   
-  type reviewObj ={
+/*   type reviewObj ={
     authorId: string,
     ratedId: string,
     stars: Number,
     comment: String
+  } */
+  type reviewObj ={
   }
   
   const reviewObj: reviewObj[] = [
-    { authorId: "", ratedId: "", stars: 0,  comment: ""}
   ]
   
   const checkTextInput = (e : any) => {
