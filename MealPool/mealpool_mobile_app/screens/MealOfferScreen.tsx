@@ -10,12 +10,13 @@ import { RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
 import SearchInput from '../components/SearchInput';
 import CustomHeader from '../components/CustomHeader';
-
+import Modal from "react-native-modal";
 import { DATA, food_category_mock_data } from '../constants/MockData';
 import CustomInput from '../components/CustomInput';
 import Navigation from '../components/Navigation';
 import SubmitButton from '../components/SubmitButton';
 import MealService from '../services/meal_service';
+import InfoModal from '../components/InfoModal';
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
     const [name, setName] = React.useState({ value: '', error: ''});
@@ -42,13 +43,26 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
     const countryVal = country.value;
     const postalCodeVal = zcode.value; 
 
+    const [isModalVisible, setModalVisible] = React.useState(false);
+
+    const toggleModal = () => {
+      setModalVisible(!isModalVisible);
+    };
+
 
   const checkTextInput = (e : any) => {
     e.preventDefault();
     MealService.addMeal({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal});
+    setModalVisible(true);
   }
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
+        <InfoModal
+          onPress={toggleModal}
+          content_value="Your meal was successfully added"
+          button_value="Hide modal"
+          isVisible={isModalVisible}
+        />
         <Navigation/>
 
         <ScrollView style={styles.scroll_container}>

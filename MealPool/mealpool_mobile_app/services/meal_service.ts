@@ -28,7 +28,7 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
   .post(API_URL + 'api/Meal', {
     cookId: cookId,
     name: nameVal,
-    dateItem: now,
+    dateItem: new Date(),
     category: categoryVal,
     description: descriptionVal,
     street: streetVal, 
@@ -37,8 +37,8 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
     postalCode: postalCodeVal
   })
   .then(function (response) {
-    response = response.data
-    console.log(response)
+    console.log("MEAL WAS ADDED")
+    console.log(response.data)
     return response
   })
   .catch(function (error) {

@@ -7,8 +7,6 @@ export default function CustomInput(props: any){
     const [error, setErrorMessage] = React.useState(false)
     const customType :string = props.type
 
-    
-
     const checkOnPressOut = () => {
         if (props.value == 0 && props.required) {
             setErrorMessage(true)
@@ -28,6 +26,7 @@ export default function CustomInput(props: any){
         style={[ error ? styles.input_error : null , styles.text_input, customWidth == "" ? {width: '100%'} : {width: customWidth}, customType == "textArea" ?  styles.textArea : null ]} 
         blurOnSubmit={true}
         placeholder={props.placeholder}
+        onKeyPress={props.onKeyPress}
         secureTextEntry={props.secureTextEntry}
         value={props.value} 
         // For TEXT AREA
