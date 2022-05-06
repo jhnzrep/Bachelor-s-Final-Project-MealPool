@@ -1,20 +1,33 @@
 import * as React from 'react';
-import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList, ImageBackground } from 'react-native';
+import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList, ImageBackground, Modal } from 'react-native';
 import { CheckBox } from 'react-native-elements'
 import CustomHeader from '../components/CustomHeader';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import MealCategoryBox from '../components/MealCategoryBox';
+import ReviewModal from '../components/ReviewModal';
 import SubmitButton from '../components/SubmitButton';
 
 import { Text, View } from '../components/Themed';
 import { food_category_mock_data } from '../constants/MockData';
+import MealService from '../services/meal_service';
+import ReviewService from '../services/review_service';
 import { RootTabScreenProps } from '../types';
 
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileScreen'>) {
   const [searchVal, setSearchVal] = React.useState('');
+  const [comment, setComment] = React.useState('');
+  const [stars, setStars] = React.useState(3)
+  const [modalVisible, setModalVisible] = React.useState(false); 
+  const authorId = "62744054a0293dc967bbe5ae";
+  const ratedId =  "62729ead203bb0d4d9e4eea9";
+    console.log(comment)
+  const postReview = () => {
+    ReviewService.postReview({authorId,ratedId, stars, comment});
+  }
+
   return (
     <View  style={styles.container}>
         <ScrollView style={styles.scroll_container}>
@@ -28,6 +41,17 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
                 <CustomHeader value="Matus Kalanin"/>
                 <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
             </View>
+            <View style={[styles.user_reviews, {padding: 10}]}>
+            <View style={{width: '50%'}}>
+                        <SubmitButton text="Follow" />
+                    </View>                    <View style={{width: '50%'}}>
+                        <SubmitButton 
+                        text="Write review" 
+                        onPress={() => setModalVisible(true)} 
+                        />
+                    </View>
+            </View>
+         
             <View style={styles.content_follower_section}>
                 <Text style={styles.bolded_text}>256 Followers</Text>
                 <Text style={styles.bolded_text}>15 Following</Text>
@@ -77,6 +101,17 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
             </View>
         </View>
         </ScrollView>
+        <Modal
+        transparent={true}
+        visible={modalVisible}>
+            <ReviewModal
+                setValue={(text : string) => setComment(text)}
+                modalVisible={() => setModalVisible(false)}
+                onPress={postReview}
+                value={comment}
+            />
+        </Modal>
+
     </View>
 
   );
