@@ -31,6 +31,11 @@ type Meal = {
   postalCodeVal: string;
 };
 
+type MealSearch = {
+  searchVal: string;
+};
+
+
 
 let now = moment().format('LLLL');
 
@@ -60,8 +65,24 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
   });
 }
 
+const searchMeal = ({searchVal} : MealSearch) => {
+  return axios
+  .get(API_URL + `api/Meal/Search?name=${searchVal}`)
+  .then(function (response) {
+    response = response.data
+    console.log(API_URL + `api/Meal/Search?name=${searchVal}`)
+    console.log(response)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
 const MealService = {
     getMeals,
-    addMeal
+    addMeal,
+    searchMeal
 }
 export default MealService;

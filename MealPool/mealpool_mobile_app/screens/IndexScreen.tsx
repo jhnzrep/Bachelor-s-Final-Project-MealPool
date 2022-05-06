@@ -21,19 +21,25 @@ import { useGlobalContext } from '../GlobalContext';
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
   const [searchVal, setSearchVal] = React.useState('');
-  const [users, setUsers] = React.useState(Array);
-  //const [meal, setMeals] = React.useState('');
-  const {meal, setMeals } = useGlobalContext()
+  const [meals, setMeals] = React.useState(Array);
+  const [searchTitle, setSearchTitle] = React.useState('Popular offers');
+  const [foundItems, setFoundItem] = React.useState(0);
 
-
+  const handleKeyDown = (e : any) => {
+    if(e.nativeEvent.key == "Enter"){
+      MealService.searchMeal({searchVal}).then(response=> {
+        setMeals(response);
+        setFoundItem(response.length)
+        setSearchTitle('Searched offers')
+      })  
+    }
+  }
 
   React.useEffect(() => {
     MealService.getMeals().then(response=> {
-      setUsers(response)
+      setMeals(response)
     })  }, [])
   const test : object =  MealService.getMeals()
-
- 
 
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
@@ -46,8 +52,11 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
             <CustomInput
                 setValue={(text : string) => setSearchVal(text)}
                 value={searchVal}
+                search={true}
                 placeholder="What meal do you want to try today?"
+                onKeyPress={handleKeyDown}
             />
+            
             <View style={{width: '100%'}}>
               <ScrollView   horizontal>
                 {food_category_mock_data.map((item, index) => {
@@ -59,15 +68,16 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
                 })}
               </ScrollView>
             </View>
-            <CustomHeader value="Popular offers" /> 
+
+            <CustomHeader value={searchTitle} />
+            {searchTitle == "Searched offers" ? <Text>Found items: {foundItems}</Text>  : null } 
             <View>
           </View>
           
-            {users.map((item) => {
+            {meals.map((item : any) => {
                 return <CustomCard
                      title={item.name}
-                     description={item.description}
-                     cook={item.cookId}
+                   
                 />
             })} 
 
@@ -95,3 +105,6 @@ const styles = StyleSheet.create({
 
 
 });
+
+/* description={item.description}
+cook={item.cookId} */
