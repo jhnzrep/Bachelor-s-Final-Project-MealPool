@@ -61,7 +61,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       phoneVal: "",
       reviewObj: []
     }])
-    //navigation.navigate('ProfileScreen')
+    navigation.navigate('Root')
   };
 
   return (

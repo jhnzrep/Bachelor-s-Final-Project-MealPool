@@ -42,13 +42,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator  screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
-
-
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
     </Stack.Navigator>
@@ -71,37 +69,30 @@ function BottomTabNavigator() {
         tabBarActiveTintColor: Colors[colorScheme].tint,
         tabBarActiveBackgroundColor: "red"
       }}>
-      <BottomTab.Screen
-        name="I"
+       <BottomTab.Screen
+        name="Index"
         component={IndexScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
        <BottomTab.Screen
-        name="Prof"
+        name="ProfileScreen"
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
        <BottomTab.Screen
-        name="More"
+        name="InfoScreen"
         component={InfoScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
        <BottomTab.Screen
-        name="Meal"
+        name="MealOfferScreen"
         component={MealOfferScreen}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="LoginScreen"
-        component={LoginScreen}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}

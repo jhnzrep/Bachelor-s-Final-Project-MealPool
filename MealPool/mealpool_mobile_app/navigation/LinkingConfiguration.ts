@@ -25,7 +25,18 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'two',
             },
           },
+          InfoScreen: {
+            screens: {
+              Index: 'three',
+            },
+          },
+          MealOfferScreen: {
+            screens: {
+              Index: 'four',
+            },
+          },
         },
+        
       },
       Modal: 'modal',
       NotFound: '*',
