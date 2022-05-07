@@ -40,7 +40,13 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'review',
             },
           },
+          EditProfileScreen: {
+            screens: {
+              Index: 'edit/profile',
+            },
+          },
         },
+        
         
       },
       Modal: 'modal',

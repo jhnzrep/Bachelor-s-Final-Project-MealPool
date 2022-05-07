@@ -26,6 +26,7 @@ import IndexScreen from '../screens/IndexScreen';
 import LoginScreen from '../screens/LoginScreen';
 import InfoScreen from '../screens/InfoScreen';
 import ReviewScreen from '../screens/ReviewScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
 
 
 
@@ -106,6 +107,13 @@ function BottomTabNavigator() {
        <BottomTab.Screen
         name="ReviewScreen"
         component={ReviewScreen}
+        options={{
+          tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
+        }}
+      />
+       <BottomTab.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
         }}

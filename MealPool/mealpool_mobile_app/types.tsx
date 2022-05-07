@@ -32,6 +32,7 @@ export type RootTabParamList = {
   MealOfferScreen: undefined;
   InfoScreen: undefined;
   ReviewScreen: undefined;
+  EditProfileScreen: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
