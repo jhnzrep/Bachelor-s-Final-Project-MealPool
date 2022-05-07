@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, SectionList, Image, FlatList } from "react-nati
 import CustomHeader from "./CustomHeader";
 import SubmitButton from "./SubmitButton";
 import { Platform } from 'react-native';
+import StarRating from "react-native-star-rating-widget";
 
 
 export default function ReviewCard(props: any){
@@ -29,8 +30,13 @@ export default function ReviewCard(props: any){
                             </Text>
                         </View>
                     </View>
-                    <View>
-                       <Text> {props.stars}</Text>
+                    <View style={{justifyContent: 'flex-end', width: '90%'}}>
+                        <StarRating
+                        style={{justifyContent: 'flex-end'}}
+                        starStyle={{width: '4%'}}
+                        rating={props.stars}
+                        onChange={() => null}
+                        />
                     </View>
                 </View>
                 <View>

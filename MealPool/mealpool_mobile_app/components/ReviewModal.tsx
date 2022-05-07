@@ -3,9 +3,11 @@ import { StyleSheet, View, Text, Image, Pressable, Alert, TextInput } from "reac
 import Colors from "../constants/Colors";
 import { BlurView } from 'expo-blur';
 import SubmitButton from "./SubmitButton";
+import StarRating from "react-native-star-rating-widget";
 
 export default function ReviewModal(props: any){
     const [error, setErrorMessage] = React.useState(false)
+    const [stars, setStars] = React.useState(3)
 
   return (
     <View style={styles.modal_background}>
@@ -24,8 +26,15 @@ export default function ReviewModal(props: any){
                     multiline={true}
                     placeholder="Write here"
                 />
-                <Text style={{marginTop: 20, textAlign: 'center'}}>Stars</Text>
-                <View style={{marginTop: 20}}>
+                <View style={{marginTop: 10}}>
+                    <StarRating
+
+                    starStyle={{width: '12%'}}
+                    rating={stars}
+                    onChange={setStars}
+                    />
+                </View>
+                <View style={{marginTop: 20, marginBottom: 20}}>
                 <SubmitButton
                     onPress={props.onPress} 
                     text="Send"
@@ -67,7 +76,7 @@ const styles = StyleSheet.create({
     },
     modal_card: {
         width: '90%',
-        height: 374,
+        height: 'auto',
         borderRadius: 25,
         borderWidth: 1,
         marginLeft: 30,

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList, ImageBackground, Modal } from 'react-native';
+import StarRating from 'react-native-star-rating-widget';
 import CustomHeader from '../components/CustomHeader';
 
 import MealCategoryBox from '../components/MealCategoryBox';
@@ -45,14 +46,18 @@ export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewS
                 <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
             </View>
             <View style={{width: '50%'}}>
-                <Text>Stars</Text>
+                <StarRating
+                    starStyle={{width: '8%'}}
+                    rating={stars}
+                    onChange={() => null}
+                />
             </View>
             <View>
             {reviews.map((item : any) => {
              return <ReviewCard 
                 title="Lorem ipsum"
                 comment={item.comment}
-                stars={item.stars}                
+                stars={item.stars}
                 />
             })} 
             </View>

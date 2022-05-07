@@ -8,6 +8,7 @@ import Logo from '../components/Logo';
 import MealCategoryBox from '../components/MealCategoryBox';
 import ReviewModal from '../components/ReviewModal';
 import SubmitButton from '../components/SubmitButton';
+import StarRating from 'react-native-star-rating-widget';
 
 import { Text, View } from '../components/Themed';
 import { food_category_mock_data } from '../constants/MockData';
@@ -23,6 +24,7 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
   const [modalVisible, setModalVisible] = React.useState(false); 
   const authorId = "62744054a0293dc967bbe5ae";
   const ratedId =  "62729ead203bb0d4d9e4eea9";
+
     console.log(comment)
   const postReview = () => {
     ReviewService.postReview({authorId,ratedId, stars, comment});
@@ -66,16 +68,23 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
             </View>
             <View style={{marginTop: 20}}>
                 <View style={styles.user_reviews}>
-                    <Text> 4,3 </Text>
                     <View style={{width: '50%'}}>
-                        <SubmitButton 
+                        <StarRating
+                            starStyle={{width: '4%'}}
+                            rating={stars}
+                            onChange={() => null}
+                        />
+                    </View>
+               
+                    <View style={{width: '50%'}}>
+                        <SubmitButton
                         text="See reviews" 
                         onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
                         />
                     </View>
                 </View>
                 <View style={styles.user_reviews}>
-                    <Text style={{width: '50%'}}> 54 reviews given </Text>
+                    <Text style={{width: '50%', textDecorationLine: 'underline'}}> 54 reviews given </Text>
                     <View style={{width: '50%'}}>
                         <SubmitButton
                         onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
