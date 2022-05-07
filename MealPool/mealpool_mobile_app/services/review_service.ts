@@ -5,7 +5,7 @@ const API_URL = "http://localhost:5109/api";
 
 
 const postReview = ({authorId, ratedId, stars, comment} : Review) => {
-    axios
+    return axios
     .post(API_URL + '/Review', {
         authorId: authorId, 
         ratedId: ratedId,
@@ -23,8 +23,25 @@ const postReview = ({authorId, ratedId, stars, comment} : Review) => {
     });
 }
 
+const getReviews = (authorId : String) => {
+    return axios
+    .get(API_URL + `/Review?id=${authorId}`)    
+        .then(function (response) {
+        response = response.data
+        console.log(response)
+        return response
+    })
+    .catch(function (error) {
+        console.log(error.response);
+        return error.response
+    });
+}
+
+
+
 const ReviewService = {
-    postReview
+    postReview,
+    getReviews
 }
 export default ReviewService;
 

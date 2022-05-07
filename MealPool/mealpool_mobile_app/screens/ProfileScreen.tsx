@@ -16,7 +16,7 @@ import ReviewService from '../services/review_service';
 import { RootTabScreenProps } from '../types';
 
 
-export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileScreen'>) {
+export default function ProfileScreen({ navigation }: RootTabScreenProps<'ProfileScreen'>) {
   const [searchVal, setSearchVal] = React.useState('');
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)
@@ -68,13 +68,19 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'ProfileS
                 <View style={styles.user_reviews}>
                     <Text> 4,3 </Text>
                     <View style={{width: '50%'}}>
-                        <SubmitButton text="See reviews" />
+                        <SubmitButton 
+                        text="See reviews" 
+                        onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
+                        />
                     </View>
                 </View>
                 <View style={styles.user_reviews}>
                     <Text style={{width: '50%'}}> 54 reviews given </Text>
                     <View style={{width: '50%'}}>
-                        <SubmitButton text="See given reviews" />
+                        <SubmitButton
+                        onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
+                        text="See given reviews" 
+                        />
                     </View>
                 </View>
             </View>

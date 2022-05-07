@@ -6,7 +6,7 @@ const API_URL = "http://localhost:5109/";
 
 const getMeals = () => {
     return axios
-    .get(API_URL + 'api/meal')
+    .get(API_URL + `api/meal`)
     .then(function (response) {
       localStorage.setItem("user", JSON.stringify(response.data));
       response = response.data

@@ -17,22 +17,27 @@ const linking: LinkingOptions<RootStackParamList> = {
         screens: {
           Index: {
             screens: {
-              Index: 'one',
+              Index: 'index',
             },
           },
           ProfileScreen: {
             screens: {
-              Index: 'two',
+              Index: 'profile',
             },
           },
           InfoScreen: {
             screens: {
-              Index: 'three',
+              Index: 'info',
             },
           },
           MealOfferScreen: {
             screens: {
-              Index: 'four',
+              Index: 'meal',
+            },
+          },
+          ReviewScreen: {
+            screens: {
+              Index: 'review',
             },
           },
         },
