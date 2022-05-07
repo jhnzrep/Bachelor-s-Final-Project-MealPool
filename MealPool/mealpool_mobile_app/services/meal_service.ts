@@ -19,6 +19,22 @@ const getMeals = () => {
     });
 }
 
+const getMealsByCategory = (category : String) => {
+  return axios
+  .get(API_URL + `api/meal/Search?category=${category}`)
+  .then(function (response) {
+    localStorage.setItem("user", JSON.stringify(response.data));
+    response = response.data
+    console.log(response)
+    console.log(API_URL + `api/meal?category=${category}`)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
 let now = moment().format('LLLL');
 
 
@@ -65,6 +81,7 @@ const searchMeal = ({searchVal} : MealSearch) => {
 const MealService = {
     getMeals,
     addMeal,
-    searchMeal
+    searchMeal,
+    getMealsByCategory
 }
 export default MealService;

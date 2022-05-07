@@ -7,12 +7,16 @@ export default function MealCategoryBox(props: any){
   const image : string =  propsimage
   return (
     <View style={{justifyContent: 'center'}}>
-      <View style={styles.box_wrapper}>
-        <Image source={require(`../assets/images/meal_category_image.png`)}  style={styles.box_image} />
-        <View style={styles.overlay}>
-             <Text>{props.title}</Text> 
-        </View> 
-      </View>
+      <Pressable
+        onPress={props.onPress}
+      >
+        <View style={styles.box_wrapper}>
+          <Image source={require(`../assets/images/meal_category_image.png`)}  style={styles.box_image} />
+          <View style={styles.overlay}>
+              <Text>{props.title}</Text> 
+          </View> 
+        </View>
+      </Pressable>
     </View>
 
   );

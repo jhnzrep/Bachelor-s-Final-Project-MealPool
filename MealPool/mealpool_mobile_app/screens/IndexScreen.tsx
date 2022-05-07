@@ -22,6 +22,7 @@ import { useGlobalContext } from '../GlobalContext';
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
   const [searchVal, setSearchVal] = React.useState('');
   const [meals, setMeals] = React.useState(Array);
+  const [category, setCategory] = React.useState("");
   const [searchTitle, setSearchTitle] = React.useState('Popular offers');
   const [foundItems, setFoundItem] = React.useState(0);
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
@@ -34,6 +35,14 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
         setSearchTitle('Searched offers')
       })  
     }
+  }
+
+  const searchByCategory = (category : string) => {
+    MealService.getMealsByCategory(category).then(response=> {
+      setMeals(response);
+      setFoundItem(response.length)
+      setSearchTitle(`Searched by category: ${category}`)
+    })  
   }
 
   React.useEffect(() => {
@@ -51,7 +60,6 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
 
         <ScrollView style={styles.scroll_container}>
         <View style={styles.container}>
-          
             <CustomHeader value="Search for food" />
             <CustomInput
                 setValue={(text : string) => setSearchVal(text)}
@@ -68,6 +76,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
                         key={index++}
                         title={item.title}
                         image={item.image}
+                        onPress={() => searchByCategory(item.title)}
                     />
                 })}
               </ScrollView>
@@ -81,14 +90,12 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
             {meals.map((item : any) => {
                 return <CustomCard
                      title={item.name}
-                   
                 />
             })} 
 
         </View>
         </ScrollView> 
     </View>
-
 
   );
 }
@@ -109,6 +116,3 @@ const styles = StyleSheet.create({
 
 
 });
-
-/* description={item.description}
-cook={item.cookId} */
