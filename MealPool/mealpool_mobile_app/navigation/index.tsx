@@ -4,6 +4,9 @@
  *
  */
 import { FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons'; 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,6 +25,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 import IndexScreen from '../screens/IndexScreen';
 import LoginScreen from '../screens/LoginScreen';
 import InfoScreen from '../screens/InfoScreen';
+
+
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -67,34 +72,34 @@ function BottomTabNavigator() {
       initialRouteName="Index"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-        tabBarActiveBackgroundColor: "red"
+        tabBarStyle: {backgroundColor: Colors.light_orange_full_opacity.background}
       }}>
        <BottomTab.Screen
         name="Index"
         component={IndexScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="silverware-fork-knife" size={size} color={color} />,
         }}
       />
        <BottomTab.Screen
         name="ProfileScreen"
         component={ProfileScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="account" size={size} color={color} />,
         }}
       />
        <BottomTab.Screen
         name="InfoScreen"
         component={InfoScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color, size }) => <Feather name="more-horizontal" size={size} color={color} />,
         }}
       />
        <BottomTab.Screen
         name="MealOfferScreen"
         component={MealOfferScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
         }}
       />
     </BottomTab.Navigator>
