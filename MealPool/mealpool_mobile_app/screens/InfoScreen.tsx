@@ -11,7 +11,10 @@ import MealCategoryBox from '../components/MealCategoryBox';
 import { DATA, food_category_mock_data } from '../constants/MockData';
 
 export default function InfoScreen({ navigation }: RootTabScreenProps<'InfoScreen'>) {
-  const [searchVal, setSearchVal] = React.useState('');
+  const logOut = () => {
+    navigation.navigate("LoginScreen")
+    localStorage.removeItem('jwt')
+  }
  
  
   return (
@@ -31,10 +34,16 @@ export default function InfoScreen({ navigation }: RootTabScreenProps<'InfoScree
                     <Text style={styles.text} >Cart</Text>
                 </View>
                 <View style={styles.separator}></View>
+               
+                  <View style={styles.menu_item}>
+                    <Pressable
+                  onPress={logOut }
+                  >
+                      <Text style={styles.text_underline}>Log out</Text>
+                </Pressable>
 
-                <View style={styles.menu_item}>
-                    <Text style={styles.text_underline}>Log out</Text>
-                </View>
+                  </View>
+
                 <View style={styles.separator}></View>
                 <View style={styles.separator}></View>
 
