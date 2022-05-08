@@ -13,11 +13,13 @@ import Colors from '../constants/Colors';
 import CustomInput from '../components/CustomInput';
 import CustomHeader from '../components/CustomHeader';
 import DesktopNavigation from '../components/DesktopNavigation';
+import Async_Storage from '../services/asyncStorage';
 
 
 export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginScreen'>) {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const [login, setLogin] = React.useState({message: "", loading: true})
+  console.log("LOGINPAGE", Async_Storage.getData()  )
 
   const window = useWindowDimensions();
   const desktop = window.width < 768;
@@ -47,7 +49,10 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       console.log('Password is in invalid format')
       return;
     }
-    ServiceFuncs.loginUser({textInputEmail,textInputPassword });
+   
+    ServiceFuncs.loginUser({textInputEmail,textInputPassword }).then(response=> {
+       Async_Storage.storeData(response)
+    })  
     setUser([{
       fnameVal: "",
       lnameVal: "",

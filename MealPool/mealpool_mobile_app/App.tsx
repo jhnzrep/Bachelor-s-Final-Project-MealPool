@@ -12,6 +12,7 @@ import { RegisterUser, userValue } from './types/User';
 export default function App() {
 
   const [user, setUser] = useState<Array<RegisterUser>>(userValue)
+  // Value true is only for testing purpose! 
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();

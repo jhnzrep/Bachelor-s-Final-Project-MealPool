@@ -18,6 +18,9 @@ import { DATA, food_category_mock_data } from '../constants/MockData';
 import axios from 'axios';
 import MealService from '../services/meal_service';
 import { useGlobalContext } from '../GlobalContext';
+import Async_Storage from '../services/asyncStorage';
+import jwt_decode from "jwt-decode";
+
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
   const [searchVal, setSearchVal] = React.useState('');
@@ -26,6 +29,23 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
   const [searchTitle, setSearchTitle] = React.useState('Popular offers');
   const [foundItems, setFoundItem] = React.useState(0);
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+
+  const checkJwtExpiration = () => {
+    // LOCAL STORAGE WORKS ONLY FOR DESKTOP 
+    var token = localStorage.getItem("jwt");
+    if (token != undefined) {
+      var decoded : any = jwt_decode(token);
+      var exp = decoded.exp;
+      if (Date.now() <= exp * 1000) {
+        return true;
+      }
+    }
+   
+    return false;
+
+    // I WILL ADD ASYNC STORAGE HERE SOON
+
+  }
 
   const handleKeyDown = (e : any) => {
     if(e.nativeEvent.key == "Enter"){
@@ -46,7 +66,9 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
   }
 
   React.useEffect(() => {
-    if (!isLoggedIn) {
+    const exp = checkJwtExpiration();
+    console.log("JWT", Async_Storage.getData())
+    if (!isLoggedIn && !exp) {
       navigation.navigate("LoginScreen")
     }
     MealService.getMeals().then(response=> {

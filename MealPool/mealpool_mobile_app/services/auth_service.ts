@@ -19,7 +19,7 @@ const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
     })
     .then(function (response) {
       console.log(response.data);
-      localStorage.setItem("user", JSON.stringify(response.data));
+      localStorage.setItem("jwt", JSON.stringify(response.data));
     })
     .catch(function (error) {
       console.log(error.response);
