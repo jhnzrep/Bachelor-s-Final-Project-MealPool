@@ -45,9 +45,12 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'edit/profile',
             },
           },
+          SocialScreen: {
+            screens: {
+              Index: 'social',
+            },
+          },
         },
-        
-        
       },
       Modal: 'modal',
       NotFound: '*',

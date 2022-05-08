@@ -38,4 +38,26 @@
     
 ];
 
-export  {food_category_mock_data, DATA }
+const cooks_list = [
+    {
+        name: "Adam",
+    },
+    {
+        name: "Matus",
+    },
+    {
+        name: "Matus",
+    },
+    {
+        name: "Alfonz",
+    },
+    {
+        name: "Adam",
+    },
+    {
+        name: "Adam",
+    },
+    
+];
+
+export  {food_category_mock_data, DATA, cooks_list }
