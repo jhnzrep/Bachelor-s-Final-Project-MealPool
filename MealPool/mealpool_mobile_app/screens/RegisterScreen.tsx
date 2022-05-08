@@ -12,6 +12,7 @@ import AuthService from '../services/auth_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import CustomHeader from '../components/CustomHeader';
 import { useGlobalContext } from '../GlobalContext';
+import Async_Storage from '../services/asyncStorage';
 
 export default function RegisterScreen ({ navigation }: RootStackScreenProps<'RegisterScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
@@ -81,9 +82,13 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   const checkTextInput = (e : any) => {
     console.log("ASDASDASD", password,  rpassword)
     e.preventDefault();
+   
     if (password.value == rpassword.value) {
-      AuthService.registerUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj});
-    }
+      AuthService.registerUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj}).then(response=> {
+         Async_Storage.storeData(email.value)
+         Async_Storage.storeData(password.value)
+      })  
+    } 
   }
 
 
