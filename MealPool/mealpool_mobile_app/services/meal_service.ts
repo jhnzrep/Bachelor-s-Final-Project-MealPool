@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { useGlobalContext } from '../GlobalContext';
+import { API_URL } from './API_URL';
 const moment = require('moment');
-const API_URL = "http://localhost:5109/";
 
 
 const getMeals = () => {
     return axios
     .get(API_URL + `api/meal`)
     .then(function (response) {
-      localStorage.setItem("user", JSON.stringify(response.data));
+      //localStorage.setItem("user", JSON.stringify(response.data));
       response = response.data
       console.log(response)
       return response
@@ -23,7 +23,7 @@ const getMealsByCategory = (category : String) => {
   return axios
   .get(API_URL + `api/meal/Search?category=${category}`)
   .then(function (response) {
-    localStorage.setItem("user", JSON.stringify(response.data));
+    //localStorage.setItem("user", JSON.stringify(response.data));
     response = response.data
     console.log(response)
     console.log(API_URL + `api/meal?category=${category}`)

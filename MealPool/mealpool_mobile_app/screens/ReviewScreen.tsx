@@ -10,6 +10,7 @@ import SubmitButton from '../components/SubmitButton';
 
 import { Text, View } from '../components/Themed';
 import { food_category_mock_data } from '../constants/MockData';
+import { useGlobalContext } from '../GlobalContext';
 import ReviewService from '../services/review_service';
 import { RootTabScreenProps } from '../types';
 
@@ -19,9 +20,9 @@ export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewS
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)
   const [modalVisible, setModalVisible] = React.useState(false); 
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const authorId = "62744054a0293dc967bbe5ae";
   const ratedId =  "62729ead203bb0d4d9e4eea9";
-
   const getReviews = () => {
     return ReviewService.getReviews(authorId).then((response : any) => {
         setReviews(response)
@@ -36,8 +37,8 @@ export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewS
     <View  style={styles.container}>
         <ScrollView style={styles.scroll_container}>
             <View style={{flex: 1,  justifyContent: 'center', alignItems: 'center', marginTop: 50, position: 'relative' }}>
-                <Image source={require('../assets/images/profile_picture.svg')}  style={styles.profile_picture} />
-                <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.svg')}>
+                <Image source={require('../assets/images/profile_picture.png')}  style={styles.profile_picture} />
+                <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.png')}>
                 </ImageBackground>
             </View>
         

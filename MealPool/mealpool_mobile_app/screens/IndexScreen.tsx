@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList } from 'react-native';
 import { CheckBox } from 'react-native-elements'
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
@@ -23,28 +23,42 @@ import jwt_decode from "jwt-decode";
 
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
+ 
   const [searchVal, setSearchVal] = React.useState('');
   const [meals, setMeals] = React.useState(Array);
+  const [token, setToken] = React.useState('');
   const [category, setCategory] = React.useState("");
   const [searchTitle, setSearchTitle] = React.useState('Popular offers');
   const [foundItems, setFoundItem] = React.useState(0);
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+  const [loading, setLoading] = React.useState(false);
 
-  const checkJwtExpiration = () => {
-    // LOCAL STORAGE WORKS ONLY FOR DESKTOP 
-    var token = localStorage.getItem("jwt");
-    if (token != undefined) {
-      var decoded : any = jwt_decode(token);
+  const isEmpty = (str) => {
+    return (!str || str.length === 0 );
+  }
+
+  const userIsNotAuthorized = () => {
+    Async_Storage.removeData()
+    navigation.navigate('RegisterScreen')
+  }
+
+
+const checkJwtExpiration =  async () => {
+    // ASYNC STORAGE WORKS FOR DESKTOP AND NATIVE APPS
+    const ldsadaset = isEmpty(token);
+    if (!ldsadaset )  {
+      var decoded : any =  jwt_decode(token);
       var exp = decoded.exp;
-      if (Date.now() <= exp * 1000) {
-        return true;
+      console.log("EXPIRATION", exp)
+      if (Date.now() >= exp * 1000) {
+        userIsNotAuthorized()
+      }
+      else{
+        setIsLoggedIn(true)
+        console.log(isLoggedIn)
       }
     }
-   
     return false;
-
-    // I WILL ADD ASYNC STORAGE HERE SOON
-
   }
 
   const handleKeyDown = (e : any) => {
@@ -65,16 +79,47 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
     })  
   }
 
+
   React.useEffect(() => {
-    const exp = checkJwtExpiration();
-    console.log("JWT", Async_Storage.getData())
-    if (!isLoggedIn && !exp) {
-      navigation.navigate("LoginScreen")
+    let isSubscribed = 1;
+
+    const fetchData = async ()  => {
+      await Async_Storage.getData()
+        .then((response) => { 
+          const data =  response; 
+          setToken(response);
+          setLoading(true)
+          if(response == undefined){ 
+            navigation.navigate('RegisterScreen')
+            return;
+          }
+          var decoded : any =  jwt_decode(token);
+          const d = new Date(decoded.exp * 1000);
+          checkJwtExpiration()
+          if (response === undefined) {
+            userIsNotAuthorized();
+          }
+      })
     }
+    
+
     MealService.getMeals().then(response=> {
       setMeals(response)
-    })  }, [])
-  const test : object =  MealService.getMeals()
+    })  
+    if (isSubscribed == 1) {
+    fetchData()
+    .catch(console.error);
+      
+    }
+    // make sure to catch any error
+
+    isSubscribed++;
+  
+  }, [token])
+
+
+
+
 
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>

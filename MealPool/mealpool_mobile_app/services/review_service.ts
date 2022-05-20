@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useGlobalContext } from '../GlobalContext';
 import { Review } from '../types/Review';
-const API_URL = "http://localhost:5109/api";
+import { API_URL } from './API_URL';
 
 
 const postReview = ({authorId, ratedId, stars, comment} : Review) => {
     return axios
-    .post(API_URL + '/Review', {
+    .post(API_URL + 'api/Review', {
         authorId: authorId, 
         ratedId: ratedId,
         stars: stars,
@@ -25,7 +25,7 @@ const postReview = ({authorId, ratedId, stars, comment} : Review) => {
 
 const getReviews = (authorId : String) => {
     return axios
-    .get(API_URL + `/Review?id=${authorId}`)    
+    .get(API_URL + `api/Review?id=${authorId}`)    
         .then(function (response) {
         response = response.data
         console.log(response)

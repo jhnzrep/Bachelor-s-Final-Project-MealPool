@@ -1,7 +1,9 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { EmptyObject } from 'react-hook-form';
 import { LoginUser, RegisterUser } from '../types/User';
-const API_URL = "http://localhost:5109/";
+import { API_URL } from './API_URL';
+import Async_Storage from './asyncStorage';
 
 type reviewObj ={
   authorId: string,
@@ -18,11 +20,13 @@ const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
       password: textInputPassword.value
     })
     .then(function (response) {
-      console.log(response.data);
-      localStorage.setItem("jwt", JSON.stringify(response.data));
+      Async_Storage.storeData(response.data)
+      console.log("INSIDE LOGIN", response)
+      return "success";
     })
     .catch(function (error) {
       console.log(error.response);
+      return "error";
     });
 }
 
@@ -49,7 +53,7 @@ const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, street
   })
   .then(function (response) {
     console.log(response.data);
-    localStorage.setItem("user", JSON.stringify(response.data));
+    //localStorage.setItem("user", JSON.stringify(response.data));
   })
   .catch(function (error) {
     console.log(error.response);

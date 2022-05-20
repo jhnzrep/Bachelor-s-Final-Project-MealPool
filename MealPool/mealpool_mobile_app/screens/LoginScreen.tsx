@@ -14,12 +14,12 @@ import CustomInput from '../components/CustomInput';
 import CustomHeader from '../components/CustomHeader';
 import DesktopNavigation from '../components/DesktopNavigation';
 import Async_Storage from '../services/asyncStorage';
-
+import AuthService from '../services/auth_service';
 
 export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginScreen'>) {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const [login, setLogin] = React.useState({message: "", loading: true})
-  console.log("LOGINPAGE", Async_Storage.getData()  )
+
 
   const window = useWindowDimensions();
   const desktop = window.width < 768;
@@ -27,7 +27,6 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
   const [textInputPassword, setTextInputPassword] = React.useState({ value: '', error: 'sadasds'});
   const [textInputEmail, setTextInputEmail] = React.useState({value: '', error: ''}); 
   const [checked, toggleChecked] = React.useState(false);
-  console.log("user", user)
   const checkTextInput = (e : any) => {
     e.preventDefault();
     if (!textInputPassword.value.trim()) {
@@ -38,6 +37,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       alert('Please Enter Email');
       return;
     }
+
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!re.test(textInputEmail.value) || textInputEmail.value.length < 6 ){
       alert('Email is in valid format')
@@ -49,26 +49,18 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       console.log('Password is in invalid format')
       return;
     }
-   
+
     ServiceFuncs.loginUser({textInputEmail,textInputPassword }).then(response=> {
-       Async_Storage.storeData(response)
-    })  
-    setUser([{
-      fnameVal: "",
-      lnameVal: "",
-      emailVal: textInputEmail.value,
-      passwordVal: textInputPassword.value,
-      dobVal: new Date(),
-      streetVal: "",
-      cityVal: "",
-      countryVal: "",
-      postalCodeVal: "",
-      phoneVal: "",
-      reviewObj: []
-    }])
-    setIsLoggedIn(true);
-    navigation.navigate('Root')
+      //Async_Storage.storeData(response)
+      if (response == "success") {
+        setIsLoggedIn(true)
+        return navigation.navigate('Root')
+      }
+      alert('Login was not sucessfull.') 
+    })
   };
+
+
 
   return (
     <ScrollView style={styles.scroll_container}>

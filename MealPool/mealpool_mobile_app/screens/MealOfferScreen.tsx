@@ -2,21 +2,20 @@ import * as React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList } from 'react-native';
 import { CheckBox } from 'react-native-elements'
 const moment = require('moment');
-
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
+import Modal from "react-native-modal";
 import SearchInput from '../components/SearchInput';
 import CustomHeader from '../components/CustomHeader';
-import Modal from "react-native-modal";
-import { DATA, food_category_mock_data } from '../constants/MockData';
 import CustomInput from '../components/CustomInput';
 import Navigation from '../components/Navigation';
 import SubmitButton from '../components/SubmitButton';
 import MealService from '../services/meal_service';
 import InfoModal from '../components/InfoModal';
+
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
     const [name, setName] = React.useState({ value: '', error: ''});
@@ -31,6 +30,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
     const [calories, setCalories] = React.useState({ value: '', error: ''});
     const [ingredients, setIngredients] = React.useState({ value: '', error: ''});
     const [allergens, setAllergens] = React.useState({ value: '', error: ''});
+
     const currDate = new Date();
 
     const cookId = "0";
@@ -55,6 +55,8 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
     MealService.addMeal({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal});
     setModalVisible(true);
   }
+
+
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
         <InfoModal
@@ -76,7 +78,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             errorText="You have to fill name"
             placeholder="Name" 
             value={name.value} />
-
+      
             <CustomInput
             setValue={(text : string) => setDate({ value: text, error: ''})}
             placeholder="Date" 

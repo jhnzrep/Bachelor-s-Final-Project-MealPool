@@ -20,7 +20,7 @@ export default function ReviewCard(props: any){
                 <Text style={styles.title} >{props.title }</Text>
                 <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
                     <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                        <Image source={require('../assets/images/offer_image.svg')}  style={styles.card_picture} />
+                        <Image source={require('../assets/images/offer_image.png')}  style={styles.card_picture} />
                         <View style={{flexDirection: 'column'}}>
                             <Text style={{fontSize: 10}}>
                                 3.4.2022

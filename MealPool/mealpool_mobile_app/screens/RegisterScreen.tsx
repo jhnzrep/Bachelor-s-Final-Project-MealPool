@@ -44,7 +44,6 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   const postalCodeVal = zcode.value
   const phoneVal = phone.value
   
-  console.log(user)
 
   
 /*   const dobVal = dob.value
@@ -80,7 +79,6 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   ]
   
   const checkTextInput = (e : any) => {
-    console.log("ASDASDASD", password,  rpassword)
     e.preventDefault();
    
     if (password.value == rpassword.value) {

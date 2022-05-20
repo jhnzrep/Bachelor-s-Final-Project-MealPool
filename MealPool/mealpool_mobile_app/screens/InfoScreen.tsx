@@ -9,13 +9,17 @@ import CustomHeader from '../components/CustomHeader';
 import CustomCard from '../components/CustomCard';
 import MealCategoryBox from '../components/MealCategoryBox';
 import { DATA, food_category_mock_data } from '../constants/MockData';
+import Async_Storage from '../services/asyncStorage';
+import { useGlobalContext } from '../GlobalContext';
 
 export default function InfoScreen({ navigation }: RootTabScreenProps<'InfoScreen'>) {
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+
   const logOut = () => {
+    Async_Storage.removeData()
+    setIsLoggedIn(false);
     navigation.navigate("LoginScreen")
-    localStorage.removeItem('jwt')
   }
- 
  
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>

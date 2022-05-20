@@ -28,10 +28,12 @@ import InfoScreen from '../screens/InfoScreen';
 import ReviewScreen from '../screens/ReviewScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import SocialScreen from '../screens/SocialScreen';
+import { useGlobalContext } from '../GlobalContext';
 
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
@@ -48,12 +50,13 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   return (
     <Stack.Navigator  screenOptions={{ headerShown: false }}>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
@@ -61,7 +64,7 @@ function RootNavigator() {
   );
 }
 
-/**
+/** 
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */

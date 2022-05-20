@@ -43,7 +43,6 @@ export default function EditProfileScreen ({ navigation }: RootTabScreenProps<'E
   const postalCodeVal = zcode.value
   const phoneVal = phone.value
   
-  console.log(user)
 
   
 /*   const dobVal = dob.value
@@ -79,7 +78,6 @@ export default function EditProfileScreen ({ navigation }: RootTabScreenProps<'E
   ]
   
   const checkTextInput = (e : any) => {
-    console.log("ASDASDASD", password,  rpassword)
     e.preventDefault();
     if (password.value == rpassword.value) {
       AuthService.registerUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj});

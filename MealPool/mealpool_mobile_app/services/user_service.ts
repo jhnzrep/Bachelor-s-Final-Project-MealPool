@@ -1,10 +1,24 @@
 import axios from 'axios';
 import { useGlobalContext } from '../GlobalContext';
-const API_URL = "http://localhost:5109/api";
+import { API_URL } from './API_URL';
 
-   const getUsers = () => {
+  const getUsers = () => {
     return axios
-    .get(API_URL + '/User')
+    .get(API_URL + 'api/User')
+    .then(function (response) {
+        response = response.data
+        console.log(response)
+        return response
+    })
+    .catch(function (error) {
+      console.log(error.response);
+      return error.response
+    });
+  }
+
+  const getUserById = (id) => {
+    return axios
+    .get(API_URL + 'api/User/' + id)
     .then(function (response) {
         response = response.data
         console.log(response)
@@ -17,7 +31,8 @@ const API_URL = "http://localhost:5109/api";
   }
 
 const UserService = {
-    getUsers
+    getUsers,
+    getUserById
 }
 export default UserService;
 

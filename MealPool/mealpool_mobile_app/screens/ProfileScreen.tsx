@@ -3,18 +3,18 @@ import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, Scroll
 import { CheckBox } from 'react-native-elements'
 import CustomHeader from '../components/CustomHeader';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import MealCategoryBox from '../components/MealCategoryBox';
 import ReviewModal from '../components/ReviewModal';
 import SubmitButton from '../components/SubmitButton';
-import StarRating from 'react-native-star-rating-widget';
+import StarRating from "react-native-star-rating-widget";
 
 import { Text, View } from '../components/Themed';
 import { food_category_mock_data } from '../constants/MockData';
 import MealService from '../services/meal_service';
 import ReviewService from '../services/review_service';
 import { RootTabScreenProps } from '../types';
+import { useGlobalContext } from '../GlobalContext';
 
 
 export default function ProfileScreen({ navigation }: RootTabScreenProps<'ProfileScreen'>) {
@@ -24,34 +24,41 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
   const [modalVisible, setModalVisible] = React.useState(false); 
   const authorId = "62744054a0293dc967bbe5ae";
   const ratedId =  "62729ead203bb0d4d9e4eea9";
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
 
-    console.log(comment)
+  React.useEffect(() => {
+    console.log("user", user)
+  }, [])
+  
   const postReview = () => {
     ReviewService.postReview({authorId,ratedId, stars, comment});
   }
+  const fullname = user[0].fnameVal + " " + user[0].lnameVal
 
   return (
     <View  style={styles.container}>
         <ScrollView style={styles.scroll_container}>
             <View style={{flex: 1,  justifyContent: 'center', alignItems: 'center', marginTop: 50, position: 'relative' }}>
-                    <Image source={require('../assets/images/profile_picture.svg')}  style={styles.profile_picture} />
-                <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.svg')}>
+                    <Image source={require('../assets/images/profile_picture.png')}  style={styles.profile_picture} />
+                <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.png')}>
                 </ImageBackground>
             </View>
         
             <View style={styles.content_section}>
-                <CustomHeader value="Matus Kalanin"/>
+                <CustomHeader value={ fullname}/>
                 <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
+                <Text>Is logged in???? {isLoggedIn}</Text>
             </View>
             <View style={[styles.user_reviews, {padding: 10}]}>
-            <View style={{width: '50%'}}>
-                        <SubmitButton text="Follow" />
-                    </View>                    <View style={{width: '50%'}}>
-                        <SubmitButton 
-                        text="Write review" 
-                        onPress={() => setModalVisible(true)} 
-                        />
-                    </View>
+                <View style={{width: '50%'}}>
+                    <SubmitButton text="Follow" />
+                </View>                    
+                <View style={{width: '50%'}}>
+                    <SubmitButton 
+                    text="Write review" 
+                    onPress={() => setModalVisible(true)} 
+                    />
+                </View>
             </View>
          
             <View style={styles.content_follower_section}>
@@ -69,11 +76,11 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
             <View style={{marginTop: 20}}>
                 <View style={styles.user_reviews}>
                     <View style={{width: '50%'}}>
-                        <StarRating
-                            starStyle={{width: '4%'}}
-                            rating={stars}
-                            onChange={() => null}
-                        />
+                    <StarRating
+                    starStyle={{width: '12%'}}
+                    rating={stars}
+                    onChange={() => null}
+                    />
                     </View>
                
                     <View style={{width: '50%'}}>

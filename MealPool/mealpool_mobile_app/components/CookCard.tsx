@@ -9,7 +9,7 @@ export default function CookCard(props: any){
 
     <View>
         <View style={{position: 'relative', marginTop: 20 }}>
-            <Image source={require('../assets/images/profile_picture.svg')}  style={styles.profile_picture} />
+            <Image source={require('../assets/images/profile_picture.png')}  style={styles.profile_picture} />
         </View>
         <View style={styles.content_section}>
             <Text style={{fontStyle: 'italic', textAlign: 'center'}}>{props.firstName} {props.lastName}</Text>
