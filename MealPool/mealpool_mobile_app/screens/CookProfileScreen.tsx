@@ -20,22 +20,33 @@ import UserService from '../services/user_service';
 import { useMemo } from 'react';
 
 
-export default function ProfileScreen({ navigation }: RootTabScreenProps<'ProfileScreen'>) {
+export default function CookProfileScreen({ navigation }: RootTabScreenProps<'CookProfileScreen'>) {
+  const route = useRoute();
+  let paramId = route.params.id
+  console.log(paramId, "PARAMID")
   const [searchVal, setSearchVal] = React.useState('');
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)
   const [rendered, isRendered] = React.useState(false);
   const [modalVisible, setModalVisible] = React.useState(false); 
-  const authorId = "62744054a0293dc967bbe5ae";
-  const ratedId =  "62729ead203bb0d4d9e4eea9";
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+  const authorId = user[0].id;
+  const ratedId =  route.params.cook[0].id;
 
+  React.useEffect(() => {
+    console.log("AAAAAAAAAA", )     
+  }, [rendered])
+  console.log()
 
+  
+  const cook = route.params.cook
+  console.log("USER!!!", route.params.cook[0])
+  console.log("COOKNAME!!!", route.params.cook[0])
 
   const postReview = () => {
     ReviewService.postReview({authorId,ratedId, stars, comment});
   }
-  const fullname =   user[0].fnameVal + " " + user[0].lnameVal
+  const fullname =   route.params.cook[0].fnameVal + " " + route.params.cook[0].lnameVal
 
 
   return (
@@ -52,6 +63,17 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
                 <CustomHeader value={ fullname}/>
                 <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
                 <Text>Is logged in???? {isLoggedIn}</Text>
+            </View>
+            <View style={[styles.user_reviews, {padding: 10}]}>
+                <View style={{width: '50%'}}>
+                    <SubmitButton text="Follow" />
+                </View>                    
+                <View style={{width: '50%'}}>
+                    <SubmitButton 
+                    text="Write review" 
+                    onPress={() => setModalVisible(true)} 
+                    />
+                </View>
             </View>
          
             <View style={styles.content_follower_section}>
@@ -111,7 +133,6 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
                 <View style={{width: '50%'}}>
                     <SubmitButton 
                         text="Edit Profile"
-                        onPress={() =>navigation.navigate('Root', { screen: 'EditProfileScreen'})} 
                     />
                 </View>
             </View>

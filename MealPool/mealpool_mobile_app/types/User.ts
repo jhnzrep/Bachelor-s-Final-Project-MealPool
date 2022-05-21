@@ -17,6 +17,7 @@ export type PasswordValues = {
 };
   
  export type RegisterUser = {
+    id?: string;
     fnameVal: string;
     lnameVal: string;
     emailVal: string;

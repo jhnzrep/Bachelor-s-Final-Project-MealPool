@@ -32,7 +32,6 @@ export default function InfoScreen({ navigation }: RootTabScreenProps<'InfoScree
                     <Text style={styles.text} >Account</Text>
                 </View>
                 <View style={styles.separator}></View>
-                <View style={styles.separator}></View>
 
                 <View style={styles.menu_item}>
                     <Text style={styles.text} >Cart</Text>
@@ -48,7 +47,6 @@ export default function InfoScreen({ navigation }: RootTabScreenProps<'InfoScree
 
                   </View>
 
-                <View style={styles.separator}></View>
                 <View style={styles.separator}></View>
 
             </View>

@@ -32,6 +32,7 @@ export default function App() {
       UserService.getUserById("62745649a0293dc967bbe5b3").then(response=> {
         console.log("USER SERVICE", response)
         setUser([{
+          id: response.id,
           fnameVal: response.firstName,
           lnameVal: response.lastName,
           emailVal: response.email,

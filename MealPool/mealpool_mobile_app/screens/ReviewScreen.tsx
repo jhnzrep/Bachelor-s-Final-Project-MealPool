@@ -12,7 +12,7 @@ import { Text, View } from '../components/Themed';
 import { food_category_mock_data } from '../constants/MockData';
 import { useGlobalContext } from '../GlobalContext';
 import ReviewService from '../services/review_service';
-import { RootTabScreenProps } from '../types';
+import { RootStackScreenProps, RootTabScreenProps } from '../types';
 
 
 export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewScreen'>) {
@@ -21,10 +21,10 @@ export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewS
   const [stars, setStars] = React.useState(3)
   const [modalVisible, setModalVisible] = React.useState(false); 
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
-  const authorId = "62744054a0293dc967bbe5ae";
-  const ratedId =  "62729ead203bb0d4d9e4eea9";
+  const fullname = user[0].fnameVal + " " + user[0].lnameVal
+
   const getReviews = () => {
-    return ReviewService.getReviews(authorId).then((response : any) => {
+    return ReviewService.getReviews(user[0].id).then((response : any) => {
         setReviews(response)
     })
   }
@@ -43,8 +43,8 @@ export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewS
             </View>
         
             <View style={styles.content_section}>
-                <CustomHeader value="Matus Kalanin"/>
-                <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
+                <CustomHeader value={fullname}/>
+                <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef 2</Text>
             </View>
             <View style={{width: '50%'}}>
                 <StarRating

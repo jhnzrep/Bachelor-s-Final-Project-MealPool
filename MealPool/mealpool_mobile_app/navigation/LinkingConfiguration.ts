@@ -25,6 +25,11 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'profile',
             },
           },
+          CookProfileScreen: {
+            screens: {
+              Index: 'profile/cook',
+            },
+          },
           InfoScreen: {
             screens: {
               Index: 'info',

@@ -21,7 +21,6 @@ import UserService from '../services/user_service';
 export default function SocialScreen({ navigation }: RootTabScreenProps<'SocialScreen'>) {
   const [searchVal, setSearchVal] = React.useState('');
   const [users, setUsers] = React.useState(Array);
-
   React.useEffect(() => {
    
     UserService.getUsers().then(response=> {
@@ -46,10 +45,11 @@ export default function SocialScreen({ navigation }: RootTabScreenProps<'SocialS
             <CustomHeader value="Cooks on fire!"/>
 
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
-          {users.map((item : any) => {
+          {users.map((item : any, index) => {
                 return <CookCard
                      firstName={item.firstName}
                      lastName={item.lastName}
+                     id={item.id}
                 />
             })} 
           </View>
