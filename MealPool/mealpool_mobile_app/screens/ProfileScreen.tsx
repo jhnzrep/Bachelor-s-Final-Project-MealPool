@@ -79,7 +79,7 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
                     <View style={{width: '50%'}}>
                         <SubmitButton
                         text="See reviews" 
-                        onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
+                        onPress={() =>navigation.navigate('ReviewScreen')} 
                         />
                     </View>
                 </View>
@@ -87,7 +87,7 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
                     <Text style={{width: '50%', textDecorationLine: 'underline'}}> 54 reviews given </Text>
                     <View style={{width: '50%'}}>
                         <SubmitButton
-                        onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
+                        onPress={() =>navigation.navigate('ReviewScreen')} 
                         text="See given reviews" 
                         />
                     </View>
@@ -111,7 +111,7 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
                 <View style={{width: '50%'}}>
                     <SubmitButton 
                         text="Edit Profile"
-                        onPress={() =>navigation.navigate('Root', { screen: 'EditProfileScreen'})} 
+                        onPress={() =>navigation.navigate('EditProfileScreen')} 
                     />
                 </View>
             </View>

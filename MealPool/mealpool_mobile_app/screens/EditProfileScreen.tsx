@@ -13,7 +13,7 @@ import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import CustomHeader from '../components/CustomHeader';
 import { useGlobalContext } from '../GlobalContext';
 
-export default function EditProfileScreen ({ navigation }: RootTabScreenProps<'EditProfileScreen'>) {
+export default function EditProfileScreen ({ navigation }: RootStackScreenProps<'EditProfileScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
   const [lname, setLname] = React.useState({ value: '', error: ''});
   const [email, setEmail] = React.useState({ value: '', error: ''});

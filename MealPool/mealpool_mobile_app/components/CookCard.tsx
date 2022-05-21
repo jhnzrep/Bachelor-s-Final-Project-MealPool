@@ -38,10 +38,10 @@ export default function CookCard(props: any){
 
        /*  navigation.navigate('Root'), {
           screen: 'ProfileScreen'        }; */
-        navigation.navigate('Root', { screen: 'CookProfileScreen', params: {cook: cook}})
+        navigation.navigate('CookProfileScreen', {params: {cook: cook}})
 
     }
-
+ 
   const id = props.id
   return (
     <View>

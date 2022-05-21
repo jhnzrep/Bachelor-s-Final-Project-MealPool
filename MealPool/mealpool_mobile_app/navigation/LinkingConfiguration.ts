@@ -25,11 +25,7 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'profile',
             },
           },
-          CookProfileScreen: {
-            screens: {
-              Index: 'profile/cook',
-            },
-          },
+        
           InfoScreen: {
             screens: {
               Index: 'info',
@@ -40,16 +36,7 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'meal',
             },
           },
-          ReviewScreen: {
-            screens: {
-              Index: 'review',
-            },
-          },
-          EditProfileScreen: {
-            screens: {
-              Index: 'edit/profile',
-            },
-          },
+         
           SocialScreen: {
             screens: {
               Index: 'social',
@@ -60,8 +47,10 @@ const linking: LinkingOptions<RootStackParamList> = {
       Modal: 'modal',
       NotFound: '*',
       LoginScreen: 'login',
+      ReviewScreen: 'review',
+      EditProfileScreen:  'edit/profile',
+      CookProfileScreen:  'profile/cook',
       RegisterScreen: 'register',
-     
     },
   },
 };

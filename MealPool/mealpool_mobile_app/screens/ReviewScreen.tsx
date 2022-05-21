@@ -15,7 +15,7 @@ import ReviewService from '../services/review_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
 
 
-export default function ReviewScreen({ navigation }: RootTabScreenProps<'ReviewScreen'>) {
+export default function ReviewScreen({ navigation }: RootStackScreenProps<'ReviewScreen'>) {
   const [reviews, setReviews] = React.useState(Array);
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)

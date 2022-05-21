@@ -13,14 +13,14 @@ import { Text, View } from '../components/Themed';
 import { food_category_mock_data } from '../constants/MockData';
 import MealService from '../services/meal_service';
 import ReviewService from '../services/review_service';
-import { RootTabScreenProps } from '../types';
+import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import { useGlobalContext } from '../GlobalContext';
 import { useRoute } from '@react-navigation/native';
 import UserService from '../services/user_service';
 import { useMemo } from 'react';
 
 
-export default function CookProfileScreen({ navigation }: RootTabScreenProps<'CookProfileScreen'>) {
+export default function CookProfileScreen({ navigation }: RootStackScreenProps<'CookProfileScreen'>) {
   const route = useRoute();
   let paramId = route.params.id
   console.log(paramId, "PARAMID")
@@ -101,7 +101,7 @@ export default function CookProfileScreen({ navigation }: RootTabScreenProps<'Co
                     <View style={{width: '50%'}}>
                         <SubmitButton
                         text="See reviews" 
-                        onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
+                        onPress={() =>navigation.navigate('ReviewScreen')} 
                         />
                     </View>
                 </View>
@@ -109,7 +109,7 @@ export default function CookProfileScreen({ navigation }: RootTabScreenProps<'Co
                     <Text style={{width: '50%', textDecorationLine: 'underline'}}> 54 reviews given </Text>
                     <View style={{width: '50%'}}>
                         <SubmitButton
-                        onPress={() =>navigation.navigate('Root', { screen: 'ReviewScreen'})} 
+                        onPress={() =>navigation.navigate('ReviewScreen')} 
                         text="See given reviews" 
                         />
                     </View>

@@ -56,7 +56,10 @@ function RootNavigator() {
     <Stack.Navigator  screenOptions={{ headerShown: false }}>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />  
+        <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} options={{ headerShown: false }} /> 
+        <Stack.Screen name="CookProfileScreen" component={CookProfileScreen} options={{ headerShown: false }} /> 
+        <Stack.Screen name="ReviewScreen" component={ReviewScreen} options={{ headerShown: false }} />
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Modal" component={ModalScreen} />
@@ -73,6 +76,7 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+
 
   return (
     <BottomTab.Navigator
@@ -105,27 +109,6 @@ function BottomTabNavigator() {
        <BottomTab.Screen
         name="MealOfferScreen"
         component={MealOfferScreen}
-        options={{
-          tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
-        }}
-      />
-       <BottomTab.Screen
-        name="ReviewScreen"
-        component={ReviewScreen}
-        options={{
-          tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
-        }}
-      />
-       <BottomTab.Screen
-        name="EditProfileScreen"
-        component={EditProfileScreen}
-        options={{
-          tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
-        }}
-      />
-        <BottomTab.Screen
-        name="CookProfileScreen"
-        component={CookProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
         }}
