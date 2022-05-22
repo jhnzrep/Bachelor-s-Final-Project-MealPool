@@ -22,15 +22,7 @@ export default function App() {
   useEffect(() => {
     Async_Storage.getData()
     .then((response) => { 
-      const data =  response
-      /* if (data == "") {
-         setIsLoggedIn(false)
-      }
-      else{
-         setIsLoggedIn(true)
-      } */
       UserService.getUserById("62745649a0293dc967bbe5b3").then(response=> {
-        console.log("USER SERVICE", response)
         setUser([{
           id: response.id,
           fnameVal: response.firstName,
@@ -46,15 +38,9 @@ export default function App() {
           reviewObj: []
         }])
       })  
-
-     
     })
-  
-   
   }, [])
   
-
- 
 
   if (!isLoadingComplete) {
     return null;

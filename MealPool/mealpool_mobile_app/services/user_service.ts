@@ -36,7 +36,6 @@ import { API_URL } from './API_URL';
     .get(API_URL + `api/User/Search?name=${searchVal}`)
     .then(function (response) {
       response = response.data
-      console.log(API_URL + `api/User/Search?name=${searchVal}`)
       console.log(response)
       return response
     })

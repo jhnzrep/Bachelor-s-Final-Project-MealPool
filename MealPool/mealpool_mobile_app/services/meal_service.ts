@@ -53,7 +53,6 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
     postalCode: postalCodeVal
   })
   .then(function (response) {
-    console.log("MEAL WAS ADDED")
     console.log(response.data)
     return response
   })

@@ -34,12 +34,7 @@ export default function CookCard(props: any){
   const navigation = useNavigation();
 
    if ( Object.keys(cook).length != 0 ) {
-        console.log("it works :)", typeof(cook))
-
-       /*  navigation.navigate('Root'), {
-          screen: 'ProfileScreen'        }; */
         navigation.navigate('CookProfileScreen', {cook: cook})
-
     }
  
   const id = props.id

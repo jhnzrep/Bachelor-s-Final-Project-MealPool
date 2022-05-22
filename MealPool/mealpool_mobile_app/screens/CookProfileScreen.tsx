@@ -31,16 +31,6 @@ export default function CookProfileScreen({ navigation }: RootStackScreenProps<'
   const authorId = user[0].id;
   const ratedId =  route.params.cook[0].id;
 
-  React.useEffect(() => {
-    console.log("AAAAAAAAAA", )     
-  }, [rendered])
-  console.log()
-
-  
-  const cook = route.params.cook
-  console.log("USER!!!", route.params.cook[0])
-  console.log("COOKNAME!!!", route.params.cook[0])
-
   const postReview = () => {
     ReviewService.postReview({authorId,ratedId, stars, comment});
   }

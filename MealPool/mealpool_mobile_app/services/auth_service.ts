@@ -21,7 +21,6 @@ const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
     })
     .then(function (response) {
       Async_Storage.storeData(response.data)
-      console.log("INSIDE LOGIN", response)
       return "success";
     })
     .catch(function (error) {
