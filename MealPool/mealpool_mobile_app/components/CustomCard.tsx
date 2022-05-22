@@ -33,7 +33,17 @@ export default function CustomCard(props: any){
                         </View>
                         <View style={styles.card_right_content}>
                             <Text style={styles.highlighted_text}>350 kcal </Text>
-                            <SubmitButton text="Order now"  small_button={true}/>
+                            {
+                                !props.orderBtnHide ? 
+                                <SubmitButton 
+                                text="Order now"  
+                                small_button={true}
+                                onPress={props.orderNowAction}
+                                />
+                                :
+                                null
+                            }
+                          
                         </View>
                     </View>
                 </View>
@@ -98,7 +108,16 @@ export default function CustomCard(props: any){
                     </View>
                 </View>
                 <View>
-                    <SubmitButton text="Order now"  small_button={true}/>
+                    {
+                        !props.orderBtnHide ? 
+                        <SubmitButton 
+                        text="Order now"  
+                        small_button={true}
+                        onPress={props.orderNowAction}
+                        />
+                        :
+                        null
+                    }
                     <Text style={[styles.read_more, {textAlign: 'center'}]}
                     onPress={readMore}
                     >Read less </Text>

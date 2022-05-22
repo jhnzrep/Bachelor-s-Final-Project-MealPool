@@ -30,6 +30,7 @@ import EditProfileScreen from '../screens/EditProfileScreen';
 import SocialScreen from '../screens/SocialScreen';
 import { useGlobalContext } from '../GlobalContext';
 import CookProfileScreen from '../screens/CookProfileScreen';
+import ConfirmPaymentScreen from '../screens/ConfirmPaymentScreen';
 
 
 
@@ -59,6 +60,7 @@ function RootNavigator() {
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />  
         <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} options={{ headerShown: false }} /> 
         <Stack.Screen name="CookProfileScreen" component={CookProfileScreen} options={{ headerShown: false }} /> 
+        <Stack.Screen name="ConfirmPaymentScreen" component={ConfirmPaymentScreen} options={{ headerShown: false }} /> 
         <Stack.Screen name="ReviewScreen" component={ReviewScreen} options={{ headerShown: false }} />
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />

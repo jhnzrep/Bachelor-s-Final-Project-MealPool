@@ -156,6 +156,7 @@ const checkJwtExpiration =  async () => {
           
             {meals.map((item : any) => {
                 return <CustomCard
+                     orderNowAction={() => navigation.navigate('ConfirmPaymentScreen', {item: item})}
                      title={item.name}
                 />
             })} 

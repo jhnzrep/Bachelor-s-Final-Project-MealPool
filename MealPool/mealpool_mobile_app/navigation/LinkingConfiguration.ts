@@ -50,6 +50,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       ReviewScreen: 'review',
       EditProfileScreen:  'edit/profile',
       CookProfileScreen:  'profile/cook',
+      ConfirmPaymentScreen:  'meal/confirm',
       RegisterScreen: 'register',
     },
   },
