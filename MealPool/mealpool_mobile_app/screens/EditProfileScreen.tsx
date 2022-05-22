@@ -12,6 +12,7 @@ import AuthService from '../services/auth_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import CustomHeader from '../components/CustomHeader';
 import { useGlobalContext } from '../GlobalContext';
+import UserService from '../services/user_service';
 
 export default function EditProfileScreen ({ navigation }: RootStackScreenProps<'EditProfileScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
@@ -80,7 +81,8 @@ export default function EditProfileScreen ({ navigation }: RootStackScreenProps<
   const checkTextInput = (e : any) => {
     e.preventDefault();
     if (password.value == rpassword.value) {
-      AuthService.registerUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj});
+      console.log("AAAAAAAAAAAAAA")
+      UserService.editUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj}, user[0].id);
     }
   }
 

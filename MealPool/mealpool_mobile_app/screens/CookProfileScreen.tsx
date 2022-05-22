@@ -117,13 +117,6 @@ export default function CookProfileScreen({ navigation }: RootStackScreenProps<'
                   />
               })}
             </ScrollView>
-            <View style={styles.edit_profile_wrapper}>
-                <View style={{width: '50%'}}>
-                    <SubmitButton 
-                        text="Edit Profile"
-                    />
-                </View>
-            </View>
         </View>
         </ScrollView>
         <Modal

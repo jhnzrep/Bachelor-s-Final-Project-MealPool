@@ -1,16 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { EmptyObject } from 'react-hook-form';
+import { Review } from '../types/Review';
 import { LoginUser, RegisterUser } from '../types/User';
 import { API_URL } from './API_URL';
 import Async_Storage from './asyncStorage';
-
-type reviewObj ={
-  authorId: string,
-  ratedId: string,
-  stars: Number,
-  comment: String
-}
 
 
 const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
@@ -29,7 +23,7 @@ const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
     });
 }
 
-const array_emp: reviewObj[] = [
+const array_emp: Review[] = [
   { authorId: "dsad", ratedId: "sadasd", stars: 0,  comment: "dsada"}
 ]
 
