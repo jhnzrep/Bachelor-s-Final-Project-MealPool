@@ -31,6 +31,12 @@ export type PasswordValues = {
     reviewObj: Array<EmptyObject>
 };
 
+export type UserSearch = {
+    searchVal: string;
+};
+
+
+
 export const userValue = [{
     fnameVal: "",
     lnameVal: "",
@@ -44,3 +50,4 @@ export const userValue = [{
     phoneVal: "",
     reviewObj: []
   }]
+

@@ -28,6 +28,15 @@ export default function SocialScreen({ navigation }: RootTabScreenProps<'SocialS
     })  
 }, [])
 
+  const handleKeyDown = (e : any) => {
+    if(e.nativeEvent.key == "Enter"){
+      UserService.searchUser({searchVal}).then(response=> {
+        setUsers(response);
+      })         
+    }
+  }
+
+
   return (
     <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
       <Navigation/> 
@@ -38,6 +47,7 @@ export default function SocialScreen({ navigation }: RootTabScreenProps<'SocialS
             <CustomInput
                 setValue={(text : string) => setSearchVal(text)}
                 value={searchVal}
+                onKeyPress={handleKeyDown}
                 search={true}
                 placeholder="What meal do you want to try today?"
             />

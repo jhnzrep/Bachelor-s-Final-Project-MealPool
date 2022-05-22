@@ -38,7 +38,7 @@ export default function CookCard(props: any){
 
        /*  navigation.navigate('Root'), {
           screen: 'ProfileScreen'        }; */
-        navigation.navigate('CookProfileScreen', {params: {cook: cook}})
+        navigation.navigate('CookProfileScreen', {cook: cook})
 
     }
  

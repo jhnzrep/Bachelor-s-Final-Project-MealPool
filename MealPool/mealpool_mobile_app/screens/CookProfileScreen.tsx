@@ -22,8 +22,6 @@ import { useMemo } from 'react';
 
 export default function CookProfileScreen({ navigation }: RootStackScreenProps<'CookProfileScreen'>) {
   const route = useRoute();
-  let paramId = route.params.id
-  console.log(paramId, "PARAMID")
   const [searchVal, setSearchVal] = React.useState('');
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)
