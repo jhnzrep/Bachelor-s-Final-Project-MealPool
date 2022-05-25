@@ -25,10 +25,20 @@ import { useEffect } from 'react';
 
 
 export default function ConfirmPaymentScreen({ navigation }: RootStackScreenProps<'ConfirmPaymentScreen'>) {
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const route = useRoute();
   const [loading, setLoading] = React.useState(false);
   let meals = route.params.item
   meals = [meals].flat()
+  const userId = meals[0].cookId
+  const mealId = meals[0]._id;
+  console.log(userId, mealId)
+  const makeRequest = () => {
+    MealService.requestMeal({userId, mealId }).then(response=> {
+      console.log(response)
+    })  
+    console.log("AAAAAAAAA")
+  }
 
 
   return (
@@ -55,9 +65,10 @@ export default function ConfirmPaymentScreen({ navigation }: RootStackScreenProp
             </View>
          </View>
 
-        <View >
+        <View  style={{alignItems: 'center'}}>
             <SubmitButton 
-                text="Buy now"  
+                onPress={makeRequest}
+                text="Make request"  
             />
         </View>
 

@@ -62,6 +62,57 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
   });
 }
 
+const requestMeal = ({userId, mealId } : MealRequest) => {
+  console.log(new Date().toLocaleString())
+  return axios
+  .post(API_URL + 'api/Meal/Request', {
+    userId: userId,
+    mealId: mealId
+  })
+  .then(function (response) {
+    console.log(response.data)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
+const acceptRequestMeal = ({userId, mealId } : MealRequest) => {
+  console.log(new Date().toLocaleString())
+  return axios
+  .post(API_URL + 'api/Meal/acceptRequest', {
+    userId: userId,
+    mealId: mealId
+  })
+  .then(function (response) {
+    console.log(response.data)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
+const declineRequestMeal = ({userId, mealId } : MealRequest) => {
+  console.log(new Date().toLocaleString())
+  return axios
+  .post(API_URL + 'api/Meal/declineRequest', {
+    userId: userId,
+    mealId: mealId
+  })
+  .then(function (response) {
+    console.log(response.data)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
 const searchMeal = ({searchVal} : MealSearch) => {
   return axios
   .get(API_URL + `api/Meal/Search?name=${searchVal}`)
@@ -81,6 +132,9 @@ const MealService = {
     getMeals,
     addMeal,
     searchMeal,
-    getMealsByCategory
+    getMealsByCategory,
+    requestMeal,
+    acceptRequestMeal,
+    declineRequestMeal
 }
 export default MealService;

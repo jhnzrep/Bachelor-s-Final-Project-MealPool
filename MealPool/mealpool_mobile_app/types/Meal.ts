@@ -14,3 +14,8 @@ type MealSearch = {
     searchVal: string;
 };
 
+type MealRequest = {
+    userId: string;
+    mealId: string;
+}
+
