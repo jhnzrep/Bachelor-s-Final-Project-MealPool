@@ -84,6 +84,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     justifyContent: 'center',
+    maxWidth: 1400,
+    margin: 'auto',
   },
   scroll_container: {
     width: '100%',

@@ -20,7 +20,7 @@ import UserService from '../services/user_service';
 import { useMemo } from 'react';
 
 
-export default function CookProfileScreen({ navigation }: RootStackScreenProps<'CookProfileScreen'>) {
+export default function CookProfileScreen({ navigation: {goBack} }: RootStackScreenProps<'CookProfileScreen'>) {
   const route = useRoute();
   const [searchVal, setSearchVal] = React.useState('');
   const [comment, setComment] = React.useState('');
@@ -39,7 +39,13 @@ export default function CookProfileScreen({ navigation }: RootStackScreenProps<'
 
   return (
     <View  style={styles.container}>
-        <Text>Profile Type</Text>
+        <View style={{width: '30%'}}>
+            <SubmitButton 
+            text="<- Go back"
+            onPress={() => goBack()} 
+            />
+        </View>
+        
         <ScrollView style={styles.scroll_container}>
             <View style={{flex: 1,  justifyContent: 'center', alignItems: 'center', marginTop: 50, position: 'relative' }}>
                     <Image source={require('../assets/images/profile_picture.png')}  style={styles.profile_picture} />
@@ -53,10 +59,10 @@ export default function CookProfileScreen({ navigation }: RootStackScreenProps<'
                 <Text>Is logged in???? {isLoggedIn}</Text>
             </View>
             <View style={[styles.user_reviews, {padding: 10}]}>
-                <View style={{width: '50%'}}>
+                <View style={{width: '50%', alignItems: 'center'}}>
                     <SubmitButton text="Follow" />
                 </View>                    
-                <View style={{width: '50%'}}>
+                <View style={{width: '50%', alignItems: 'center'}}>
                     <SubmitButton 
                     text="Write review" 
                     onPress={() => setModalVisible(true)} 
@@ -145,6 +151,8 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingRight: 20,
     paddingLeft: 20,
+    maxWidth: 1400,
+    margin: 'auto'
   },
   profile_picture: {
     borderRadius: 100,

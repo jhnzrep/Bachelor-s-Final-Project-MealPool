@@ -138,11 +138,14 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     justifyContent: 'center',
+    
   },
   scroll_container: {
     width: '100%',
     paddingRight: 20,
     paddingLeft: 20,
+    maxWidth: 1400,
+    margin: 'auto',
   },
   profile_picture: {
     borderRadius: 100,

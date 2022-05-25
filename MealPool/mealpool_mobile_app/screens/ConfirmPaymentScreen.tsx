@@ -30,6 +30,7 @@ export default function ConfirmPaymentScreen({ navigation }: RootStackScreenProp
   const [loading, setLoading] = React.useState(false);
   let meals = route.params.item
   meals = [meals].flat()
+  console.log("MMMMMMEALS", meals)
   const userId = meals[0].cookId
   const mealId = meals[0]._id;
   console.log(userId, mealId)
@@ -84,7 +85,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,            // all the available vertical space will be occupied by it
     alignContent: 'space-between',
     justifyContent: 'space-between', // will create the gutter between body and footer
-    color: Colors.text_color.background
+    color: Colors.text_color.background,
+    maxWidth: 1400,
+    margin: 'auto'
   },
   scroll_container: {
     width: '100%',

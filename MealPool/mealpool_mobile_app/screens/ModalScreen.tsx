@@ -22,6 +22,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    maxWidth: 1400,
+    margin: 'auto'
   },
   title: {
     fontSize: 20,

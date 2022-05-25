@@ -1,6 +1,6 @@
 import React from "react";
 import Colors from '../constants/Colors';
-import { StyleSheet, View, Text, SectionList, Image, FlatList } from "react-native";
+import { StyleSheet, View, Text, SectionList, Image, FlatList, useWindowDimensions } from "react-native";
 import CustomHeader from "./CustomHeader";
 import SubmitButton from "./SubmitButton";
 import { Platform } from 'react-native';
@@ -8,12 +8,15 @@ import { Platform } from 'react-native';
 
 export default function CustomCard(props: any){
     const [toggleContent, setToggleContent] = React.useState(false)
+    const window = useWindowDimensions();
+    const isDesktopDevice = window.width > 768;
+  
 
     const readMore = () => {
         setToggleContent(!toggleContent)
     }
   return (
-    <View style={{width: '100%'}}>
+    <View style={isDesktopDevice ? [{flexBasis: '50%',  maxWidth: '100%', flex:1}] : [{flexBasis: '100%'}]}>
         {!toggleContent ? 
         <View style={styles.card}>
             <View style={styles.card_content}>

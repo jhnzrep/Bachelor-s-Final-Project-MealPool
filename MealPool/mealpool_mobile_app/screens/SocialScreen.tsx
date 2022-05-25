@@ -77,7 +77,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',  
     justifyContent: 'center',
-    color: Colors.text_color.background
+    color: Colors.text_color.background,
+    maxWidth: 1400,
+    margin: 'auto',
   },
   scroll_container: {
     width: '100%',

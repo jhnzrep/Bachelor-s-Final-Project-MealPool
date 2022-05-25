@@ -153,13 +153,15 @@ const checkJwtExpiration =  async () => {
             {searchTitle == "Searched offers" ? <Text>Found items: {foundItems}</Text>  : null } 
             <View>
           </View>
-          
+          <View style={{flex: 1, flexWrap: 'wrap', flexDirection: 'row'}}>
             {meals.map((item : any) => {
-                return <CustomCard
-                     orderNowAction={() => navigation.navigate('ConfirmPaymentScreen', {item: item})}
-                     title={item.name}
-                />
-            })} 
+                  return <CustomCard
+                      orderNowAction={() => navigation.navigate('ConfirmPaymentScreen', {item: item})}
+                      title={item.name}
+                  />
+              })} 
+          </View>
+           
 
         </View>
         </ScrollView> 
@@ -174,7 +176,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',  
     justifyContent: 'center',
-    color: Colors.text_color.background
+    color: Colors.text_color.background,
+    maxWidth: 1400,
+    margin: 'auto'
   },
   scroll_container: {
     width: '100%',

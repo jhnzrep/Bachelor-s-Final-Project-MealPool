@@ -54,7 +54,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   return (
-    <Stack.Navigator  screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />  

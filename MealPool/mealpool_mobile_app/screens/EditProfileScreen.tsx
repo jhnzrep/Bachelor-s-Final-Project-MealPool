@@ -202,6 +202,8 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingLeft: 70,
     paddingRight: 70,
+    maxWidth: 1400,
+    margin: 'auto'
   },
   custom_input_desktop_wrapper: {
     width: 330

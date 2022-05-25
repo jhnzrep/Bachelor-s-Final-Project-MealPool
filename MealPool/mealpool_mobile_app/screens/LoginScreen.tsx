@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
 
 
   const window = useWindowDimensions();
-  const desktop = window.width < 768;
+  const desktop = window.width > 768;
   // State Management
   const [textInputPassword, setTextInputPassword] = React.useState({ value: '', error: 'sadasds'});
   const [textInputEmail, setTextInputEmail] = React.useState({value: '', error: ''}); 
@@ -67,7 +67,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       <View style={styles.container}>
 
         {
-          desktop ? <Logo type="main" show_title={true} /> :  <DesktopNavigation/>
+          desktop ?  <DesktopNavigation/>  : <Logo type="main" show_title={true} />  
         }
 
         <CustomHeader value="Sign In" />
@@ -127,9 +127,12 @@ const styles = StyleSheet.create({
     color: Colors.text_color.background,
     paddingLeft: 70,
     paddingRight: 70,
+
   },
   custom_input_desktop_wrapper: {
-    width: 330
+    width: 330,
+    maxWidth: 1400,
+    margin: 'auto'
   },
   custom_input_mobile_wrapper: {
     width: '100%'

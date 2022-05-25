@@ -207,9 +207,11 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingLeft: 70,
     paddingRight: 70,
+
   },
   custom_input_desktop_wrapper: {
-    width: 330
+    width: 330,
+
   },
   custom_input_mobile_wrapper: {
     width: '100%'

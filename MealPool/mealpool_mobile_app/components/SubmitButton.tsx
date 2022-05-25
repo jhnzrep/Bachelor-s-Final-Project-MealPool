@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      color: 'white'
+      color: 'white',
+      maxWidth: 300,
     },
     button: {
       backgroundColor: '#EA9B58',
