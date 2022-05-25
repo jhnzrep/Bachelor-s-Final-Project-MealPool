@@ -54,13 +54,19 @@ export default function ReviewScreen({ navigation }: RootStackScreenProps<'Revie
                 />
             </View>
             <View>
-            {reviews.map((item : any) => {
+            {
+            typeof reviews !== 'undefined' && reviews.length > 0 ? 
+            reviews.map((item : any) => {
              return <ReviewCard 
                 title="Lorem ipsum"
                 comment={item.comment}
                 stars={item.stars}
                 />
-            })} 
+            })
+
+            : 
+            <Text style={{textAlign: 'center', marginTop: 40, fontSize: 20}}>The user does not have any reviews yet</Text>
+            } 
             </View>
 
         </ScrollView>

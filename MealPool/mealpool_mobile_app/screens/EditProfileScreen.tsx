@@ -13,8 +13,9 @@ import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import CustomHeader from '../components/CustomHeader';
 import { useGlobalContext } from '../GlobalContext';
 import UserService from '../services/user_service';
+import GoBackButton from '../components/GoBackButton';
 
-export default function EditProfileScreen ({ navigation }: RootStackScreenProps<'EditProfileScreen'>) {
+export default function EditProfileScreen ({ navigation: {goBack} }: RootStackScreenProps<'EditProfileScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
   const [lname, setLname] = React.useState({ value: '', error: ''});
   const [email, setEmail] = React.useState({ value: '', error: ''});
@@ -93,6 +94,10 @@ export default function EditProfileScreen ({ navigation }: RootStackScreenProps<
         {
             desktop ? null :  <DesktopNavigation/>
         }
+        
+          <GoBackButton
+              onPress={() => goBack()} 
+          />
         <View style={[!desktop ? styles.custom_input_desktop_wrapper : styles.custom_input_mobile_wrapper, {marginTop: 33}]}>
           <CustomHeader  value="Edit Profile" />
 

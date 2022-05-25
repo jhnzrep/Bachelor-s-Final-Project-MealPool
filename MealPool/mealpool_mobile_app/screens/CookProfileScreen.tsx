@@ -18,6 +18,7 @@ import { useGlobalContext } from '../GlobalContext';
 import { useRoute } from '@react-navigation/native';
 import UserService from '../services/user_service';
 import { useMemo } from 'react';
+import GoBackButton from '../components/GoBackButton';
 
 
 export default function CookProfileScreen({ navigation: {goBack} }: RootStackScreenProps<'CookProfileScreen'>) {
@@ -39,10 +40,9 @@ export default function CookProfileScreen({ navigation: {goBack} }: RootStackScr
 
   return (
     <View  style={styles.container}>
-        <View style={{width: '30%'}}>
-            <SubmitButton 
-            text="<- Go back"
-            onPress={() => goBack()} 
+        <View>
+            <GoBackButton
+                onPress={() => goBack()} 
             />
         </View>
         

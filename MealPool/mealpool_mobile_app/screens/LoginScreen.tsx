@@ -54,7 +54,7 @@ export default function LoginScreen({ navigation }: RootStackScreenProps<'LoginS
       //Async_Storage.storeData(response)
       if (response == "success") {
         setIsLoggedIn(true)
-        return navigation.navigate('Root')
+        return navigation.navigate('Root', {screen: 'Index'})
       }
       alert('Login was not sucessfull.') 
     })
