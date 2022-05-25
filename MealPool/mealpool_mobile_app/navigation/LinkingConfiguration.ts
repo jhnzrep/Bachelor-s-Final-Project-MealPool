@@ -36,10 +36,14 @@ const linking: LinkingOptions<RootStackParamList> = {
               Index: 'meal',
             },
           },
-         
           SocialScreen: {
             screens: {
               Index: 'social',
+            },
+          },
+          RequestScreen: {
+            screens: {
+              Index: 'request',
             },
           },
         },

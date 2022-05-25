@@ -31,6 +31,7 @@ import SocialScreen from '../screens/SocialScreen';
 import { useGlobalContext } from '../GlobalContext';
 import CookProfileScreen from '../screens/CookProfileScreen';
 import ConfirmPaymentScreen from '../screens/ConfirmPaymentScreen';
+import RequestScreen from '../screens/RequestScreen';
 
 
 
@@ -118,6 +119,13 @@ function BottomTabNavigator() {
        <BottomTab.Screen
         name="SocialScreen"
         component={SocialScreen}
+        options={{
+          tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="RequestScreen"
+        component={RequestScreen}
         options={{
           tabBarIcon: ({ color, size }) =><AntDesign name="pluscircle" size={size} color={color} />,
         }}

@@ -37,6 +37,7 @@ export type RootTabParamList = {
   MealOfferScreen: undefined;
   InfoScreen: undefined;
   SocialScreen: undefined;
+  RequestScreen: undefined;
 };
 
 
