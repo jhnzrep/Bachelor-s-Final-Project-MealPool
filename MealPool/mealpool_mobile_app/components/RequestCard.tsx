@@ -5,6 +5,7 @@ import { StyleSheet, View, Image, Text, FlatList, Button, Pressable } from "reac
 import Logo from "./Logo";
 
 export default function RequestCard(props: any){
+  let points = props.points
   return (
 
     <View style={styles.card}>
@@ -14,7 +15,7 @@ export default function RequestCard(props: any){
 
         <Text style={{fontSize: 14, fontWeight: '700', marginTop: 20}}>Do you want to accept request?</Text>
         <View style={styles.request_image_wrapper}>
-            <Pressable onPress={props.acceptRequest}>
+            <Pressable onPress={ props.acceptRequest}>
                 <Image 
                 source={require('../assets/images/accept.png')}  
                 style={styles.request_image} 

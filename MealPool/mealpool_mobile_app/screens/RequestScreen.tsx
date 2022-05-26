@@ -33,16 +33,28 @@ export default function RequestScreen({ navigation }: RootTabScreenProps<'Reques
   const [cookedMeals, setCookedMeals] = React.useState(Array);
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
 
-  const acceptRequest = () => {
-    console.log("ACCEPT")
+  const acceptRequest = (userId, mealId, item) => {
+    console.log("ACCEPT", userId, mealId)
+    MealService.acceptRequestMeal({userId, mealId}).then(response=> {
+      setRequestedMeals(response)
+    })  
   }
-  const declineRequest = () => {
-    console.log("DECLINE")
+  const declineRequest = (userId, mealId, item) => {
+    MealService.declineRequestMeal({userId, mealId}).then(response=> {
+      setRequestedMeals(response)
+    }) 
   }
+  React.useEffect(() => {
+    return () => {
+      setCookedMeals([]); // This worked for me
+      setRequestedMeals([])
+    };
+  }, []);
+
+
   React.useEffect(() => {
     MealService.getRequestedMeals(user[0].id).then(response=> {
       setRequestedMeals(response)
-    
     })  
 
     MealService.getCookedMeals(user[0].id).then(response=> {
@@ -60,34 +72,44 @@ return (
           <CustomHeader value="Your requested meals" />
 
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
-        {requestedMeals.map((item : any, index) => {
+        {
+        requestedMeals.length > 0 ?
+        requestedMeals.map((item : any, index) => {
               return <RequestCard
                    id={item.cookId}
               />
-          })} 
+          })
+        : null
+        } 
         </View>
 
         <CustomHeader value="Users requested meals from you" />
 
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
           
-        {cookedMeals.map((item : any, index : any) => {
+        {
+        cookedMeals.length > 0? 
+        cookedMeals.map((item : any, index : any) => {
           <Text>LOOL{item}</Text>
           if (item.requests.length > 0) {
             return item.requests.map((item2 : any) => {
-              console.log("ITEM2", item2.points)
+              console.log("ITEM", item._id)
+              const points = item2
+              console.log("POINTS", points)
               return <RequestCard
                   points={item2.points}
                   status={item2.status}
                   userId={item2.userid}
-                  acceptRequest={acceptRequest}
-                  declineRequest={declineRequest}
+                  acceptRequest={acceptRequest.bind(this, item2.userid, item._id)}
+                  declineRequest={declineRequest.bind(this, item2.userid, item._id )}
 
               />
             })
           
           }
-          })} 
+          })
+        : null
+        } 
         </View>
 
 
