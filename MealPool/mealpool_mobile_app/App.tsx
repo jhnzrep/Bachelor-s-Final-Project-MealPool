@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 import { MyGlobalContext } from './GlobalContext';
 import { EmptyObject } from 'react-hook-form';
 
@@ -11,6 +12,8 @@ import Navigation from './navigation';
 import { RegisterUser, userValue } from './types/User';
 import Async_Storage from './services/asyncStorage';
 import UserService from './services/user_service';
+import jwt_decode from "jwt-decode";
+
 
 export default function App() {
   const [user, setUser] = useState<Array<RegisterUser>>(userValue)
@@ -20,9 +23,14 @@ export default function App() {
   const colorScheme = useColorScheme();
 
   useEffect(() => {
+
     Async_Storage.getData()
-    .then((response) => { 
-      UserService.getUserById("62745649a0293dc967bbe5b3").then(response=> {
+    .then((response) => {
+      if (response == undefined ) {
+        return;
+      }
+      var decoded : any =  jwt_decode(response);
+      UserService.getUserById(decoded.UserId).then(response=> {
         setUser([{
           id: response.id,
           fnameVal: response.firstName,
@@ -35,7 +43,9 @@ export default function App() {
           countryVal: "",
           postalCodeVal: "",
           phoneVal: "",
-          reviewObj: []
+          reviewObj: [],
+          requestedMeals: response.requestedMeals,
+          cookedMeals: response.cookedMeals,
         }])
       })  
     })
@@ -46,8 +56,8 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <MyGlobalContext.Provider value= {{ user, setUser, isLoggedIn, setIsLoggedIn }}>
+      <SafeAreaProvider >
+        <MyGlobalContext.Provider  value= {{ user, setUser, isLoggedIn, setIsLoggedIn }}>
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
         </MyGlobalContext.Provider>

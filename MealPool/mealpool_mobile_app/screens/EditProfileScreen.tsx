@@ -78,12 +78,23 @@ export default function EditProfileScreen ({ navigation: {goBack} }: RootStackSc
   
   const reviewObj: reviewObj[] = [
   ]
+
+  type cookedMeals ={
+  }
+  
+  const cookedMeals: cookedMeals[] = [
+  ]
+  type requestedMeals ={
+  }
+  
+  const requestedMeals: requestedMeals[] = [
+  ]
   
   const checkTextInput = (e : any) => {
     e.preventDefault();
     if (password.value == rpassword.value) {
       console.log("AAAAAAAAAAAAAA")
-      UserService.editUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj}, user[0].id);
+      UserService.editUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj, cookedMeals, requestedMeals}, user[0].id);
     }
   }
 

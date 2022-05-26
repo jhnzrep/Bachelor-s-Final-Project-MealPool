@@ -29,6 +29,8 @@ export type PasswordValues = {
     postalCodeVal: string;
     phoneVal: string;
     reviewObj: Array<EmptyObject>
+    requestedMeals: Array<EmptyObject>,
+    cookedMeals: Array<EmptyObject>,
 };
 
 export type UserSearch = {
@@ -48,6 +50,8 @@ export const userValue = [{
     countryVal: "",
     postalCodeVal: "",
     phoneVal: "",
-    reviewObj: []
+    reviewObj: [],
+    requestedMeals: [],
+    cookedMeals: []
   }]
 

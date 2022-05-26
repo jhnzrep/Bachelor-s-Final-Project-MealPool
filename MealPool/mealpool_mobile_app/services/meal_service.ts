@@ -44,7 +44,10 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
   .post(API_URL + 'api/Meal', {
     cookId: cookId,
     name: nameVal,
-    dateItem: new Date(),
+    price: 0,
+    maxPeople: 0,
+    requests: [],
+    dateTime: dateItemVal,
     category: categoryVal,
     description: descriptionVal,
     street: streetVal, 
@@ -128,6 +131,35 @@ const searchMeal = ({searchVal} : MealSearch) => {
   });
 }
 
+const getRequestedMeals =  (userId : String) => {
+  return axios
+  .get(API_URL + `api/Meal/getrequestedmeals?userid=${userId}`)
+  .then(function  (response) {
+    response = response.data
+    console.log(response)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
+const getCookedMeals = (userId : String) => {
+  return axios
+  .get(API_URL + `api/Meal/getcookedmeals?userid=${userId}`)
+  .then(function (response) {
+    response = response.data
+    console.log(response)
+    return response
+  })
+  .catch(function (error) {
+    console.log(error.response);
+    return error.response
+  });
+}
+
+
 const MealService = {
     getMeals,
     addMeal,
@@ -135,6 +167,8 @@ const MealService = {
     getMealsByCategory,
     requestMeal,
     acceptRequestMeal,
-    declineRequestMeal
+    declineRequestMeal,
+    getRequestedMeals,
+    getCookedMeals
 }
 export default MealService;

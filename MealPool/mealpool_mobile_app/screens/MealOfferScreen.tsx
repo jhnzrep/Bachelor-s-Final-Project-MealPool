@@ -15,6 +15,7 @@ import Navigation from '../components/Navigation';
 import SubmitButton from '../components/SubmitButton';
 import MealService from '../services/meal_service';
 import InfoModal from '../components/InfoModal';
+import { useGlobalContext } from '../GlobalContext';
 
 
 export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
@@ -30,10 +31,12 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
     const [calories, setCalories] = React.useState({ value: '', error: ''});
     const [ingredients, setIngredients] = React.useState({ value: '', error: ''});
     const [allergens, setAllergens] = React.useState({ value: '', error: ''});
+    const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+
 
     const currDate = new Date();
 
-    const cookId = "0";
+    const cookId = user[0].id;
     const nameVal = name.value;
     const dateItemVal = new Date("2023-05-05T23:56:45.469Z");
     const categoryVal = category.value;

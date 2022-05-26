@@ -1,81 +1,117 @@
 import * as React from 'react';
-import { StyleSheet, ScrollView, Pressable, Image } from 'react-native';
-import {  View, Text } from '../components/Themed';
-
-import { RootTabScreenProps } from '../types';
-import { useGlobalContext } from '../GlobalContext';
+import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList } from 'react-native';
+import { CheckBox } from 'react-native-elements'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import EditScreenInfo from '../components/EditScreenInfo';
+import Logo from '../components/Logo';
+import SubmitButton from '../components/SubmitButton';
+import { Text, View } from '../components/Themed';
+import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
-
+import CustomInput from '../components/CustomInput';
+import Navigation from '../components/Navigation';
+import SearchInput from '../components/SearchInput';
+import CustomHeader from '../components/CustomHeader';
+import CustomCard from '../components/CustomCard';
+import MealCategoryBox from '../components/MealCategoryBox';
+import { DATA, food_category_mock_data } from '../constants/MockData';
+import axios from 'axios';
+import MealService from '../services/meal_service';
+import { useGlobalContext } from '../GlobalContext';
+import Async_Storage from '../services/asyncStorage';
+import jwt_decode from "jwt-decode";
+import { useRoute } from '@react-navigation/native';
+import { useEffect } from 'react';
+import CookCard from '../components/CookCard';
+import UserService from '../services/user_service';
+import RequestCard from '../components/RequestCard';
 
 export default function RequestScreen({ navigation }: RootTabScreenProps<'RequestScreen'>) {
+ 
+  const [searchVal, setSearchVal] = React.useState('');
+  const [requestedMeals, setRequestedMeals] = React.useState(Array);
+  const [cookedMeals, setCookedMeals] = React.useState(Array);
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
 
-  return (
-    <View  style={styles.container}>
-        <ScrollView style={styles.scroll_container}>
-            <View style={styles.card}>
-                <Text>User Name</Text>
-                <Text style={{fontSize: 14, fontWeight: '700', marginTop: 20}}>Do you want to accept request?</Text>
-                <View style={styles.request_image_wrapper}>
-                    <Pressable>
-                        <Image source={require('../assets/images/accept.png')}  style={styles.request_image} />
-                    </Pressable>
-                    <Pressable>
-                        <Image source={require('../assets/images/decline.png')}  style={styles.request_image} />
-                    </Pressable>
-                </View>
-            </View>
+  const acceptRequest = () => {
+    console.log("ACCEPT")
+  }
+  const declineRequest = () => {
+    console.log("DECLINE")
+  }
+  React.useEffect(() => {
+    MealService.getRequestedMeals(user[0].id).then(response=> {
+      setRequestedMeals(response)
+    
+    })  
+
+    MealService.getCookedMeals(user[0].id).then(response=> {
+     setCookedMeals(response)
+    })  
+}, [])
+
+
+return (
+  <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
+    <Navigation/> 
+
+      <ScrollView style={styles.scroll_container}>
+      <View style={styles.container}>
+          <CustomHeader value="Your requested meals" />
+
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
+        {requestedMeals.map((item : any, index) => {
+              return <RequestCard
+                   id={item.cookId}
+              />
+          })} 
+        </View>
+
+        <CustomHeader value="Users requested meals from you" />
+
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
           
-        </ScrollView>
+        {cookedMeals.map((item : any, index : any) => {
+          <Text>LOOL{item}</Text>
+          if (item.requests.length > 0) {
+            return item.requests.map((item2 : any) => {
+              console.log("ITEM2", item2.points)
+              return <RequestCard
+                  points={item2.points}
+                  status={item2.status}
+                  userId={item2.userid}
+                  acceptRequest={acceptRequest}
+                  declineRequest={declineRequest}
 
-    </View>
+              />
+            })
+          
+          }
+          })} 
+        </View>
 
-  );
+
+      </View>
+      </ScrollView> 
+  </View>
+
+);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    
-  },
-  card: {
-    marginTop: 15,
-    backgroundColor: Colors.light_orange_full_opacity.background,
-    width: '100%',
-    height: 160,
-    maxHeight: 190,
-    borderRadius: 25,
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingLeft: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingRight: 10,
-    shadowColor: 'rgba(253, 180, 65, 0.3)',
-    shadowOffset: { width: 2, height: 6 },
-    shadowOpacity: 0.3,
-    flexWrap: 'wrap'
-  },
-  scroll_container: {
-    width: '100%',
-    paddingRight: 20,
-    paddingLeft: 20,
-    maxWidth: 1400,
-    margin: 'auto',
-  },
-  request_image_wrapper: {
-    backgroundColor: Colors.light_orange_full_opacity.background,
-    flex: 1,
-    flexDirection: 'row',
-    marginTop: 10,
-    width: '100%',
-    justifyContent: 'space-evenly'
-  },
-  request_image: {
-      height: 50,
-      width: 50,
-      backgroundColor: Colors.light_orange_full_opacity.background,
-  }
+container: {
+  flex: 1,
+  alignItems: 'center',
+  width: '100%',  
+  justifyContent: 'center',
+  color: Colors.text_color.background,
+  maxWidth: 1400,
+  margin: 'auto',
+},
+scroll_container: {
+  width: '100%',
+  paddingRight: 20,
+  paddingLeft: 20,
+},
+
 });
