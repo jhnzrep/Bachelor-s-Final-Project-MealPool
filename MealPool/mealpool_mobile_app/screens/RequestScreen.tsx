@@ -63,6 +63,9 @@ export default function RequestScreen({ navigation }: RootTabScreenProps<'Reques
 }, [])
 
 
+console.log("REQQE", requestedMeals)
+
+
 return (
   <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
     <Navigation/> 
@@ -71,22 +74,31 @@ return (
       <View style={styles.container}>
           <CustomHeader value="Your requested meals" />
 
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
-        {
-        requestedMeals.length > 0 ?
-        requestedMeals.map((item : any, index) => {
-              return <RequestCard
-                   id={item.cookId}
-              />
-          })
-        : null
-        } 
+        <View style={styles.card_wrapper}>
+          {
+          requestedMeals.length > 0 ?
+          requestedMeals.map((item : any, index) => {
+                console.log("AA!!!!!!!!!", item)
+                var requests = item.requests
+                return requests.map(item2 => {
+                  if (item2.userid == user[0].id ) {
+                  console.log("CHECK ME OUT", item2, user[0].id)
+                    return <RequestCard
+                      points={item2.points}
+                      status={item2.status}
+                      cookId={item.cookId}
+                      type="requested"
+                    />
+                  }
+                })
+            })
+          : null
+          } 
         </View>
 
-        <CustomHeader value="Users requested meals from you" />
 
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', flex: 1, justifyContent: 'space-around'}}>
-          
+        <View style={styles.card_wrapper}>
+        <CustomHeader value="Users requested meals from you" />
         {
         cookedMeals.length > 0? 
         cookedMeals.map((item : any, index : any) => {
@@ -102,7 +114,7 @@ return (
                   userId={item2.userid}
                   acceptRequest={acceptRequest.bind(this, item2.userid, item._id)}
                   declineRequest={declineRequest.bind(this, item2.userid, item._id )}
-
+                  type="requests"
               />
             })
           
@@ -129,6 +141,13 @@ container: {
   color: Colors.text_color.background,
   maxWidth: 1400,
   margin: 'auto',
+},
+card_wrapper: {
+  flexDirection: 'row', 
+  flexWrap: 'wrap', 
+  flex: 1, 
+  justifyContent: 'space-around',
+  marginBottom: 90,
 },
 scroll_container: {
   width: '100%',

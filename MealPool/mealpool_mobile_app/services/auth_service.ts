@@ -24,10 +24,9 @@ const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
 }
 
 const array_emp: Review[] = [
-  { authorId: "dsad", ratedId: "sadasd", stars: 0,  comment: "dsada"}
 ]
 
-const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal, reviewObj } : RegisterUser ) => {
+const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal, reviewObj, requestedMeals, cookedMeals } : RegisterUser ) => {
   console.log(fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal, reviewObj )
   return axios
   .post(API_URL + 'Register', {
@@ -42,7 +41,9 @@ const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, street
     country: countryVal,
     postalCode: postalCodeVal,
     phone: phoneVal,
-    reviews: array_emp
+    reviews: array_emp,
+    requestedMeals: [],
+    cookedMeals: [],
   })
   .then(function (response) {
     console.log(response.data);
