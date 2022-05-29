@@ -13,6 +13,7 @@ import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import CustomHeader from '../components/CustomHeader';
 import { useGlobalContext } from '../GlobalContext';
 import Async_Storage from '../services/asyncStorage';
+import InfoModal from '../components/InfoModal';
 
 export default function RegisterScreen ({ navigation }: RootStackScreenProps<'RegisterScreen'>) {
   const [fname, setFname] = React.useState({ value: '', error: ''});
@@ -43,35 +44,15 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   const countryVal = country.value
   const postalCodeVal = zcode.value
   const phoneVal = phone.value
-  
+  const pointsVal = 10;
+
+  const [isModalVisible, setModalVisible] = React.useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
 
   
-/*   const dobVal = dob.value
- */
-  type RegisterUser = {
-    fnameVal: string;
-    lnameVal: string;
-    emailVal: string;
-    passwordVal: string;
-    dobVal: Date;
-    streetVal: string;
-    cityVal: string;
-    countryVal: string;
-    postalCodeVal: string;
-    phoneVal: string;
-    reviewObj: Array<review>
-  };
-  type review = {
-    stars: Number,
-    comment: String
-  }
-  
-/*   type reviewObj ={
-    authorId: string,
-    ratedId: string,
-    stars: Number,
-    comment: String
-  } */
   type reviewObj ={
   }
   
@@ -82,7 +63,7 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
     e.preventDefault();
    
     if (password.value == rpassword.value) {
-      AuthService.registerUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj}).then(response=> {
+      AuthService.registerUser({fnameVal, lnameVal, emailVal, pointsVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal}).then(response=> {
          Async_Storage.storeData(email.value)
          Async_Storage.storeData(password.value)
       })  
@@ -93,6 +74,12 @@ export default function RegisterScreen ({ navigation }: RootStackScreenProps<'Re
   return (
     <ScrollView>
       <View style={styles.container}>
+        <InfoModal
+          onPress={toggleModal}
+          content_value="Your meal was successfully added"
+          button_value="Hide modal"
+          isVisible={isModalVisible}
+        />
       {
           desktop ? null :  <DesktopNavigation/>
         }

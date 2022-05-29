@@ -9,21 +9,20 @@ import { EmptyObject } from 'react-hook-form';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
-import { RegisterUser, userValue } from './types/User';
+import { RegisterUser, User, userValue } from './types/User';
 import Async_Storage from './services/asyncStorage';
 import UserService from './services/user_service';
 import jwt_decode from "jwt-decode";
 
 
 export default function App() {
-  const [user, setUser] = useState<Array<RegisterUser>>(userValue)
+  const [user, setUser] = useState<Array<User>>(userValue)
   // Value true is only for testing purpose! 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
   useEffect(() => {
-
     Async_Storage.getData()
     .then((response) => {
       if (response == undefined ) {
@@ -37,6 +36,7 @@ export default function App() {
           lnameVal: response.lastName,
           emailVal: response.email,
           passwordVal: "",
+          pointsVal: 0,
           dobVal: new Date(),
           streetVal: "",
           cityVal: "",

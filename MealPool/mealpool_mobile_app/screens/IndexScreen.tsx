@@ -42,6 +42,16 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
     navigation.navigate('RegisterScreen')
   }
 
+  function refreshPage() {
+  }
+
+  React.useEffect(() => {
+      refreshPage() 
+  }, [navigation])
+  
+
+  console.log("NAVIGATION", navigation)
+
 
 const checkJwtExpiration =  async () => {
     // ASYNC STORAGE WORKS FOR DESKTOP AND NATIVE APPS
@@ -114,9 +124,10 @@ const checkJwtExpiration =  async () => {
     // make sure to catch any error
 
     isSubscribed++;
-  
-  }, [token])
+    
 
+    console.log("USER DATA", user)
+  }, [token])
 
 
 

@@ -23,17 +23,17 @@ const loginUser = ({textInputEmail, textInputPassword} : LoginUser ) => {
     });
 }
 
-const array_emp: Review[] = [
-]
 
-const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal, reviewObj, requestedMeals, cookedMeals } : RegisterUser ) => {
-  console.log(fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal, reviewObj )
+
+const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, pointsVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal,} : RegisterUser ) => {
+  console.log(fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal,phoneVal )
   return axios
   .post(API_URL + 'Register', {
     firstName: fnameVal, 
     lastName: lnameVal,
     email: emailVal,
     password: passwordVal,
+    points: pointsVal,
     createdDate: new Date(),
     dateOfBirth: new Date(2018, 0O5, 0O5, 17, 23, 42, 11),
     street: streetVal,
@@ -41,7 +41,7 @@ const registerUser = ({fnameVal, lnameVal, emailVal, passwordVal, dobVal, street
     country: countryVal,
     postalCode: postalCodeVal,
     phone: phoneVal,
-    reviews: array_emp,
+    reviews: [],
     requestedMeals: [],
     cookedMeals: [],
   })
