@@ -1,0 +1,582 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "white",
+      "display": "flex",
+      "justifyContent": "center",
+      "maxWidth": 300,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityLabel="Learn more about this purple button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EA9B58",
+          "borderRadius": 25,
+          "color": "#FFF3DE",
+          "display": "flex",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "height": 45,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "shadowColor": "rgba(253, 180, 65, 0.3)",
+          "shadowOffset": Object {
+            "height": 12,
+            "width": 5,
+          },
+          "shadowOpacity": 0.3,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="submiButton"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF3DE",
+            "fontSize": 16,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      test button
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "none",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "600",
+          "textAlign": "center",
+        }
+      }
+    >
+      OR
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#EA9B58",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<SubmitButton> as default create new submit button correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "white",
+      "display": "flex",
+      "justifyContent": "center",
+      "maxWidth": 300,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityLabel="Learn more about this purple button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EA9B58",
+          "borderRadius": 25,
+          "color": "#FFF3DE",
+          "display": "flex",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "height": 45,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "shadowColor": "rgba(253, 180, 65, 0.3)",
+          "shadowOffset": Object {
+            "height": 12,
+            "width": 5,
+          },
+          "shadowOpacity": 0.3,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="submiButton"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF3DE",
+            "fontSize": 16,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      test button
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "none",
+        },
+      ]
+    }
+    testID="separator"
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "600",
+          "textAlign": "center",
+        }
+      }
+    >
+      OR
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#EA9B58",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<SubmitButton> create new submit button correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "white",
+      "display": "flex",
+      "justifyContent": "center",
+      "maxWidth": 300,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityLabel="Learn more about this purple button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EA9B58",
+          "borderRadius": 25,
+          "color": "#FFF3DE",
+          "display": "flex",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "height": 45,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "shadowColor": "rgba(253, 180, 65, 0.3)",
+          "shadowOffset": Object {
+            "height": 12,
+            "width": 5,
+          },
+          "shadowOpacity": 0.3,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="submiButton"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF3DE",
+            "fontSize": 16,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      test button
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "none",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "600",
+          "textAlign": "center",
+        }
+      }
+    >
+      OR
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#EA9B58",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`<SubmitButton> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "white",
+      "display": "flex",
+      "justifyContent": "center",
+      "maxWidth": 300,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityLabel="Learn more about this purple button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EA9B58",
+          "borderRadius": 25,
+          "color": "#FFF3DE",
+          "display": "flex",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "height": 45,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "shadowColor": "rgba(253, 180, 65, 0.3)",
+          "shadowOffset": Object {
+            "height": 12,
+            "width": 5,
+          },
+          "shadowOpacity": 0.3,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="submiButton"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF3DE",
+            "fontSize": 16,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      test button
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "none",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "600",
+          "textAlign": "center",
+        }
+      }
+    >
+      OR
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#EA9B58",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "white",
+      "display": "flex",
+      "justifyContent": "center",
+      "maxWidth": 300,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityLabel="Learn more about this purple button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EA9B58",
+          "borderRadius": 25,
+          "color": "#FFF3DE",
+          "display": "flex",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "height": 45,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "marginTop": 10,
+          "shadowColor": "rgba(253, 180, 65, 0.3)",
+          "shadowOffset": Object {
+            "height": 12,
+            "width": 5,
+          },
+          "shadowOpacity": 0.3,
+          "width": "100%",
+        },
+      ]
+    }
+    testID="submiButton"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF3DE",
+            "fontSize": 16,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      test button
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "none",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "600",
+          "textAlign": "center",
+        }
+      }
+    >
+      OR
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#EA9B58",
+          "height": 1,
+          "width": "40%",
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#EA9B58",
+      }
+    }
+  />
+</View>
+`;

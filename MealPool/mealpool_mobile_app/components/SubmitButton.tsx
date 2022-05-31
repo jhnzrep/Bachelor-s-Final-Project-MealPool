@@ -7,12 +7,13 @@ export default function SubmitButton(props: any){
 
     <View style={styles.buttonWrapper}>
       <Pressable
+        testID="submiButton"
         onPress={props.onPress}
         style={[!props.small_button ? styles.button : styles.small_button]}
         accessibilityLabel="Learn more about this purple button">
         <Text style={[!props.small_button ? styles.button_text : styles.small_button] }>{props.text}</Text>
       </Pressable>
-      <View style={[ props.showSeparator ? styles.alternative_login_section : {display: 'none'}]}>
+      <View testID="separator" style={[ props.showSeparator ? styles.alternative_login_section : {display: 'none'}]}>
           <View style={styles.separator} />
           <Text style={styles.title}>OR</Text>
           <View style={styles.separator}  />

@@ -11,7 +11,8 @@
     "test": "jest --watchAll"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"]
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
@@ -24,6 +25,7 @@
     "@react-navigation/native-stack": "^6.1.0",
     "axios": "^0.27.2",
     "axios-auth-refresh": "^3.3.1",
+    "enzyme": "^3.11.0",
     "expo": "~44.0.0",
     "expo-asset": "~8.4.4",
     "expo-blur": "~11.0.0",
@@ -51,6 +53,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@testing-library/react-native": "^9.1.0",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
     "jest": "^26.6.3",
