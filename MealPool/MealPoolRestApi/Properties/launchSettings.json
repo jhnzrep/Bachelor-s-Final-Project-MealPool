@@ -18,8 +18,10 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "MealPoolDB",
+        "CONNECTION_STRING": "mongodb+srv://Admin:ZShiNNe6vjEF7ZXj@mealpooldb.amlax.mongodb.net/MealPoolDB?retryWrites=true&w=majority",
         "UsersCollection": "Users",
-        "MealsCollection": "Meals"      }
+        "MealsCollection": "Meals"
+      }
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -28,6 +30,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "MealPoolDB",
+        "CONNECTION_STRING": "mongodb+srv://Admin:ZShiNNe6vjEF7ZXj@mealpooldb.amlax.mongodb.net/MealPoolDB?retryWrites=true&w=majority",
         "UsersCollection": "Users",
         "MealsCollection": "Meals"
       }

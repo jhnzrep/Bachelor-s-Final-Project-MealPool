@@ -57,5 +57,19 @@ namespace MealPoolRestApi.Controllers
 
             return Ok(JsonSerializer.Serialize(new JwtSecurityTokenHandler().WriteToken(JWTWriter.Write(user, _configuration))));
         }
+
+        [HttpPut("{id}")]
+        public ActionResult<User> Put(string id, [FromBody] User user)
+        {
+            return Ok(_userRepository.UpdateUser(id, user));
+        }
+
+        [HttpGet]
+        [Route("Search")]
+        public ActionResult<IEnumerable<User>> Search([FromQuery] string name)
+        {
+            return Ok(_userRepository.SearchUsers(name));
+        }
+
     }
 }

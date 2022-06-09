@@ -17,7 +17,7 @@ namespace MealPoolRestApi.Controllers
 
         //GET: api/<MealController>
         [HttpGet]
-        public ActionResult<IEnumerable<Meal>> Get()
+        public ActionResult<IEnumerable<Meal>> Get(string? userid)
         {
             return _mealRepository.GetAllMeals();
         }
@@ -37,6 +37,27 @@ namespace MealPoolRestApi.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("Request")]
+        public ActionResult<string> RequestMeal(Request request)
+        {
+            return Ok(_mealRepository.RequestMeal(request));
+        }
+
+        [HttpPost]
+        [Route("acceptRequest")]
+        public ActionResult<string> AcceptRequest(Request request)
+        {
+            return Ok(_mealRepository.AcceptRequest(request));
+        }
+
+        [HttpPost]
+        [Route("declineRequest")]
+        public ActionResult<string> DeclineRequest(Request request)
+        {
+            return Ok(_mealRepository.DeclineRequest(request));
+        }
+
         //POST api/<MealController>
         [HttpPost]
         public void Post([FromBody] Meal meal)
@@ -44,16 +65,30 @@ namespace MealPoolRestApi.Controllers
             Ok(_mealRepository.AddMeal(meal));
         }
 
-        // PUT api/<MealController>/5
-        [HttpPut("{id}")]
-        public void Put(string id, [FromBody] Meal meal)
+        [HttpGet]
+        [Route("getrequestedmeals")]
+        public ActionResult<IEnumerable<Meal>> GetRequestedMeals(string userid)
         {
+            return _mealRepository.GetRequestedMeals(userid);
         }
 
-        // DELETE api/<MealController>/5
-        [HttpDelete("{id}")]
-        public void Delete(string id)
+        [HttpGet]
+        [Route("getcookedmeals")]
+        public ActionResult<IEnumerable<Meal>> GetCookedMeals(string userid)
         {
+            return _mealRepository.GetCookedMeals(userid);
         }
+
+        //// PUT api/<MealController>/5
+        //[HttpPut("{id}")]
+        //public void Put(string id, [FromBody] Meal meal)
+        //{
+        //}
+
+        //// DELETE api/<MealController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(string id)
+        //{
+        //}
     }
 }

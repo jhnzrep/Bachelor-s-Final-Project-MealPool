@@ -12,6 +12,7 @@ namespace MealPoolLibrary.Models
         public string? Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public int Points { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Street { get; set; }
@@ -20,5 +21,9 @@ namespace MealPoolLibrary.Models
         public string PostalCode { get; set; }
         public string Phone { get; set; }
         public List<Review>? Reviews { get; set; } = new List<Review>();
+        public List<string>? RequestedMeals { get; set; } = new List<string>();
+        public List<string>? CookedMeals { get; set; } = new List<string>();
+
+
     }
 }

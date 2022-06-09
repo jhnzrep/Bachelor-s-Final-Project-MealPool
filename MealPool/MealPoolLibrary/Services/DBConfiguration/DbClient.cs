@@ -11,11 +11,11 @@ namespace MealPoolLibrary.Services.DBConfiguration
 
         public DbClient(IOptions<MealPoolDBConfig> mealPoolDbConfig)
         {
-            var client = new MongoClient(mealPoolDbConfig.Value.Connection_String);
-            var database = client.GetDatabase(mealPoolDbConfig.Value.Database_Name);
+            var client = new MongoClient("mongodb+srv://Admin:ZShiNNe6vjEF7ZXj@mealpooldb.amlax.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            var database = client.GetDatabase("MealPoolDB");
 
-            _users = database.GetCollection<User>(mealPoolDbConfig.Value.UsersCollection);
-            _meals = database.GetCollection<Meal>(mealPoolDbConfig.Value.MealsCollection);
+            _users = database.GetCollection<User>("Users");
+            _meals = database.GetCollection<Meal>("Meals");
 
         }
 

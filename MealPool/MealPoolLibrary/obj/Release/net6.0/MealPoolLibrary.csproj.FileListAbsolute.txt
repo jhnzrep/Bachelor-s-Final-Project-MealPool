@@ -1,0 +1,12 @@
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\bin\Release\net6.0\MealPoolLibrary.deps.json
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\bin\Release\net6.0\MealPoolLibrary.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\bin\Release\net6.0\MealPoolLibrary.pdb
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.csproj.AssemblyReference.cache
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.AssemblyInfoInputs.cache
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.AssemblyInfo.cs
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.csproj.CoreCompileInputs.cache
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\refint\MealPoolLibrary.dll
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\MealPoolLibrary.pdb
+C:\Users\jcoyn\Documents\Bachelors Thesis\Bachelor-s-Final-Project-MealPool\MealPool\MealPoolLibrary\obj\Release\net6.0\ref\MealPoolLibrary.dll

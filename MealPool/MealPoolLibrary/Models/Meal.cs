@@ -10,6 +10,9 @@ namespace MealPoolLibrary.Models
         public string? _id{ get; set; }
         public string CookId { get; set; }
         public string Name { get; set; }
+        public int Price { get; set; }
+        public int MaxPeople { get; set; }
+        public List<MealRequest>? Requests { get; set; } = new List<MealRequest>();
         DateTime Created { get; set; }
         public DateTime DateTime { get; set; }
         public string Category { get; set; }

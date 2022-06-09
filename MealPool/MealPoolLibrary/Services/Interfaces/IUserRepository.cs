@@ -10,5 +10,7 @@ namespace MealPoolLibrary.Services.Interfaces
         User AddUser(User user);
         User RegisterUser(User user);
         User LoginUser(string email, string password);
+        User UpdateUser(string id, User user);
+        List<User> SearchUsers(string name);
     }
 }
