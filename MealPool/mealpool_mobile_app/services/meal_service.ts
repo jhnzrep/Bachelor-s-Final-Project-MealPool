@@ -38,15 +38,14 @@ const getMealsByCategory = (category : String) => {
 let now = moment().format('LLLL');
 
 
-const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal} : Meal) => {
+const addMeal = ({cookId, nameVal,  spotsVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal, priceVal} : Meal) => {
   console.log(new Date().toLocaleString())
   return axios
   .post(API_URL + 'api/Meal', {
     cookId: cookId,
     name: nameVal,
-    price: 0,
-    maxPeople: 0,
-    requests: [],
+    price: 2,
+    maxPeople: 10,
     dateTime: dateItemVal,
     category: categoryVal,
     description: descriptionVal,
@@ -56,7 +55,7 @@ const addMeal = ({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, str
     postalCode: postalCodeVal
   })
   .then(function (response) {
-    console.log(response.data)
+    console.log(response)
     return response
   })
   .catch(function (error) {

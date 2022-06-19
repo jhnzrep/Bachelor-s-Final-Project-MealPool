@@ -21,7 +21,7 @@ export default function CustomCard(props: any){
         <View style={styles.card}>
             <View style={styles.card_content}>
                 <View>
-                    <Image source={require('../assets/images/offer_image.svg')}  style={styles.card_picture} />
+                    <Image source={require('../assets/images/offer_image.png')}  style={styles.card_picture} />
                 </View>
                 <View style={styles.card_right}>
                     <Text style={styles.title} >{props.title }</Text>

@@ -17,18 +17,20 @@ import MealService from '../services/meal_service';
 import InfoModal from '../components/InfoModal';
 import { useGlobalContext } from '../GlobalContext';
 
+  export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
 
-export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOfferScreen'>) {
     const [name, setName] = React.useState({ value: '', error: ''});
     const [date, setDate] = React.useState({ value: '', error: ''});
-    const [spots, setSpots] = React.useState({ value: '', error: ''});
+    const [spots, setSpots] = React.useState({ value: 0, error: ''});
     const [description, setDescription] = React.useState({ value: '', error: ''});
     const [street, setStreet] = React.useState({ value: '', error: ''});
     const [city, setCity] = React.useState({ value: '', error: ''});
     const [country, setCountry] = React.useState({ value: '', error: ''});
     const [category, setCategory] = React.useState({ value: '', error: ''});
     const [zcode, setZcode] = React.useState({ value: '', error: ''});
-    const [calories, setCalories] = React.useState({ value: '', error: ''});
+    const [price, setPrice] = React.useState({ value: 0, error: ''});
+    const [maxPeople, setMaxPeople] = React.useState({ value: 0, error: ''});
+    const [date2, setDate2] = React.useState("2016-05-15")
     const [ingredients, setIngredients] = React.useState({ value: '', error: ''});
     const [allergens, setAllergens] = React.useState({ value: '', error: ''});
     const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
@@ -38,8 +40,10 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
 
     const cookId = user[0].id;
     const nameVal = name.value;
-    const dateItemVal = new Date("2023-05-05T23:56:45.469Z");
+    const spotsVal = spots.value;
+    const dateItemVal = new Date();
     const categoryVal = category.value;
+    const priceVal = price.value;
     const descriptionVal =  description.value;
     const streetVal = street.value;
     const cityVal = city.value;
@@ -55,7 +59,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
 
   const checkTextInput = (e : any) => {
     e.preventDefault();
-    MealService.addMeal({cookId, nameVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal});
+    MealService.addMeal({cookId, nameVal, spotsVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal, priceVal});
     setModalVisible(true);
   }
 
@@ -91,7 +95,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             value={date.value}/>
 
              <CustomInput
-            setValue={(text : string) => setSpots({ value: text, error: ''})}
+            setValue={(text : number) => setSpots({ value: text, error: ''})}
             placeholder="Number of spots" 
             required={true}
             error={!!spots.error}
@@ -146,14 +150,13 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             value={zcode.value}/>
 
             <CustomInput
-            setValue={(text : string) => setCalories({ value: text, error: ''})}
-            placeholder="Calories" 
+            setValue={(text : number) => setPrice({ value: text, error: ''})}
+            placeholder="Points for food" 
             required={true}
-            error={!!calories.error}
-            errorText="You have to fill calories"
-            value={calories.value}/>
+            error={!!price.error}
+            errorText="You have to fill points"
+            value={price.value}/>
 
-            
             <SubmitButton
               text="Create meal" 
               showSeparator={true}
@@ -163,6 +166,7 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'MealOffe
             </View>
         </ScrollView>
     </View>
+    
 
 
   );

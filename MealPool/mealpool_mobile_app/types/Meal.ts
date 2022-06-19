@@ -1,6 +1,7 @@
 type Meal = {
     cookId: string;
     nameVal: string;
+    spotsVal: number;
     dateItemVal: Date;
     categoryVal: string;
     descriptionVal: string;
@@ -8,6 +9,7 @@ type Meal = {
     cityVal: string;
     countryVal: string;
     postalCodeVal: string;
+    priceVal: number;
 };
   
 type MealSearch = {
