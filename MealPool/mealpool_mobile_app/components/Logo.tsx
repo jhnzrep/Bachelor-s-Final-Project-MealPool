@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Colors from '../constants/Colors';
 
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable, DevSettings } from "react-native";
 
 
 export default function Logo(props: any){
-  return (
 
+   
+    const reload = () => {
+        DevSettings.reload()
+    }
+  return (
+   
     <View>
-        <Image source={require('../assets/images/company_logo.png')}  style={[  props.type == "main" ? styles.company_logo_main : styles.company_logo_nav]}/>
+        <Pressable onPress={reload}>
+            <Image source={require('../assets/images/company_logo.png')}  style={[  props.type == "main" ? styles.company_logo_main : styles.company_logo_nav]}/>
+        </Pressable>
         {props.show_title ?
         <Text style={styles.main_title}>MEALPOOL</Text>
         : null }

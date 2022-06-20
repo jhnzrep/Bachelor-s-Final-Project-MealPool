@@ -25,6 +25,7 @@ import { useEffect } from 'react';
 import CookCard from '../components/CookCard';
 import UserService from '../services/user_service';
 import RequestCard from '../components/RequestCard';
+import GoBackButton from '../components/GoBackButton';
 
 export default function RequestScreen({ navigation }: RootTabScreenProps<'RequestScreen'>) {
  
@@ -78,7 +79,6 @@ return (
           {
           requestedMeals.length > 0 ?
           requestedMeals.map((item : any, index) => {
-                console.log("AA!!!!!!!!!", item)
                 var requests = item.requests
                 return requests.map(item2 => {
                   if (item2.userid == user[0].id ) {

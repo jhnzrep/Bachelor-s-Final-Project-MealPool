@@ -93,7 +93,6 @@ export default function EditProfileScreen ({ navigation: {goBack} }: RootStackSc
   const checkTextInput = (e : any) => {
     e.preventDefault();
     if (password.value == rpassword.value) {
-      console.log("AAAAAAAAAAAAAA")
       UserService.editUser({fnameVal, lnameVal, emailVal, passwordVal, dobVal, streetVal, cityVal, countryVal, postalCodeVal, phoneVal, reviewObj, cookedMeals, requestedMeals}, user[0].id);
     }
   }

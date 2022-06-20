@@ -52,6 +52,7 @@ const linking: LinkingOptions<RootStackParamList> = {
       NotFound: '*',
       LoginScreen: 'login',
       ReviewScreen: 'review',
+      CookReviewScreen: 'review/cook',
       EditProfileScreen:  'edit/profile',
       CookProfileScreen:  'profile/cook',
       ConfirmPaymentScreen:  'meal/confirm',

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList } from 'react-native';
+import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList , View, RefreshControl} from 'react-native';
 import { CheckBox } from 'react-native-elements'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import EditScreenInfo from '../components/EditScreenInfo';
 import Logo from '../components/Logo';
 import SubmitButton from '../components/SubmitButton';
-import { Text, View } from '../components/Themed';
+import { Text } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
 import CustomInput from '../components/CustomInput';
@@ -20,8 +20,11 @@ import MealService from '../services/meal_service';
 import { useGlobalContext } from '../GlobalContext';
 import Async_Storage from '../services/asyncStorage';
 import jwt_decode from "jwt-decode";
+import { useFocusEffect } from '@react-navigation/native';
 
-
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
 export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>) {
  
   const [searchVal, setSearchVal] = React.useState('');
@@ -32,7 +35,20 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
   const [foundItems, setFoundItem] = React.useState(0);
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const [loading, setLoading] = React.useState(false);
+  const [key, setKey] = React.useState(0);
 
+  const [internetCheck, setInternetCheck] = React.useState(0);
+  React.useEffect(() => {
+    //code
+    console.log('internet', internetCheck)
+  }, [internetCheck]);
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+  
   const isEmpty = (str) => {
     return (!str || str.length === 0 );
   }
@@ -42,30 +58,17 @@ export default function IndexScreen({ navigation }: RootTabScreenProps<'Index'>)
     navigation.navigate('RegisterScreen')
   }
 
-  function refreshPage() {
-  }
-
-  React.useEffect(() => {
-      refreshPage() 
-  }, [navigation])
-  
-
-  console.log("NAVIGATION", navigation)
-
-
 const checkJwtExpiration =  async () => {
     // ASYNC STORAGE WORKS FOR DESKTOP AND NATIVE APPS
     const ldsadaset = isEmpty(token);
     if (!ldsadaset )  {
       var decoded : any =  jwt_decode(token);
       var exp = decoded.exp;
-      console.log("EXPIRATION", exp)
       if (Date.now() >= exp * 1000) {
         userIsNotAuthorized()
       }
       else{
         setIsLoggedIn(true)
-        console.log(isLoggedIn)
       }
     }
     return false;
@@ -133,11 +136,21 @@ const checkJwtExpiration =  async () => {
 
 
   return (
-    <View  style={{flex: 1, width: '100%', justifyContent: 'center'  }}>
+    <View  style={{flex: 1, width: '100%', justifyContent: 'center' }}>
       <Navigation/> 
+     
 
-        <ScrollView style={styles.scroll_container}>
+        <ScrollView 
+        style={styles.scroll_container}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
+        >
         <View style={styles.container}>
+        
             <CustomHeader value="Search for food" />
             <CustomInput
                 setValue={(text : string) => setSearchVal(text)}

@@ -1,3 +1,4 @@
+import { useRoute } from '@react-navigation/native';
 import * as React from 'react';
 import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList, ImageBackground, Modal } from 'react-native';
 import StarRating from 'react-native-star-rating-widget';
@@ -16,21 +17,25 @@ import ReviewService from '../services/review_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
 
 
-export default function ReviewScreen({ navigation: {goBack} }: RootStackScreenProps<'ReviewScreen'>) {
+export default function CookReviewScreen({ navigation: {goBack} }: RootStackScreenProps<'CookReviewScreen'>) {
+  const route = useRoute();
   const [reviews, setReviews] = React.useState(Array);
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)
   const [modalVisible, setModalVisible] = React.useState(false); 
-  const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
-  const fullname = user[0].fnameVal + " " + user[0].lnameVal
+  //const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+  const user = route.params.cookId
+  const fullname = user.fnameVal + " " + user.lnameVal
 
   const getReviews = () => {
-    return ReviewService.getReviews(user[0].id).then((response : any) => {
+    return ReviewService.getReviews(user.id).then((response : any) => {
         setReviews(response)
     })
   }
 
   React.useEffect(() => {
+    console.log('COOKTEST', route.params.cookId)
+
      getReviews()
   }, [])
 

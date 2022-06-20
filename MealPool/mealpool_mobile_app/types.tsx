@@ -20,6 +20,7 @@ export type RootStackParamList = {
   RegisterScreen: undefined;
   LoginScreen: undefined;
   ReviewScreen: undefined;
+  CookReviewScreen: undefined;
   EditProfileScreen: undefined;
   CookProfileScreen: undefined;
   ConfirmPaymentScreen: undefined;

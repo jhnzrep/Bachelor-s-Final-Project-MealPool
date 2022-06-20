@@ -11,9 +11,11 @@ import MealCategoryBox from '../components/MealCategoryBox';
 import { DATA, food_category_mock_data } from '../constants/MockData';
 import Async_Storage from '../services/asyncStorage';
 import { useGlobalContext } from '../GlobalContext';
+import { useNavigation } from '@react-navigation/native';
 
-export default function InfoScreen({ navigation }: RootTabScreenProps<'InfoScreen'>) {
+export default function InfoScreen({  }: RootTabScreenProps<'InfoScreen'>) {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+  const navigation = useNavigation();
 
   const logOut = () => {
     Async_Storage.removeData()

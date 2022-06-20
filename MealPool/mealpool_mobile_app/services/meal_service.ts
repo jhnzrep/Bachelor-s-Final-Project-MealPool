@@ -39,14 +39,14 @@ let now = moment().format('LLLL');
 
 
 const addMeal = ({cookId, nameVal,  spotsVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal, priceVal} : Meal) => {
-  console.log(new Date().toLocaleString())
+  console.log(cookId, nameVal,  spotsVal, dateItemVal, categoryVal, descriptionVal, streetVal, cityVal, countryVal, postalCodeVal, priceVal)
   return axios
   .post(API_URL + 'api/Meal', {
     cookId: cookId,
     name: nameVal,
     price: 2,
     maxPeople: 10,
-    dateTime: dateItemVal,
+    dateTime: "2023-06-20T10:29:02.115Z",
     category: categoryVal,
     description: descriptionVal,
     street: streetVal, 
@@ -73,7 +73,7 @@ const requestMeal = ({userId, mealId } : MealRequest) => {
   })
   .then(function (response) {
     console.log(response.data)
-    return response
+    return response.data
   })
   .catch(function (error) {
     console.log(error.response);

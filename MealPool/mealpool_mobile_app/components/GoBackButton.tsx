@@ -20,6 +20,7 @@ export default function GoBackButton(props: any){
 
 const styles = StyleSheet.create({
     buttonWrapper: {
+      zIndex: 999999,
       display: 'flex',
       position: 'absolute',
       top: 10,

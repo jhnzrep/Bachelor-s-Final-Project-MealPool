@@ -39,7 +39,8 @@ export default function CustomCard(props: any){
                             {
                                 !props.orderBtnHide ? 
                                 <SubmitButton 
-                                text="Order now"  
+                                text="Order" 
+                                style={{justifyContent: 'center', textALign: 'center'}}
                                 small_button={true}
                                 onPress={props.orderNowAction}
                                 />
@@ -176,6 +177,7 @@ const styles = StyleSheet.create({
     },
 
     card_content: {
+        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',

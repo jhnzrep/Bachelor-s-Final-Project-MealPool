@@ -15,14 +15,14 @@ import MealService from '../services/meal_service';
 import ReviewService from '../services/review_service';
 import { RootStackScreenProps, RootTabScreenProps } from '../types';
 import { useGlobalContext } from '../GlobalContext';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import UserService from '../services/user_service';
 import { useMemo } from 'react';
 import GoBackButton from '../components/GoBackButton';
 
 
 export default function CookProfileScreen({ navigation: {goBack} }: RootStackScreenProps<'CookProfileScreen'>) {
-  const route = useRoute();
+  const route = useRoute(); 
   const [searchVal, setSearchVal] = React.useState('');
   const [comment, setComment] = React.useState('');
   const [stars, setStars] = React.useState(3)
@@ -31,7 +31,8 @@ export default function CookProfileScreen({ navigation: {goBack} }: RootStackScr
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
   const authorId = user[0].id;
   const ratedId =  route.params.cook[0].id;
-
+  const cookId = route.params.cook[0]
+  const navigation = useNavigation();
   const postReview = () => {
     ReviewService.postReview({authorId,ratedId, stars, comment});
   }
@@ -40,11 +41,9 @@ export default function CookProfileScreen({ navigation: {goBack} }: RootStackScr
 
   return (
     <View  style={styles.container}>
-        <View>
             <GoBackButton
-                onPress={() => goBack()} 
+                onPress={goBack} 
             />
-        </View>
         
         <ScrollView style={styles.scroll_container}>
             <View style={{flex: 1,  justifyContent: 'center', alignItems: 'center', marginTop: 50, position: 'relative' }}>
@@ -56,7 +55,6 @@ export default function CookProfileScreen({ navigation: {goBack} }: RootStackScr
             <View style={styles.content_section}>
                 <CustomHeader value={ fullname}/>
                 <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
-                <Text>Is logged in???? {isLoggedIn}</Text>
             </View>
             <View style={[styles.user_reviews, {padding: 10}]}>
                 <View style={{width: '50%', alignItems: 'center'}}>
@@ -95,7 +93,7 @@ export default function CookProfileScreen({ navigation: {goBack} }: RootStackScr
                     <View style={{width: '50%'}}>
                         <SubmitButton
                         text="See reviews" 
-                        onPress={() =>navigation.navigate('ReviewScreen')} 
+                        onPress={() =>navigation.navigate('CookReviewScreen', {cookId: cookId})} 
                         />
                     </View>
                 </View>
@@ -103,7 +101,7 @@ export default function CookProfileScreen({ navigation: {goBack} }: RootStackScr
                     <Text style={{width: '50%', textDecorationLine: 'underline'}}> 54 reviews given </Text>
                     <View style={{width: '50%'}}>
                         <SubmitButton
-                        onPress={() =>navigation.navigate('ReviewScreen')} 
+                        onPress={() =>navigation.navigate('CookReviewScreen')} 
                         text="See given reviews" 
                         />
                     </View>

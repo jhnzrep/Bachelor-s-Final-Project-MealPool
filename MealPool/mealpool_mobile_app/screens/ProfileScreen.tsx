@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList, ImageBackground, Modal } from 'react-native';
+import { StyleSheet, Image, TextInput, Button, Alert, Pressable, Linking, ScrollView, SectionList, ImageBackground, Modal, RefreshControl, Platform } from 'react-native';
 import { CheckBox } from 'react-native-elements'
 import CustomHeader from '../components/CustomHeader';
 
@@ -18,8 +18,11 @@ import { useGlobalContext } from '../GlobalContext';
 import { useRoute } from '@react-navigation/native';
 import UserService from '../services/user_service';
 import { useMemo } from 'react';
+import {DevSettings} from 'react-native';
 
-
+const wait = (timeout) => {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+  }
 export default function ProfileScreen({ navigation }: RootTabScreenProps<'ProfileScreen'>) {
   const [searchVal, setSearchVal] = React.useState('');
   const [comment, setComment] = React.useState('');
@@ -29,6 +32,13 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
   const authorId = "62744054a0293dc967bbe5ae";
   const ratedId =  "62729ead203bb0d4d9e4eea9";
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useGlobalContext()
+
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
 
 
 
@@ -40,8 +50,15 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
 
   return (
     <View  style={styles.container}>
-        <Text>Profile Type</Text>
-        <ScrollView style={styles.scroll_container}>
+        <ScrollView style={styles.scroll_container}
+         refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+            />
+          }
+        >
+
             <View style={{flex: 1,  justifyContent: 'center', alignItems: 'center', marginTop: 50, position: 'relative' }}>
                     <Image source={require('../assets/images/profile_picture.png')}  style={styles.profile_picture} />
                 <ImageBackground style={styles.image_wrapper} source={require('../assets/images/profile_picture_background.png')}>
@@ -51,7 +68,6 @@ export default function ProfileScreen({ navigation }: RootTabScreenProps<'Profil
             <View style={styles.content_section}>
                 <CustomHeader value={ fullname}/>
                 <Text style={{fontStyle: 'italic', textAlign: 'center', marginTop: 10}}>My profile - Chef</Text>
-                <Text>Is logged in???? {isLoggedIn}</Text>
             </View>
          
             <View style={styles.content_follower_section}>
